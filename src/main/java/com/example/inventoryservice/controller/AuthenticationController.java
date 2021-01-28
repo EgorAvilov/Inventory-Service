@@ -1,0 +1,70 @@
+package com.example.inventoryservice.controller;
+
+import com.example.inventoryservice.dto.AuthenticationRequestDto;
+import com.example.inventoryservice.dto.UserDto;
+import com.example.inventoryservice.security.jwt.JwtTokenProvider;
+import com.example.inventoryservice.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
+import java.util.HashMap;
+import java.util.Map;
+
+@RestController
+@RequestMapping(value = "/api")
+public class AuthenticationController {
+
+    private final AuthenticationManager authenticationManager;
+    private final JwtTokenProvider jwtTokenProvider;
+    private final UserService userService;
+    Logger logger = LoggerFactory.getLogger(AuthenticationController.class);
+
+    @Autowired
+    public AuthenticationController(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, UserService userService) {
+        this.authenticationManager = authenticationManager;
+        this.jwtTokenProvider = jwtTokenProvider;
+        this.userService = userService;
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity login(@RequestBody @Valid AuthenticationRequestDto requestDto) {
+        try {
+            String username = requestDto.getUsername();
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, requestDto.getPassword()));
+            UserDto user = userService.findByUsername(username);
+            if (user == null) {
+                logger.error("User with username: " + username + " not found");
+                throw new UsernameNotFoundException("User with username: " + username + " not found");
+            }
+            String token = jwtTokenProvider.createToken(username, user.getUserRole());
+            Map<Object, Object> response = new HashMap<>();
+            response.put("token", token);
+            response.put("user", user);
+            return ResponseEntity.ok(response);
+        } catch (AuthenticationException e) {
+            logger.error(e.getMessage());
+            return new ResponseEntity<>("Invalid username or password", HttpStatus.FORBIDDEN);
+        }
+    }
+
+    @PostMapping("/logout")
+    public void logout(HttpServletRequest request, HttpServletResponse response) {
+        SecurityContextLogoutHandler securityContextLogoutHandler = new SecurityContextLogoutHandler();
+        securityContextLogoutHandler.logout(request, response, null);
+    }
+}
