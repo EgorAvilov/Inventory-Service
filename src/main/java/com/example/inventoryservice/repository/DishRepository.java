@@ -1,13 +1,14 @@
 package com.example.inventoryservice.repository;
 
-import com.example.inventoryservice.entity.Ingredient;
+
+import com.example.inventoryservice.entity.Dish;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface IngredientRepository extends JpaRepository<Ingredient, Long> {
-    List<Ingredient> findAllByRestaurant_Id(Long restaurantId);
+public interface DishRepository extends JpaRepository<Dish, Long> {
+    List<Dish> findAllByRestaurant_Id(Long restaurantId);
 }
 
