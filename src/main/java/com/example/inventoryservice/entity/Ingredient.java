@@ -24,7 +24,7 @@ public class Ingredient implements Serializable {
     private String name;
 
     @Column(name = "amount")
-    private Integer amount;
+    private BigDecimal amount;
 
     @Column(name = "measure_unit")
     private String measureUnit;

@@ -18,7 +18,7 @@ public class IngredientDto {
 
     private String name;
 
-    private Integer amount;
+    private BigDecimal amount;
 
     private String measureUnit;
 
