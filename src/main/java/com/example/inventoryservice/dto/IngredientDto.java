@@ -24,5 +24,5 @@ public class IngredientDto {
 
     private BigDecimal price;
 
-    private Restaurant restaurant;
+    private RestaurantDto restaurant;
 }

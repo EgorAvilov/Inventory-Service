@@ -28,5 +28,5 @@ public class UserDto {
 
     private String password;
 
-    private Restaurant restaurant;
+    private RestaurantDto restaurant;
 }

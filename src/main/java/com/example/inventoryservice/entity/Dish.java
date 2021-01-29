@@ -29,4 +29,8 @@ public class Dish implements Serializable {
 
     @Column(name = "price")
     private BigDecimal price;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "recipe_id")
+    private Recipe recipe;
 }

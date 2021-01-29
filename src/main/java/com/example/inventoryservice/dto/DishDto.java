@@ -1,5 +1,6 @@
 package com.example.inventoryservice.dto;
 
+import com.example.inventoryservice.entity.Recipe;
 import com.example.inventoryservice.entity.Restaurant;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +18,9 @@ public class DishDto {
 
     private String name;
 
-    private Restaurant restaurant;
+    private RestaurantDto restaurant;
 
     private BigDecimal price;
+
+    private RecipeDto recipe;
 }

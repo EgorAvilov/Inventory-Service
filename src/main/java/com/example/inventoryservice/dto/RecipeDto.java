@@ -16,5 +16,5 @@ public class RecipeDto {
 
     private String name;
 
-    private Restaurant restaurant;
+    private RestaurantDto restaurant;
 }
