@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @Entity
 @Data
@@ -28,11 +28,7 @@ public class Recipe implements Serializable {
     @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(name = "ingredients_list",
-            joinColumns = @JoinColumn(name = "recipe_id", referencedColumnName = "id"),
-            inverseJoinColumns = {@JoinColumn(name = "ingredient_id", referencedColumnName = "id"),
-                    @JoinColumn(name = "amount", referencedColumnName = "amount")})
-    private List<Ingredient> recordsList;
+    @OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL )
+    private List<RecipeIngredient> recipeIngredients=new ArrayList<>();
 }
 

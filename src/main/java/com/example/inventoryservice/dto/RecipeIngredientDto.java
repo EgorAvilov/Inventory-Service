@@ -5,19 +5,18 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class DishDto {
+public class RecipeIngredientDto {
 
     private Long id;
 
-    private RestaurantDto restaurant;
+    private BigDecimal amount;
 
-    private BigDecimal price;
-
-    private RecipeDto recipe;
+    private IngredientDto ingredient;
 }

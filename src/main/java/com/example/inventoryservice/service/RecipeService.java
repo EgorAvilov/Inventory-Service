@@ -8,4 +8,6 @@ public interface RecipeService {
     RecipeDto create(RecipeDto recipeDto);
 
     List<RecipeDto> findAllByRestaurant();
+
+    boolean recipeExists(String name, Long restaurantId);
 }

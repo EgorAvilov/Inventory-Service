@@ -1,12 +1,12 @@
 package com.example.inventoryservice.dto;
 
-import com.example.inventoryservice.entity.Ingredient;
-import com.example.inventoryservice.entity.Restaurant;
+import com.example.inventoryservice.entity.RecipeIngredient;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -21,5 +21,5 @@ public class RecipeDto {
 
     private RestaurantDto restaurant;
 
-    private List<IngredientDto> recordsList;
+    private List<RecipeIngredient> recipeIngredients = new ArrayList<>();
 }

@@ -3,6 +3,7 @@ package com.example.inventoryservice.service.impl;
 import com.example.inventoryservice.converter.RestaurantConverter;
 import com.example.inventoryservice.dto.RestaurantDto;
 import com.example.inventoryservice.entity.Restaurant;
+import com.example.inventoryservice.exception.ServiceException;
 import com.example.inventoryservice.repository.RestaurantRepository;
 import com.example.inventoryservice.service.RestaurantService;
 import org.slf4j.Logger;
@@ -23,8 +24,19 @@ public class RestaurantServiceImpl implements RestaurantService {
     @Override
     public RestaurantDto create(RestaurantDto restaurantDto) {
         logger.info("Create restaurant");
+        if(restaurantExists(restaurantDto.getName())){
+            logger.error("Not unique name {}", restaurantDto.getName());
+            throw new ServiceException("Name should be unique");
+        }
         Restaurant restaurant = restaurantConverter.dtoToEntity(restaurantDto);
         Restaurant persistRestaurant = restaurantRepository.save(restaurant);
         return restaurantConverter.entityToDto(persistRestaurant);
+    }
+
+    @Override
+    public boolean restaurantExists(String name) {
+        logger.info("Check for existing restaurant {}", name);
+        return restaurantRepository.findAllByNameIgnoreCase(name)
+                                   .size() != 0;
     }
 }

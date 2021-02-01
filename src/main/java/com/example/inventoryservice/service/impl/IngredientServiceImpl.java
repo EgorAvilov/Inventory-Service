@@ -32,7 +32,7 @@ public class IngredientServiceImpl implements IngredientService {
 
     @Override
     public IngredientDto create(IngredientDto ingredientDto) {
-        logger.info("Create recipe");
+        logger.info("Create ingredient");
         Ingredient ingredient = ingredientConverter.dtoToEntity(ingredientDto);
         Ingredient persistIngredient = ingredientRepository.save(ingredient);
         return ingredientConverter.entityToDto(persistIngredient);
@@ -40,7 +40,7 @@ public class IngredientServiceImpl implements IngredientService {
 
     @Override
     public List<IngredientDto> findAllByRestaurant() {
-        logger.info("Find all recipes by restaurant");
+        logger.info("Find all ingredients by restaurant");
         UserDto userDto = userService.getCurrentUser();
         List<Ingredient> ingredients = ingredientRepository.findAllByRestaurant_Id(userDto.getRestaurant()
                                                                               .getId());
