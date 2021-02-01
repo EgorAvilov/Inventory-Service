@@ -47,6 +47,9 @@ public class DishServiceImpl implements DishService {
     public DishDto create(DishDto dishDto) {
         logger.info("Create dish");
         Dish dish = dishConverter.dtoToEntity(dishDto);
+        if (!recipeExists(dish)) {
+            throw new ServiceException("No such recipe");
+        }
         checkForEnoughIngredients(dish);
         Dish persistDish = dishRepository.save(dish);
         return dishConverter.entityToDto(persistDish);
@@ -60,6 +63,7 @@ public class DishServiceImpl implements DishService {
                                                                               .getId());
         return dishConverter.entityToDto(ingredients);
     }
+
     @Override
     public void checkForEnoughIngredients(Dish dish) {
         Recipe recipe = recipeRepository.getOne(dish.getRecipe()
@@ -76,7 +80,8 @@ public class DishServiceImpl implements DishService {
         }
         for (RecipeIngredient requiredRecipeIngredient : requiredRecipeIngredients) {
             for (Ingredient existingIngredient : existingIngredients) {
-                if (requiredRecipeIngredient.getIngredient().getName()
+                if (requiredRecipeIngredient.getIngredient()
+                                            .getName()
                                             .equalsIgnoreCase(existingIngredient.getName())) {
                     if (existingIngredient.getAmount()
                                           .compareTo(requiredRecipeIngredient.getAmount()) < 0) {
@@ -88,5 +93,12 @@ public class DishServiceImpl implements DishService {
             }
             ingredientRepository.saveAll(existingIngredients);
         }
+    }
+
+    public boolean recipeExists(Dish dish) {
+        return recipeRepository.findAllByNameIgnoreCaseAndRestaurant_Id(dish.getRecipe()
+                                                                            .getName(),
+                dish.getRestaurant()
+                    .getId()).size() != 0;
     }
 }

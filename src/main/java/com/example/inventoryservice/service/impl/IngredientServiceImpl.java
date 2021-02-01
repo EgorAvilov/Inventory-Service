@@ -32,9 +32,24 @@ public class IngredientServiceImpl implements IngredientService {
         logger.info("Create ingredient");
         Ingredient ingredient = ingredientConverter.dtoToEntity(ingredientDto);
         if (ingredientExists(ingredient)) {
-            throw new ServiceException("Not unique ingredient");
+            throw new ServiceException("Not unique ingredient");//проверка что ингредиент этого юзера
+            //после security
         }
         Ingredient persistIngredient = ingredientRepository.save(ingredient);
+        return ingredientConverter.entityToDto(persistIngredient);
+    }
+
+    @Override
+    public IngredientDto update(IngredientDto ingredientDto) {
+        logger.info("Update ingredient");
+        Ingredient ingredient = ingredientConverter.dtoToEntity(ingredientDto);
+        if (!ingredientExists(ingredient)) {
+            throw new ServiceException("No such ingredient");//проверка что ингредиент этого юзера
+            //после security
+        }
+        Ingredient persistIngredient = ingredientRepository.findById(ingredient.getId()).orElse(new Ingredient());
+        persistIngredient.setAmount(ingredient.getAmount());
+        persistIngredient=ingredientRepository.save(persistIngredient);
         return ingredientConverter.entityToDto(persistIngredient);
     }
 

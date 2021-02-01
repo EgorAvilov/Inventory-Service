@@ -7,5 +7,7 @@ import java.util.List;
 public interface IngredientService {
     IngredientDto create(IngredientDto ingredientDto);
 
+    IngredientDto update(IngredientDto ingredientDto);
+
     List<IngredientDto> findAllByRestaurant();
 }

@@ -16,7 +16,6 @@ public class DishDto {
 
     private Long id;
 
-    @NotBlank(message = "Username can't be empty.")
     private RestaurantDto restaurant;
 
     private BigDecimal price;
