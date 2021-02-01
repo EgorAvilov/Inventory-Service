@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "ingredient_list")
+@Table(name = "recipe_ingredients")
 public class RecipeIngredient {
 
     @Id
@@ -25,4 +25,5 @@ public class RecipeIngredient {
     @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "ingredient_id")
     private Ingredient ingredient;
+
 }

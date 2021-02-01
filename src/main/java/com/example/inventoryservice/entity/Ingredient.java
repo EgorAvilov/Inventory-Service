@@ -40,16 +40,21 @@ public class Ingredient implements Serializable {
 
     @Override
     public boolean equals(Object o) {
+        System.out.println(o);
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Ingredient that = (Ingredient) o;
-        return Objects.equals(name, that.name) &&
+        return Objects.equals(id, that.id) &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(amount, that.amount) &&
+                Objects.equals(measureUnit, that.measureUnit) &&
+                Objects.equals(price, that.price) &&
                 Objects.equals(restaurant, that.restaurant);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, restaurant);
+        return Objects.hash(id, name, amount, measureUnit, price, restaurant);
     }
 }
 

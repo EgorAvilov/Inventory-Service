@@ -1,14 +1,11 @@
 package com.example.inventoryservice.service.impl;
 
 import com.example.inventoryservice.converter.IngredientConverter;
-import com.example.inventoryservice.converter.RecipeConverter;
 import com.example.inventoryservice.dto.IngredientDto;
-import com.example.inventoryservice.dto.RecipeDto;
 import com.example.inventoryservice.dto.UserDto;
 import com.example.inventoryservice.entity.Ingredient;
-import com.example.inventoryservice.entity.Recipe;
+import com.example.inventoryservice.exception.ServiceException;
 import com.example.inventoryservice.repository.IngredientRepository;
-import com.example.inventoryservice.repository.RecipeRepository;
 import com.example.inventoryservice.service.IngredientService;
 import com.example.inventoryservice.service.UserService;
 import org.slf4j.Logger;
@@ -34,6 +31,9 @@ public class IngredientServiceImpl implements IngredientService {
     public IngredientDto create(IngredientDto ingredientDto) {
         logger.info("Create ingredient");
         Ingredient ingredient = ingredientConverter.dtoToEntity(ingredientDto);
+        if (ingredientExists(ingredient)) {
+            throw new ServiceException("Not unique ingredient");
+        }
         Ingredient persistIngredient = ingredientRepository.save(ingredient);
         return ingredientConverter.entityToDto(persistIngredient);
     }
@@ -43,7 +43,13 @@ public class IngredientServiceImpl implements IngredientService {
         logger.info("Find all ingredients by restaurant");
         UserDto userDto = userService.getCurrentUser();
         List<Ingredient> ingredients = ingredientRepository.findAllByRestaurant_Id(userDto.getRestaurant()
-                                                                              .getId());
+                                                                                          .getId());
         return ingredientConverter.entityToDto(ingredients);
+    }
+
+    public boolean ingredientExists(Ingredient ingredient) {
+        return ingredientRepository.findAllByRestaurant_IdAndName(ingredient.getRestaurant()
+                                                                            .getId(), ingredient.getName())
+                                   .size() != 0;
     }
 }

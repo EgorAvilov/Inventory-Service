@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
 
 @Data
@@ -15,6 +16,7 @@ public class DishDto {
 
     private Long id;
 
+    @NotBlank(message = "Username can't be empty.")
     private RestaurantDto restaurant;
 
     private BigDecimal price;

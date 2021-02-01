@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
 
 @Data
@@ -16,10 +17,12 @@ public class IngredientDto {
 
     private Long id;
 
+    @NotBlank(message = "Username can't be empty.")
     private String name;
 
     private BigDecimal amount;
 
+    @NotBlank(message = "Username can't be empty.")
     private String measureUnit;
 
     private BigDecimal price;
