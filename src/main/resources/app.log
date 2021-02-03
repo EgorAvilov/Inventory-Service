@@ -5171,3 +5171,482 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 2021-02-03 15:32:45 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
 2021-02-03 15:32:45 INFO  DispatcherServlet:547 - Completed initialization in 1 ms
 2021-02-03 15:32:45 INFO  UserServiceImpl:64 - Update ingredient price
+2021-02-03 15:43:57 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 18596 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-03 15:43:57 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-03 15:43:57 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-03 15:43:57 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-03 15:43:57 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-03 15:43:58 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-03 15:43:58 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 66 ms. Found 6 JPA repository interfaces.
+2021-02-03 15:43:59 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-03 15:43:59 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 1765 ms
+2021-02-03 15:43:59 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-03 15:43:59 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-03 15:43:59 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-03 15:43:59 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-03 15:43:59 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-03 15:43:59 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:231 - отношение "dishes" не существует, пропускается
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:231 - отношение "dishes" не существует, пропускается
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:231 - отношение "ingredients" не существует, пропускается
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:231 - отношение "recipe_ingredients" не существует, пропускается
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:231 - отношение "recipes" не существует, пропускается
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:231 - отношение "recipes_recipe_ingredients" не существует, пропускается
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:231 - отношение "recipes_recipe_ingredients" не существует, пропускается
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:231 - отношение "user_role" не существует, пропускается
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:231 - отношение "users" не существует, пропускается
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:231 - таблица "dishes" не существует, пропускается
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:231 - таблица "ingredients" не существует, пропускается
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:231 - таблица "recipe_ingredients" не существует, пропускается
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:231 - таблица "recipes" не существует, пропускается
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:231 - таблица "recipes_recipe_ingredients" не существует, пропускается
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:231 - таблица "restaurants" не существует, пропускается
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:231 - таблица "user_role" не существует, пропускается
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:44:00 WARN  SqlExceptionHelper:231 - таблица "users" не существует, пропускается
+2021-02-03 15:44:00 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-03 15:44:00 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-03 15:44:00 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-03 15:44:00 WARN  AnnotationConfigServletWebServerApplicationContext:596 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'ServletContext resource [/script.sql]' is invalid: The specified resource does not exist.
+2021-02-03 15:44:00 INFO  HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2021-02-03 15:44:00 INFO  HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2021-02-03 15:44:00 INFO  ConditionEvaluationReportLoggingListener:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-02-03 15:44:00 ERROR LoggingFailureAnalysisReporter:40 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Invalid value 'script.sql' for configuration property 'spring.datasource.data' (originating from 'class path resource [application.properties] - 12:24'). Validation failed for the following reason:
+
+The specified resource does not exist.
+
+Action:
+
+Review the value of the property with the provided reason.
+
+2021-02-03 15:44:14 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 20976 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-03 15:44:14 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-03 15:44:14 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-03 15:44:15 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-03 15:44:15 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-03 15:44:15 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-03 15:44:16 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 55 ms. Found 6 JPA repository interfaces.
+2021-02-03 15:44:16 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-03 15:44:17 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2047 ms
+2021-02-03 15:44:17 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-03 15:44:17 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-03 15:44:17 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-03 15:44:17 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-03 15:44:17 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-03 15:44:17 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-03 15:44:19 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-03 15:44:19 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-03 15:44:19 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-03 15:44:19 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-03 15:44:19 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ad8e793, org.springframework.security.web.context.SecurityContextPersistenceFilter@10b137b4, org.springframework.security.web.header.HeaderWriterFilter@1e612d84, org.springframework.web.filter.CorsFilter@37725237, org.springframework.security.web.authentication.logout.LogoutFilter@2d4a3b79, com.example.inventoryservice.security.jwt.JwtTokenFilter@5152176c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e36f340, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@676a9bd2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3baadd31, org.springframework.security.web.session.SessionManagementFilter@55fe9ed5, org.springframework.security.web.access.ExceptionTranslationFilter@78790140, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@41b35b72]
+2021-02-03 15:44:20 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-03 15:44:20 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-03 15:44:20 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-03 15:44:20 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-03 15:44:20 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-03 15:44:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-03 15:44:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-03 15:44:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-03 15:44:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-03 15:44:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-03 15:44:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-03 15:44:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-03 15:44:20 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 5.551 seconds (JVM running for 6.818)
+2021-02-03 15:44:33 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-03 15:44:33 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 3688 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-03 15:44:33 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-03 15:44:33 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-03 15:44:33 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-03 15:44:35 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-03 15:44:35 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 107 ms. Found 6 JPA repository interfaces.
+2021-02-03 15:44:36 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-03 15:44:36 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2884 ms
+2021-02-03 15:44:36 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-03 15:44:36 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-03 15:44:36 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-03 15:44:36 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-03 15:44:36 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-03 15:44:36 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-03 15:44:37 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-03 15:44:37 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-03 15:44:37 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-03 15:44:37 WARN  AnnotationConfigServletWebServerApplicationContext:596 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'ServletContext resource [/script.sql]' is invalid: The specified resource does not exist.
+2021-02-03 15:44:37 INFO  HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2021-02-03 15:44:37 INFO  HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2021-02-03 15:44:37 INFO  ConditionEvaluationReportLoggingListener:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-02-03 15:44:37 ERROR LoggingFailureAnalysisReporter:40 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Invalid value 'script.sql' for configuration property 'spring.datasource.data' (originating from 'class path resource [application.properties] - 12:24'). Validation failed for the following reason:
+
+The specified resource does not exist.
+
+Action:
+
+Review the value of the property with the provided reason.
+
+2021-02-03 15:47:12 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 2296 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-03 15:47:12 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-03 15:47:12 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-03 15:47:12 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-03 15:47:12 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-03 15:47:14 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-03 15:47:14 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 106 ms. Found 6 JPA repository interfaces.
+2021-02-03 15:47:15 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-03 15:47:15 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2658 ms
+2021-02-03 15:47:15 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-03 15:47:15 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-03 15:47:15 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-03 15:47:15 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-03 15:47:16 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-03 15:47:16 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:231 - отношение "dishes" не существует, пропускается
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:231 - отношение "dishes" не существует, пропускается
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:231 - отношение "ingredients" не существует, пропускается
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:231 - отношение "recipe_ingredients" не существует, пропускается
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:231 - отношение "recipes" не существует, пропускается
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:231 - отношение "recipes_recipe_ingredients" не существует, пропускается
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:231 - отношение "recipes_recipe_ingredients" не существует, пропускается
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:231 - отношение "user_role" не существует, пропускается
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:231 - отношение "users" не существует, пропускается
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:231 - таблица "dishes" не существует, пропускается
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:231 - таблица "ingredients" не существует, пропускается
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:231 - таблица "recipe_ingredients" не существует, пропускается
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:231 - таблица "recipes" не существует, пропускается
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:231 - таблица "recipes_recipe_ingredients" не существует, пропускается
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:231 - таблица "restaurants" не существует, пропускается
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:231 - таблица "user_role" не существует, пропускается
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:230 - SQL Warning Code: 0, SQLState: 00000
+2021-02-03 15:47:16 WARN  SqlExceptionHelper:231 - таблица "users" не существует, пропускается
+2021-02-03 15:47:16 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-03 15:47:16 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-03 15:47:16 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-03 15:47:17 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-03 15:47:17 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5e560583, org.springframework.security.web.context.SecurityContextPersistenceFilter@5bf6bea1, org.springframework.security.web.header.HeaderWriterFilter@377af7f7, org.springframework.web.filter.CorsFilter@5b44dbc1, org.springframework.security.web.authentication.logout.LogoutFilter@606a4764, com.example.inventoryservice.security.jwt.JwtTokenFilter@2d3caf87, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d2256d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e4d777, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6abd3579, org.springframework.security.web.session.SessionManagementFilter@1f512ad6, org.springframework.security.web.access.ExceptionTranslationFilter@10cccc2e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3f4c3e2]
+2021-02-03 15:47:17 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-03 15:47:17 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-03 15:47:17 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-03 15:47:17 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-03 15:47:17 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-03 15:47:17 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-03 15:47:17 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-03 15:47:17 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-03 15:47:17 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-03 15:47:17 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-03 15:47:17 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-03 15:47:17 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-03 15:47:17 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 5.57 seconds (JVM running for 6.694)
+2021-02-03 15:48:17 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 9804 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-03 15:48:17 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-03 15:48:17 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-03 15:48:17 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-03 15:48:17 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-03 15:48:18 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-03 15:48:18 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 77 ms. Found 6 JPA repository interfaces.
+2021-02-03 15:48:19 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-03 15:48:19 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 1938 ms
+2021-02-03 15:48:19 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-03 15:48:19 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-03 15:48:20 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-03 15:48:20 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-03 15:48:20 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-03 15:48:20 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-03 15:48:21 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-03 15:48:21 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-03 15:48:21 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-03 15:48:21 WARN  AnnotationConfigServletWebServerApplicationContext:596 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'ServletContext resource [/db.sql]' is invalid: The specified resource does not exist.
+2021-02-03 15:48:21 INFO  HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2021-02-03 15:48:21 INFO  HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2021-02-03 15:48:21 INFO  ConditionEvaluationReportLoggingListener:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-02-03 15:48:21 ERROR LoggingFailureAnalysisReporter:40 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Invalid value 'db.sql' for configuration property 'spring.datasource.data' (originating from 'class path resource [application.properties] - 12:24'). Validation failed for the following reason:
+
+The specified resource does not exist.
+
+Action:
+
+Review the value of the property with the provided reason.
+
+2021-02-03 15:49:59 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 13764 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-03 15:49:59 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-03 15:49:59 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-03 15:49:59 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-03 15:49:59 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-03 15:50:01 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-03 15:50:01 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 163 ms. Found 6 JPA repository interfaces.
+2021-02-03 15:50:02 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-03 15:50:02 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2730 ms
+2021-02-03 15:50:02 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-03 15:50:02 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-03 15:50:02 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-03 15:50:02 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-03 15:50:03 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-03 15:50:03 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-03 15:50:03 ERROR LocalContainerEntityManagerFactoryBean:426 - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [dishes]
+2021-02-03 15:50:03 WARN  AnnotationConfigServletWebServerApplicationContext:596 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [dishes]
+2021-02-03 15:50:03 INFO  HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2021-02-03 15:50:03 INFO  HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2021-02-03 15:50:03 INFO  ConditionEvaluationReportLoggingListener:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-02-03 15:50:03 ERROR SpringApplication:856 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [dishes]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1159)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at com.example.inventoryservice.InventoryServiceApplication.main(InventoryServiceApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [dishes]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1847)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	... 22 more
+Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [dishes]
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:121)
+	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:42)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:89)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:68)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:192)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 26 more
+2021-02-03 15:50:36 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 15420 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-03 15:50:36 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-03 15:50:36 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-03 15:50:36 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-03 15:50:36 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-03 15:50:37 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-03 15:50:37 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 114 ms. Found 6 JPA repository interfaces.
+2021-02-03 15:50:38 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-03 15:50:38 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2409 ms
+2021-02-03 15:50:38 WARN  AnnotationConfigServletWebServerApplicationContext:596 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'inMemoryDatabaseShutdownExecutor' defined in class path resource [org/springframework/boot/devtools/autoconfigure/DevToolsDataSourceAutoConfiguration.class]: Unsatisfied dependency expressed through method 'inMemoryDatabaseShutdownExecutor' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.schema with value 'ServletContext resource [/db.sql]' is invalid: The specified resource does not exist.
+2021-02-03 15:50:38 INFO  ConditionEvaluationReportLoggingListener:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-02-03 15:50:38 ERROR LoggingFailureAnalysisReporter:40 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Invalid value 'db.sql' for configuration property 'spring.datasource.schema' (originating from 'class path resource [application.properties] - 12:26'). Validation failed for the following reason:
+
+The specified resource does not exist.
+
+Action:
+
+Review the value of the property with the provided reason.
+
+2021-02-03 15:50:49 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 19644 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-03 15:50:49 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-03 15:50:49 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-03 15:50:49 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-03 15:50:49 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-03 15:50:51 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-03 15:50:51 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 79 ms. Found 6 JPA repository interfaces.
+2021-02-03 15:50:52 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-03 15:50:52 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2235 ms
+2021-02-03 15:50:52 WARN  AnnotationConfigServletWebServerApplicationContext:596 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'inMemoryDatabaseShutdownExecutor' defined in class path resource [org/springframework/boot/devtools/autoconfigure/DevToolsDataSourceAutoConfiguration.class]: Unsatisfied dependency expressed through method 'inMemoryDatabaseShutdownExecutor' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.schema with value 'ServletContext resource [/db.sql]' is invalid: The specified resource does not exist.
+2021-02-03 15:50:52 INFO  ConditionEvaluationReportLoggingListener:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-02-03 15:50:52 ERROR LoggingFailureAnalysisReporter:40 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Invalid value 'db.sql' for configuration property 'spring.datasource.schema' (originating from 'class path resource [application.properties] - 12:26'). Validation failed for the following reason:
+
+The specified resource does not exist.
+
+Action:
+
+Review the value of the property with the provided reason.
+
+2021-02-03 16:02:36 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-03 16:02:36 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 17480 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-03 16:02:36 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-03 16:02:36 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-03 16:02:36 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-03 16:02:38 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-03 16:02:38 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 135 ms. Found 6 JPA repository interfaces.
+2021-02-03 16:02:39 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-03 16:02:39 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 3096 ms
+2021-02-03 16:02:39 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-03 16:02:39 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-03 16:02:39 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-03 16:02:39 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-03 16:02:39 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-03 16:02:40 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-03 16:02:40 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-03 16:02:40 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-03 16:02:40 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-03 16:02:41 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d0a7c4e, org.springframework.security.web.context.SecurityContextPersistenceFilter@5e59248b, org.springframework.security.web.header.HeaderWriterFilter@2570ce73, org.springframework.web.filter.CorsFilter@75c34e69, org.springframework.security.web.authentication.logout.LogoutFilter@6d310ec0, com.example.inventoryservice.security.jwt.JwtTokenFilter@1f35be9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1938f7cf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1b9ab7c1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@53191f0, org.springframework.security.web.session.SessionManagementFilter@eb464e9, org.springframework.security.web.access.ExceptionTranslationFilter@7f0f7705, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@54bdf626]
+2021-02-03 16:02:41 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-03 16:02:41 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-03 16:02:41 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-03 16:02:41 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-03 16:02:41 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-03 16:02:41 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-03 16:02:41 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-03 16:02:41 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-03 16:02:41 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-03 16:02:41 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-03 16:02:41 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-03 16:02:41 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-03 16:02:41 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-03 16:02:41 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 5.878 seconds (JVM running for 7.135)
+2021-02-03 16:06:55 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 18660 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-03 16:06:55 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-03 16:06:55 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-03 16:06:55 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-03 16:06:55 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-03 16:06:56 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-03 16:06:57 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 113 ms. Found 6 JPA repository interfaces.
+2021-02-03 16:06:57 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-03 16:06:58 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2530 ms
+2021-02-03 16:06:58 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-03 16:06:58 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-03 16:06:58 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-03 16:06:58 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-03 16:06:58 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-03 16:06:58 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-03 16:06:58 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-03 16:06:59 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-03 16:06:59 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-03 16:06:59 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-03 16:06:59 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@26fd9bd, org.springframework.security.web.context.SecurityContextPersistenceFilter@5075ab61, org.springframework.security.web.header.HeaderWriterFilter@215069ed, org.springframework.web.filter.CorsFilter@7b4e129b, org.springframework.security.web.authentication.logout.LogoutFilter@ce29359, com.example.inventoryservice.security.jwt.JwtTokenFilter@2db92552, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f72c090, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@46031798, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7bcf6de0, org.springframework.security.web.session.SessionManagementFilter@480d16bc, org.springframework.security.web.access.ExceptionTranslationFilter@7d478016, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@303d560b]
+2021-02-03 16:06:59 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-03 16:07:00 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-03 16:07:00 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-03 16:07:00 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-03 16:07:00 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-03 16:07:00 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-03 16:07:00 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-03 16:07:00 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-03 16:07:00 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-03 16:07:00 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-03 16:07:00 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-03 16:07:00 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-03 16:07:00 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 5.1 seconds (JVM running for 6.215)
+2021-02-03 16:07:39 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 8316 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-03 16:07:39 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-03 16:07:39 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-03 16:07:39 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-03 16:07:39 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-03 16:07:40 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-03 16:07:40 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 115 ms. Found 6 JPA repository interfaces.
+2021-02-03 16:07:41 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-03 16:07:41 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2090 ms
+2021-02-03 16:07:41 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-03 16:07:41 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-03 16:07:41 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-03 16:07:41 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-03 16:07:41 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-03 16:07:42 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-03 16:07:42 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-03 16:07:42 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-03 16:07:42 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-03 16:07:43 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-03 16:07:43 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@584644f8, org.springframework.security.web.context.SecurityContextPersistenceFilter@32698b31, org.springframework.security.web.header.HeaderWriterFilter@65f33b9f, org.springframework.web.filter.CorsFilter@1194c5fd, org.springframework.security.web.authentication.logout.LogoutFilter@d3a2a00, com.example.inventoryservice.security.jwt.JwtTokenFilter@4072f475, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4fa28ad6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@47c8c291, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@831acb5, org.springframework.security.web.session.SessionManagementFilter@7b296459, org.springframework.security.web.access.ExceptionTranslationFilter@24d3a4d9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@215a7dd3]
+2021-02-03 16:07:43 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-03 16:07:43 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-03 16:07:43 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-03 16:07:43 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-03 16:07:43 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-03 16:07:43 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-03 16:07:43 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-03 16:07:43 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-03 16:07:43 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-03 16:07:43 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-03 16:07:43 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-03 16:07:43 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-03 16:07:43 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 5.037 seconds (JVM running for 6.276)
