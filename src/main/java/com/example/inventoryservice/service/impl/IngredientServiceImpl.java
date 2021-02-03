@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -36,16 +37,15 @@ public class IngredientServiceImpl implements IngredientService {
         ingredientDto.setRestaurant(restaurantDto);
         Ingredient ingredient = ingredientConverter.dtoToEntity(ingredientDto);
         if (ingredientExists(ingredient)) {
-            throw new ServiceException("Not unique ingredient");//проверка что ингредиент этого юзера
-            //после security
+            throw new ServiceException("Not unique ingredient");
         }
         Ingredient persistIngredient = ingredientRepository.save(ingredient);
         return ingredientConverter.entityToDto(persistIngredient);
     }
 
     @Override
-    public IngredientDto update(IngredientDto ingredientDto) {
-        logger.info("Update ingredient");
+    public IngredientDto updateAmount(IngredientDto ingredientDto) {
+        logger.info("Update ingredient amount");
         Ingredient ingredient = ingredientConverter.dtoToEntity(ingredientDto);
         if (!ingredientExists(ingredient)) {
             logger.error("No such ingredient {}", ingredient.getName());
@@ -53,7 +53,24 @@ public class IngredientServiceImpl implements IngredientService {
         }
         Ingredient persistIngredient = ingredientRepository.findById(ingredient.getId())
                                                            .orElse(new Ingredient());
-        persistIngredient.setAmount(ingredient.getAmount());
+        BigDecimal persistAmount = persistIngredient.getAmount();
+        persistIngredient.setAmount(persistAmount.add(ingredient.getAmount()));
+        persistIngredient = ingredientRepository.save(persistIngredient);
+        return ingredientConverter.entityToDto(persistIngredient);
+    }
+
+    @Override
+    public IngredientDto updatePrice(IngredientDto ingredientDto) {
+        logger.info("Update ingredient price");
+        Ingredient ingredient = ingredientConverter.dtoToEntity(ingredientDto);
+        if (!ingredientExists(ingredient)) {
+            logger.error("No such ingredient {}", ingredient.getName());
+            throw new ServiceException("No such ingredient");
+        }
+        Ingredient persistIngredient = ingredientRepository.findById(ingredient.getId())
+                                                           .orElse(new Ingredient());
+        BigDecimal persistPrice = persistIngredient.getPrice();
+        persistIngredient.setPrice(persistPrice.add(ingredient.getAmount()));
         persistIngredient = ingredientRepository.save(persistIngredient);
         return ingredientConverter.entityToDto(persistIngredient);
     }

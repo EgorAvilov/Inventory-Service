@@ -18,6 +18,7 @@ import java.util.List;
 public class UserDto {
 
     private Long id;
+
     @NotBlank(message = "Username can't be empty.")
     private String firstName;
 

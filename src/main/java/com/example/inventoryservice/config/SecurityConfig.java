@@ -46,7 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api" + "/login")
                 .permitAll()
                 .antMatchers("/api" + "/logout")
-                .hasAnyAuthority("KITCHEN_STUFF",  "KITCHEN_CHEF", "INVENTORY_MANAGER")
+                .hasAnyAuthority("KITCHEN_STUFF", "KITCHEN_CHEF", "INVENTORY_MANAGER")
                 .antMatchers("/api" + "/dishes")
                 .hasAnyAuthority("KITCHEN_STUFF")
                 .antMatchers("/api" + "/recipes")

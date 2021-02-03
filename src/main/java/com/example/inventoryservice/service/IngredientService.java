@@ -8,7 +8,9 @@ import java.util.List;
 public interface IngredientService {
     IngredientDto create(IngredientDto ingredientDto);
 
-    IngredientDto update(IngredientDto ingredientDto);
+    IngredientDto updateAmount(IngredientDto ingredientDto);
+
+    IngredientDto updatePrice(IngredientDto ingredientDto);
 
     List<IngredientDto> findAllByRestaurant();
 

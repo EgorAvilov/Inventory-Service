@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
 
@@ -18,6 +19,7 @@ public class DishDto {
 
     private RestaurantDto restaurant;
 
+    @DecimalMin(value = "0.0", inclusive = false, message = "Price can't be <=0")
     private BigDecimal price;
 
     private RecipeDto recipe;

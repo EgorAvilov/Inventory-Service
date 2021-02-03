@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,5 +24,6 @@ public class RecipeDto {
 
     private RestaurantDto restaurant;
 
+    @NotEmpty(message = "Ingredient list can't be empty")
     private List<RecipeIngredientDto> recipeIngredients = new ArrayList<>();//было просто
 }
