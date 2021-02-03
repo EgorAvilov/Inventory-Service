@@ -42,7 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                /*.authorizeRequests()
+                .authorizeRequests()
                 .antMatchers("/api" + "/login")
                 .permitAll()
                 .antMatchers("/api" + "/logout")
@@ -55,7 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .hasAnyAuthority("INVENTORY_MANAGER")
                 .anyRequest()
                 .authenticated()
-                .and()*/
+                .and()
                 .apply(new JwtConfigurer(jwtTokenProvider));
     }
 }
