@@ -26,6 +26,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public UserDto findByUsername(String username) {
         logger.info("Find user by username {}", username);
         User user = userRepository.findByUsername(username);

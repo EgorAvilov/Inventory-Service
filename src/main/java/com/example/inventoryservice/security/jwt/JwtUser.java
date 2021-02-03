@@ -10,23 +10,17 @@ import java.util.Collection;
 public class JwtUser implements UserDetails {
 
     private final Long id;
-    private final String firstName;
-    private final String lastName;
     private final Collection<? extends GrantedAuthority> authorities;
-    private final String email;
+    private final String username;
     private final String password;
 
     public JwtUser(Long id,
-                   String firstName,
-                   String lastName,
                    Collection<? extends GrantedAuthority> authorities,
-                   String email,
+                   String username,
                    String password) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
         this.authorities = authorities;
-        this.email = email;
+        this.username = username;
         this.password = password;
     }
 
@@ -48,7 +42,7 @@ public class JwtUser implements UserDetails {
 
     @Override
     public String getUsername() {
-        return email;
+        return username;
     }
 
     @Override
@@ -69,11 +63,6 @@ public class JwtUser implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
-    }
-
-
-    public String getFirstName() {
-        return firstName;
     }
 
 }

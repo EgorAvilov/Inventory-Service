@@ -41,10 +41,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .disable()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                                /*.authorizeRequests()
-                .anyRequest()
-                .authenticated()*/
                 .and()
+                /*.authorizeRequests()
+                .antMatchers("/api" + "/login")
+                .permitAll()
+                .antMatchers("/api" + "/logout")
+                .hasAnyAuthority("KITCHEN_STUFF",  "KITCHEN_CHEF", "INVENTORY_MANAGER")
+                .antMatchers("/api" + "/dishes")
+                .hasAnyAuthority("KITCHEN_STUFF")
+                .antMatchers("/api" + "/recipes")
+                .hasAnyAuthority("KITCHEN_CHEF")
+                .antMatchers("/api" + "/ingredients")
+                .hasAnyAuthority("INVENTORY_MANAGER")
+                .anyRequest()
+                .authenticated()
+                .and()*/
                 .apply(new JwtConfigurer(jwtTokenProvider));
     }
 }

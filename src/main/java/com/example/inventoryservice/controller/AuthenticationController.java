@@ -44,14 +44,13 @@ public class AuthenticationController {
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody @Valid AuthenticationRequestDto requestDto) {
         try {
-            String username = requestDto.getUsername();
-            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, requestDto.getPassword()));
-            UserDto user = userService.findByUsername(username);
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(requestDto.getUsername(), requestDto.getPassword()));
+            UserDto user = userService.findByUsername(requestDto.getUsername());
             if (user == null) {
-                logger.error("User with username: " + username + " not found");
-                throw new UsernameNotFoundException("User with username: " + username + " not found");
+                logger.error("User with username: " + requestDto.getUsername() + " not found");
+                throw new UsernameNotFoundException("User with username: " + requestDto.getUsername() + " not found");
             }
-            String token = jwtTokenProvider.createToken(username, user.getUserRole());
+            String token = jwtTokenProvider.createToken(requestDto.getUsername(), user.getUserRole());
             Map<Object, Object> response = new HashMap<>();
             response.put("token", token);
             response.put("user", user);

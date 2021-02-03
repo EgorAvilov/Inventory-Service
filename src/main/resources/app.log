@@ -3272,3 +3272,1226 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 2021-02-01 18:24:58 INFO  DispatcherServlet:547 - Completed initialization in 5 ms
 2021-02-01 18:24:59 INFO  UserServiceImpl:48 - Create dish
 2021-02-01 18:24:59 WARN  ExceptionHandlerExceptionResolver:207 - Resolved [com.example.inventoryservice.exception.ServiceException: No such recipe]
+2021-02-02 11:51:15 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 13684 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 11:51:15 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 11:51:15 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 11:51:15 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 11:51:15 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 11:51:17 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 11:51:17 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 83 ms. Found 6 JPA repository interfaces.
+2021-02-02 11:51:17 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 11:51:17 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2688 ms
+2021-02-02 11:51:18 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 11:51:18 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 11:51:18 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 11:51:18 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 11:51:18 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 11:51:18 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 11:51:20 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 11:51:20 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 11:51:20 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 11:51:20 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 11:51:22 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3410eab4, org.springframework.security.web.context.SecurityContextPersistenceFilter@34600683, org.springframework.security.web.header.HeaderWriterFilter@2e2acc33, org.springframework.web.filter.CorsFilter@4e56da7, org.springframework.security.web.authentication.logout.LogoutFilter@1467cd72, com.example.inventoryservice.security.jwt.JwtTokenFilter@498a08b3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e15b316, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e2eb7dc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4a73f7c6, org.springframework.security.web.session.SessionManagementFilter@21a4baa4, org.springframework.security.web.access.ExceptionTranslationFilter@50644b57, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7d3fc85f]
+2021-02-02 11:51:22 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 11:51:22 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 11:51:22 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 11:51:22 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 11:51:22 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 11:51:22 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 11:51:22 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 11:51:22 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 11:51:22 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 11:51:22 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 11:51:22 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 11:51:22 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 11:51:22 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 8.657 seconds (JVM running for 10.729)
+2021-02-02 11:51:47 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 11:51:47 INFO  DispatcherServlet:547 - Completed initialization in 1 ms
+2021-02-02 11:51:48 WARN  ExceptionHandlerExceptionResolver:207 - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity com.example.inventoryservice.controller.AuthenticationController.login(com.example.inventoryservice.dto.AuthenticationRequestDto): [Field error in object 'authenticationRequestDto' on field 'username': rejected value [null]; codes [NotBlank.authenticationRequestDto.username,NotBlank.username,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [authenticationRequestDto.username,username]; arguments []; default message [username]]; default message [Username can't be empty.]] ]
+2021-02-02 11:51:55 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 11:51:56 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 11:51:56 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 11:51:56 ERROR AuthenticationController:60 - Неверные учетные данные пользователя
+2021-02-02 11:52:49 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 11:52:49 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 11:52:49 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 11:52:49 ERROR AuthenticationController:60 - Неверные учетные данные пользователя
+2021-02-02 11:52:51 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 11:52:51 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 11:52:51 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 11:52:51 ERROR AuthenticationController:60 - Неверные учетные данные пользователя
+2021-02-02 11:53:38 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 11:53:38 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 11:53:38 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 11:53:38 ERROR AuthenticationController:60 - Неверные учетные данные пользователя
+2021-02-02 11:54:33 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 16156 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 11:54:33 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 11:54:33 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 11:54:33 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 11:54:33 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 11:54:35 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 11:54:35 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 169 ms. Found 6 JPA repository interfaces.
+2021-02-02 11:54:36 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 11:54:37 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 3646 ms
+2021-02-02 11:54:37 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 11:54:37 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 11:54:37 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 11:54:37 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 11:54:37 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 11:54:37 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 11:54:38 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 11:54:38 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 11:54:38 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 11:54:39 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 11:54:40 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@eede243, org.springframework.security.web.context.SecurityContextPersistenceFilter@6eaf96ec, org.springframework.security.web.header.HeaderWriterFilter@19a2b08c, org.springframework.web.filter.CorsFilter@ea75be6, org.springframework.security.web.authentication.logout.LogoutFilter@295479ad, com.example.inventoryservice.security.jwt.JwtTokenFilter@5aef9d24, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@11a9faaf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6627f403, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5dcaef26, org.springframework.security.web.session.SessionManagementFilter@25913c3c, org.springframework.security.web.access.ExceptionTranslationFilter@7f44a780, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d78b60f]
+2021-02-02 11:54:40 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 11:54:40 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 11:54:40 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 11:54:40 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 11:54:40 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 11:54:41 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 11:54:41 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 11:54:41 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 11:54:41 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 11:54:41 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 11:54:41 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 11:54:41 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 11:54:41 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 8.415 seconds (JVM running for 9.819)
+2021-02-02 11:55:08 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 11:55:08 INFO  DispatcherServlet:547 - Completed initialization in 1 ms
+2021-02-02 11:55:08 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 11:55:08 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 11:55:08 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 11:55:08 ERROR AuthenticationController:60 - Неверные учетные данные пользователя
+2021-02-02 11:55:09 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 11:55:09 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 11:55:09 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 11:55:09 ERROR AuthenticationController:60 - Неверные учетные данные пользователя
+2021-02-02 11:57:52 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 12220 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 11:57:52 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 11:57:52 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 11:57:52 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 11:57:52 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 11:57:53 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 11:57:53 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 131 ms. Found 6 JPA repository interfaces.
+2021-02-02 11:57:54 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 11:57:54 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 1832 ms
+2021-02-02 11:57:54 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 11:57:54 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 11:57:54 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 11:57:55 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 11:57:55 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 11:57:55 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 11:57:56 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 11:57:56 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 11:57:56 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 11:57:56 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 11:57:57 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c259b37, org.springframework.security.web.context.SecurityContextPersistenceFilter@915ab36, org.springframework.security.web.header.HeaderWriterFilter@48029170, org.springframework.web.filter.CorsFilter@72f7b7bc, org.springframework.security.web.authentication.logout.LogoutFilter@6e85fc6, com.example.inventoryservice.security.jwt.JwtTokenFilter@3159615d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3a4b7e75, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@d8aa525, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5cf59ba4, org.springframework.security.web.session.SessionManagementFilter@4a4c09, org.springframework.security.web.access.ExceptionTranslationFilter@51fe12b3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3cac1ca4]
+2021-02-02 11:57:57 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 11:57:57 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 11:57:57 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 11:57:57 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 11:57:57 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 11:57:57 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 11:57:57 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 11:57:57 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 11:57:57 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 11:57:57 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 11:57:57 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 11:57:57 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 11:57:57 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 5.407 seconds (JVM running for 7.436)
+2021-02-02 11:58:02 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 11:58:02 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+2021-02-02 11:58:02 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 11:58:03 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 11:58:03 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 11:58:03 ERROR AuthenticationController:60 - Неверные учетные данные пользователя
+2021-02-02 11:58:04 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 11:58:04 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 11:58:04 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 11:58:04 ERROR AuthenticationController:60 - Неверные учетные данные пользователя
+2021-02-02 11:58:21 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 11:58:21 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 15712 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 11:58:21 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 11:58:21 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 11:58:21 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 11:58:23 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 11:58:23 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 137 ms. Found 6 JPA repository interfaces.
+2021-02-02 11:58:24 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 11:58:24 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2926 ms
+2021-02-02 11:58:24 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 11:58:24 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 11:58:24 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 11:58:24 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 11:58:24 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 11:58:24 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 11:58:25 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 11:58:25 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 11:58:25 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 11:58:26 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 11:58:27 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1da3e637, org.springframework.security.web.context.SecurityContextPersistenceFilter@666b771e, org.springframework.security.web.header.HeaderWriterFilter@1e643ad6, org.springframework.web.filter.CorsFilter@3e302def, org.springframework.security.web.authentication.logout.LogoutFilter@19be7b66, com.example.inventoryservice.security.jwt.JwtTokenFilter@6ff61a9f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@57dd05a0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@f902c0d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7cdc75b3, org.springframework.security.web.session.SessionManagementFilter@1451806, org.springframework.security.web.access.ExceptionTranslationFilter@3a007fe7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4a70e09d]
+2021-02-02 11:58:27 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 11:58:28 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 11:58:28 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 11:58:28 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 11:58:28 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 11:58:28 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 11:58:28 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 11:58:28 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 11:58:28 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 11:58:28 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 11:58:28 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 11:58:28 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 11:58:28 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 8.053 seconds (JVM running for 10.828)
+2021-02-02 11:58:32 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 11:58:32 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+2021-02-02 11:58:32 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 11:58:33 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 11:58:33 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 11:58:33 ERROR AuthenticationController:60 - Неверные учетные данные пользователя
+2021-02-02 11:58:43 INFO  ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-02 11:58:43 INFO  LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 11:58:43 INFO  HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2021-02-02 11:58:43 INFO  HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2021-02-02 11:58:49 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 11:58:49 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 100 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 11:58:49 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 11:58:49 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 11:58:49 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 11:58:50 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 11:58:51 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 138 ms. Found 6 JPA repository interfaces.
+2021-02-02 11:58:52 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 11:58:52 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 3136 ms
+2021-02-02 11:58:52 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 11:58:52 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 11:58:52 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 11:58:52 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 11:58:53 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 11:58:53 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 11:58:53 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 11:58:53 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 11:58:53 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 11:58:54 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 11:58:54 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3f8f11c2, org.springframework.security.web.context.SecurityContextPersistenceFilter@18763bcf, org.springframework.security.web.header.HeaderWriterFilter@292b24be, org.springframework.web.filter.CorsFilter@5257bc83, org.springframework.security.web.authentication.logout.LogoutFilter@2962f7b6, com.example.inventoryservice.security.jwt.JwtTokenFilter@58e4cbf6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@326d5097, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62d2646f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@78a66f03, org.springframework.security.web.session.SessionManagementFilter@71f1699a, org.springframework.security.web.access.ExceptionTranslationFilter@347b7d72, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6b8d2427]
+2021-02-02 11:58:54 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 11:58:54 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 11:58:54 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 11:58:54 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 11:58:54 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 11:58:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 11:58:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 11:58:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 11:58:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 11:58:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 11:58:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 11:58:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 11:58:55 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 6.456 seconds (JVM running for 8.871)
+2021-02-02 11:58:57 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 11:58:57 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+2021-02-02 11:59:35 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 11:59:38 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 11:59:38 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 11:59:54 ERROR AuthenticationController:60 - Неверные учетные данные пользователя
+2021-02-02 11:59:55 INFO  ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-02 11:59:55 INFO  LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 11:59:55 INFO  HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2021-02-02 11:59:55 INFO  HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2021-02-02 12:04:34 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 3276 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 12:04:34 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 12:04:34 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 12:04:34 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 12:04:34 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 12:04:35 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 12:04:35 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 116 ms. Found 6 JPA repository interfaces.
+2021-02-02 12:04:36 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 12:04:36 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2449 ms
+2021-02-02 12:04:36 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 12:04:36 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 12:04:37 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 12:04:37 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 12:04:37 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 12:04:37 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 12:04:38 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 12:04:38 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:04:38 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 12:04:39 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 12:04:39 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2059e652, org.springframework.security.web.context.SecurityContextPersistenceFilter@5e67d1ac, org.springframework.security.web.header.HeaderWriterFilter@297f672a, org.springframework.web.filter.CorsFilter@14ec7cbe, org.springframework.security.web.authentication.logout.LogoutFilter@5c88de0b, com.example.inventoryservice.security.jwt.JwtTokenFilter@6bd3ab3e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36a61421, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@480ee286, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3851b0c8, org.springframework.security.web.session.SessionManagementFilter@7fa849b7, org.springframework.security.web.access.ExceptionTranslationFilter@2409c5c9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@74c7e2af]
+2021-02-02 12:04:39 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:04:39 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 12:04:39 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 12:04:39 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 12:04:39 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 12:04:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 12:04:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 12:04:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 12:04:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 12:04:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 12:04:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 12:04:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 12:04:39 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 5.987 seconds (JVM running for 8.589)
+2021-02-02 12:04:47 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 12:04:47 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+2021-02-02 12:05:27 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:05:30 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:05:30 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:05:30 ERROR AuthenticationController:60 - Неверные учетные данные пользователя
+2021-02-02 12:05:30 WARN  ExceptionHandlerExceptionResolver:207 - Resolved [java.lang.NullPointerException]
+2021-02-02 12:05:31 INFO  ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:05:31 INFO  LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:05:31 INFO  HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2021-02-02 12:05:31 INFO  HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2021-02-02 12:06:20 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 7824 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 12:06:20 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 12:06:20 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 12:06:20 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 12:06:20 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 12:06:22 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 12:06:22 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 128 ms. Found 6 JPA repository interfaces.
+2021-02-02 12:06:23 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 12:06:23 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2829 ms
+2021-02-02 12:06:23 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 12:06:23 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 12:06:23 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 12:06:23 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 12:06:23 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 12:06:23 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 12:06:24 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 12:06:24 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:06:24 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 12:06:24 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 12:06:25 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@28922ee3, org.springframework.security.web.context.SecurityContextPersistenceFilter@33126a05, org.springframework.security.web.header.HeaderWriterFilter@6627f403, org.springframework.web.filter.CorsFilter@22d9fa64, org.springframework.security.web.authentication.logout.LogoutFilter@37d63f62, com.example.inventoryservice.security.jwt.JwtTokenFilter@2a554187, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@10cccc2e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@384902b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@61f50473, org.springframework.security.web.session.SessionManagementFilter@242a0757, org.springframework.security.web.access.ExceptionTranslationFilter@7e49cda9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2ea18afd]
+2021-02-02 12:06:25 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:06:25 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 12:06:25 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 12:06:25 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 12:06:25 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 12:06:26 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 12:06:26 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 12:06:26 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 12:06:26 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 12:06:26 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 12:06:26 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 12:06:26 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 12:06:26 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 6.184 seconds (JVM running for 7.255)
+2021-02-02 12:06:46 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 12:06:46 INFO  DispatcherServlet:547 - Completed initialization in 1 ms
+2021-02-02 12:06:46 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:06:47 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:06:47 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:06:47 ERROR AuthenticationController:60 - Неверные учетные данные пользователя
+2021-02-02 12:08:57 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 1092 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 12:08:57 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 12:08:57 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 12:08:57 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 12:08:57 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 12:08:59 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 12:08:59 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 118 ms. Found 6 JPA repository interfaces.
+2021-02-02 12:09:00 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 12:09:00 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2730 ms
+2021-02-02 12:09:00 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 12:09:00 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 12:09:00 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 12:09:01 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 12:09:01 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 12:09:01 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 12:09:01 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 12:09:01 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:09:01 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 12:09:02 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 12:09:02 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41c97008, org.springframework.security.web.context.SecurityContextPersistenceFilter@3ca3a6c0, org.springframework.security.web.header.HeaderWriterFilter@798eec8f, org.springframework.web.filter.CorsFilter@10e09ad, org.springframework.security.web.authentication.logout.LogoutFilter@62929cee, com.example.inventoryservice.security.jwt.JwtTokenFilter@4e5a3975, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1b2ea9ce, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1fc97e3b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4cb90e19, org.springframework.security.web.session.SessionManagementFilter@763512f8, org.springframework.security.web.access.ExceptionTranslationFilter@43578612, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@346cfce5]
+2021-02-02 12:09:02 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:09:02 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 12:09:02 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 12:09:02 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 12:09:02 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 12:09:02 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 12:09:02 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 12:09:02 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 12:09:02 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 12:09:02 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 12:09:02 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 12:09:02 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 12:09:02 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 5.503 seconds (JVM running for 6.986)
+2021-02-02 12:09:27 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 16480 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 12:09:27 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 12:09:27 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 12:09:27 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 12:09:27 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 12:09:28 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 12:09:28 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 73 ms. Found 6 JPA repository interfaces.
+2021-02-02 12:09:29 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 12:09:29 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 1689 ms
+2021-02-02 12:09:29 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 12:09:29 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 12:09:29 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 12:09:29 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 12:09:29 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 12:09:29 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 12:09:30 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 12:09:30 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:09:30 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 12:09:30 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 12:09:31 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5b44dbc1, org.springframework.security.web.context.SecurityContextPersistenceFilter@767bc69a, org.springframework.security.web.header.HeaderWriterFilter@295479ad, org.springframework.web.filter.CorsFilter@2d3caf87, org.springframework.security.web.authentication.logout.LogoutFilter@7cd5c6ce, com.example.inventoryservice.security.jwt.JwtTokenFilter@6abd3579, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6c8990c2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@37d63f62, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4a95fb0, org.springframework.security.web.session.SessionManagementFilter@5d2256d, org.springframework.security.web.access.ExceptionTranslationFilter@377af7f7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@72f0bddb]
+2021-02-02 12:09:31 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:09:31 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 12:09:31 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 12:09:31 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 12:09:31 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 12:09:31 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 12:09:31 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 12:09:31 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 12:09:31 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 12:09:31 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 12:09:31 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 12:09:31 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 12:09:31 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 4.888 seconds (JVM running for 6.849)
+2021-02-02 12:09:44 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 12:09:44 INFO  DispatcherServlet:547 - Completed initialization in 1 ms
+2021-02-02 12:09:44 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:10:48 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:10:56 INFO  UserServiceImpl:30 - Find user by username tes1t
+2021-02-02 12:10:56 WARN  ExceptionHandlerExceptionResolver:207 - Resolved [java.lang.IllegalArgumentException: source cannot be null]
+2021-02-02 12:11:00 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:11:06 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:11:10 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:16:16 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 2336 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 12:16:16 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 12:16:16 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 12:16:16 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 12:16:16 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 12:16:18 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 12:16:18 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 69 ms. Found 6 JPA repository interfaces.
+2021-02-02 12:16:18 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 12:16:18 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2227 ms
+2021-02-02 12:16:18 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 12:16:18 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 12:16:18 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 12:16:18 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 12:16:18 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 12:16:18 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 12:16:19 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 12:16:19 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:16:19 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 12:16:19 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 12:16:20 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5141075b, org.springframework.security.web.context.SecurityContextPersistenceFilter@51d9f2b3, org.springframework.security.web.header.HeaderWriterFilter@105d5d19, org.springframework.web.filter.CorsFilter@54fa42a2, org.springframework.security.web.authentication.logout.LogoutFilter@676a9bd2, com.example.inventoryservice.security.jwt.JwtTokenFilter@73ca5b9d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9f54bf6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@205e1a76, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@33b67b65, org.springframework.security.web.session.SessionManagementFilter@34dcb261, org.springframework.security.web.access.ExceptionTranslationFilter@57b3f8e0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@41597dd7]
+2021-02-02 12:16:20 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:16:20 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 12:16:20 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 12:16:20 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 12:16:20 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 12:16:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 12:16:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 12:16:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 12:16:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 12:16:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 12:16:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 12:16:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 12:16:20 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 5.209 seconds (JVM running for 7.005)
+2021-02-02 12:16:29 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 12:16:29 INFO  DispatcherServlet:547 - Completed initialization in 1 ms
+2021-02-02 12:16:29 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:16:29 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:16:29 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:16:29 ERROR AuthenticationController:60 - Неверные учетные данные пользователя
+2021-02-02 12:16:36 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:16:36 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:16:36 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:16:36 ERROR AuthenticationController:60 - Неверные учетные данные пользователя
+2021-02-02 12:16:40 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:16:40 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:16:40 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:16:40 ERROR AuthenticationController:60 - Неверные учетные данные пользователя
+2021-02-02 12:16:44 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:16:44 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:16:44 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:16:44 ERROR AuthenticationController:60 - Неверные учетные данные пользователя
+2021-02-02 12:27:08 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 12:27:08 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 2064 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 12:27:08 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 12:27:09 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 12:27:09 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 12:27:10 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 12:27:10 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 84 ms. Found 6 JPA repository interfaces.
+2021-02-02 12:27:10 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 12:27:10 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 1650 ms
+2021-02-02 12:27:10 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 12:27:10 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 12:27:10 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 12:27:11 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 12:27:11 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 12:27:11 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 12:27:12 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 12:27:12 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:27:12 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 12:27:12 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 12:27:13 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4bdf2af5, org.springframework.security.web.context.SecurityContextPersistenceFilter@12865fe5, org.springframework.security.web.header.HeaderWriterFilter@60b481af, org.springframework.web.filter.CorsFilter@431deef3, org.springframework.security.web.authentication.logout.LogoutFilter@3aac964a, com.example.inventoryservice.security.jwt.JwtTokenFilter@5a9819a6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6c477a54, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@9981ef3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4aa8183d, org.springframework.security.web.session.SessionManagementFilter@1292780c, org.springframework.security.web.access.ExceptionTranslationFilter@2dd5f4b7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@53fda72]
+2021-02-02 12:27:13 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:27:13 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 12:27:13 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 12:27:13 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 12:27:13 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 12:27:14 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 12:27:14 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 12:27:14 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 12:27:14 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 12:27:14 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 12:27:14 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 12:27:14 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 12:27:14 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 5.799 seconds (JVM running for 8.157)
+2021-02-02 12:27:22 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 12:27:22 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+2021-02-02 12:27:22 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:27:22 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:27:22 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:27:22 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:27:29 INFO  ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:27:29 INFO  LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:27:29 INFO  HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2021-02-02 12:27:29 INFO  HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2021-02-02 12:27:33 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 5444 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 12:27:33 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 12:27:33 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 12:27:33 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 12:27:33 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 12:27:35 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 12:27:35 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 133 ms. Found 6 JPA repository interfaces.
+2021-02-02 12:27:36 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 12:27:36 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2892 ms
+2021-02-02 12:27:36 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 12:27:36 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 12:27:36 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 12:27:36 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 12:27:37 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 12:27:37 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 12:27:37 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 12:27:37 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:27:37 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 12:27:37 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 12:27:38 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@73e409f4, org.springframework.security.web.context.SecurityContextPersistenceFilter@4b379e7e, org.springframework.security.web.header.HeaderWriterFilter@37aa1e7b, org.springframework.web.filter.CorsFilter@43bfefbc, org.springframework.security.web.authentication.logout.LogoutFilter@3144a702, com.example.inventoryservice.security.jwt.JwtTokenFilter@75448a95, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@113be7d2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6bb22d2a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@35699716, org.springframework.security.web.session.SessionManagementFilter@72815c9e, org.springframework.security.web.access.ExceptionTranslationFilter@155212bb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3c50a55d]
+2021-02-02 12:27:38 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:27:38 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 12:27:38 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 12:27:38 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 12:27:38 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 12:27:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 12:27:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 12:27:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 12:27:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 12:27:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 12:27:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 12:27:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 12:27:39 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 6.144 seconds (JVM running for 7.491)
+2021-02-02 12:27:43 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 12:27:43 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+2021-02-02 12:29:02 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:29:04 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:29:04 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:29:11 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:29:12 INFO  ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:29:12 INFO  LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:29:12 INFO  HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2021-02-02 12:29:12 INFO  HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2021-02-02 12:30:49 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 17816 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 12:30:49 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 12:30:49 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 12:30:49 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 12:30:49 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 12:30:51 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 12:30:51 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 61 ms. Found 6 JPA repository interfaces.
+2021-02-02 12:30:51 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 12:30:51 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2115 ms
+2021-02-02 12:30:52 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 12:30:52 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 12:30:52 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 12:30:52 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 12:30:52 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 12:30:52 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 12:30:53 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 12:30:53 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:30:53 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 12:30:53 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 12:30:54 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@db5e9cd, org.springframework.security.web.context.SecurityContextPersistenceFilter@5b1ff5f1, org.springframework.security.web.header.HeaderWriterFilter@18d2edde, org.springframework.web.filter.CorsFilter@48bc5749, org.springframework.security.web.authentication.logout.LogoutFilter@23cb591a, com.example.inventoryservice.security.jwt.JwtTokenFilter@50a4ef82, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@dcb7572, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6975f455, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@18da8f7d, org.springframework.security.web.session.SessionManagementFilter@2441955a, org.springframework.security.web.access.ExceptionTranslationFilter@7dc83b9e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2e880fee]
+2021-02-02 12:30:54 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:30:54 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 12:30:54 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 12:30:54 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 12:30:54 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 12:30:54 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 12:30:54 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 12:30:54 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 12:30:54 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 12:30:54 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 12:30:54 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 12:30:54 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 12:30:54 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 5.786 seconds (JVM running for 7.955)
+2021-02-02 12:31:01 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 12:31:01 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+2021-02-02 12:31:42 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:32:56 WARN  HikariPool:787 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m33s758ms312µs700ns).
+2021-02-02 12:33:04 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:33:04 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:33:05 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:33:26 INFO  ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:33:26 INFO  LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:33:26 INFO  HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2021-02-02 12:33:26 INFO  HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2021-02-02 12:33:33 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 20560 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 12:33:33 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 12:33:33 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 12:33:33 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 12:33:33 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 12:33:35 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 12:33:35 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 204 ms. Found 6 JPA repository interfaces.
+2021-02-02 12:33:36 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 12:33:37 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 3585 ms
+2021-02-02 12:33:37 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 12:33:37 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 12:33:37 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 12:33:37 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 12:33:37 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 12:33:37 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 12:33:38 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 12:33:38 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:33:38 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 12:33:38 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 12:33:39 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1cd0da0a, org.springframework.security.web.context.SecurityContextPersistenceFilter@570e8a4c, org.springframework.security.web.header.HeaderWriterFilter@4c9c76ba, org.springframework.web.filter.CorsFilter@62f16fb2, org.springframework.security.web.authentication.logout.LogoutFilter@10fe4766, com.example.inventoryservice.security.jwt.JwtTokenFilter@383f5fad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@20930c08, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@773b14d9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@306d40bd, org.springframework.security.web.session.SessionManagementFilter@6d6530ca, org.springframework.security.web.access.ExceptionTranslationFilter@39e80d8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@72f96161]
+2021-02-02 12:33:39 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:33:39 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 12:33:39 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 12:33:39 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 12:33:39 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 12:33:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 12:33:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 12:33:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 12:33:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 12:33:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 12:33:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 12:33:39 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 12:33:39 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 6.468 seconds (JVM running for 8.135)
+2021-02-02 12:33:43 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 12:33:43 INFO  DispatcherServlet:547 - Completed initialization in 1 ms
+2021-02-02 12:33:43 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:34:19 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:35:44 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:35:57 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:35:58 INFO  ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:35:58 INFO  LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:35:58 INFO  HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2021-02-02 12:35:58 INFO  HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2021-02-02 12:36:49 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 18208 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 12:36:49 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 12:36:49 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 12:36:49 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 12:36:49 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 12:36:50 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 12:36:50 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 126 ms. Found 6 JPA repository interfaces.
+2021-02-02 12:36:51 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 12:36:51 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2023 ms
+2021-02-02 12:36:52 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 12:36:52 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 12:36:52 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 12:36:52 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 12:36:52 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 12:36:52 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 12:36:53 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 12:36:53 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:36:53 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 12:36:54 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 12:36:54 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d54583d, org.springframework.security.web.context.SecurityContextPersistenceFilter@5d7f2f5f, org.springframework.security.web.header.HeaderWriterFilter@1e675e2b, org.springframework.web.filter.CorsFilter@5fbbb65f, org.springframework.security.web.authentication.logout.LogoutFilter@4ededd1, com.example.inventoryservice.security.jwt.JwtTokenFilter@2ebce1a6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@fe7a6e8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a22457e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4300ed8e, org.springframework.security.web.session.SessionManagementFilter@554efd96, org.springframework.security.web.access.ExceptionTranslationFilter@751c77b7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@9e74a57]
+2021-02-02 12:36:54 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:36:54 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 12:36:54 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 12:36:54 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 12:36:54 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 12:36:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 12:36:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 12:36:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 12:36:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 12:36:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 12:36:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 12:36:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 12:36:55 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 5.557 seconds (JVM running for 6.631)
+2021-02-02 12:36:59 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 12:36:59 INFO  DispatcherServlet:547 - Completed initialization in 1 ms
+2021-02-02 12:36:59 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:36:59 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:36:59 WARN  ExceptionHandlerExceptionResolver:207 - Resolved [java.lang.IllegalArgumentException: There is no PasswordEncoder mapped for the id "null"]
+2021-02-02 12:37:05 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:37:05 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:37:05 WARN  ExceptionHandlerExceptionResolver:207 - Resolved [java.lang.IllegalArgumentException: There is no PasswordEncoder mapped for the id "null"]
+2021-02-02 12:37:08 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:37:08 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:37:08 WARN  ExceptionHandlerExceptionResolver:207 - Resolved [java.lang.IllegalArgumentException: There is no PasswordEncoder mapped for the id "null"]
+2021-02-02 12:37:28 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:37:28 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:37:28 WARN  ExceptionHandlerExceptionResolver:207 - Resolved [java.lang.IllegalArgumentException: There is no PasswordEncoder mapped for the id "null"]
+2021-02-02 12:38:16 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 12:38:16 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 3168 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 12:38:16 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 12:38:16 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 12:38:16 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 12:38:17 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 12:38:17 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 72 ms. Found 6 JPA repository interfaces.
+2021-02-02 12:38:18 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 12:38:18 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2014 ms
+2021-02-02 12:38:18 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 12:38:18 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 12:38:18 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 12:38:18 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 12:38:18 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 12:38:18 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 12:38:19 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 12:38:19 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:38:19 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 12:38:19 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 12:38:19 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@16402401, org.springframework.security.web.context.SecurityContextPersistenceFilter@3210b336, org.springframework.security.web.header.HeaderWriterFilter@39593991, org.springframework.web.filter.CorsFilter@586c494e, org.springframework.security.web.authentication.logout.LogoutFilter@407010a4, com.example.inventoryservice.security.jwt.JwtTokenFilter@10e8256f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75122f97, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6d85136f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1ffdae1c, org.springframework.security.web.session.SessionManagementFilter@5554754e, org.springframework.security.web.access.ExceptionTranslationFilter@115f2ff2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@e50e62d]
+2021-02-02 12:38:20 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:38:20 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 12:38:20 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 12:38:20 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 12:38:20 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 12:38:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 12:38:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 12:38:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 12:38:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 12:38:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 12:38:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 12:38:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 12:38:20 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 5.049 seconds (JVM running for 6.963)
+2021-02-02 12:38:23 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 12:38:23 INFO  DispatcherServlet:547 - Completed initialization in 1 ms
+2021-02-02 12:38:23 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:38:23 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:38:23 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:38:23 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:41:38 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 12:41:38 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 11836 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 12:41:38 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 12:41:38 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 12:41:38 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 12:41:40 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 12:41:40 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 139 ms. Found 6 JPA repository interfaces.
+2021-02-02 12:41:41 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 12:41:41 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2777 ms
+2021-02-02 12:41:41 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 12:41:41 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 12:41:41 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 12:41:41 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 12:41:42 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 12:41:42 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 12:41:42 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 12:41:42 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:41:42 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 12:41:43 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 12:41:43 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3e21807b, org.springframework.security.web.context.SecurityContextPersistenceFilter@415fd4e0, org.springframework.security.web.header.HeaderWriterFilter@70d76428, org.springframework.web.filter.CorsFilter@390f8460, org.springframework.security.web.authentication.logout.LogoutFilter@383a17a7, com.example.inventoryservice.security.jwt.JwtTokenFilter@5c103f37, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b0045b5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ef22652, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5ca5cf94, org.springframework.security.web.session.SessionManagementFilter@22ed0852, org.springframework.security.web.access.ExceptionTranslationFilter@66170df8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2ac6c44d]
+2021-02-02 12:41:43 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:41:43 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 12:41:44 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 12:41:44 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 12:41:44 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 12:41:44 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 12:41:44 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 12:41:44 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 12:41:44 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 12:41:44 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 12:41:44 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 12:41:44 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 12:41:44 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 6.23 seconds (JVM running for 7.614)
+2021-02-02 12:41:45 INFO  ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:41:45 INFO  LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:41:45 INFO  HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2021-02-02 12:41:45 INFO  HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2021-02-02 12:42:07 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 12:42:07 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 12072 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 12:42:07 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 12:42:07 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 12:42:07 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 12:42:09 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 12:42:09 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 119 ms. Found 6 JPA repository interfaces.
+2021-02-02 12:42:10 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 12:42:10 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 3055 ms
+2021-02-02 12:42:10 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 12:42:11 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 12:42:11 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 12:42:11 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 12:42:11 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 12:42:11 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 12:42:12 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 12:42:12 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:42:12 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 12:42:12 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 12:42:13 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@67dabb3f, org.springframework.security.web.context.SecurityContextPersistenceFilter@62621302, org.springframework.security.web.header.HeaderWriterFilter@14e40f33, org.springframework.web.filter.CorsFilter@5cbcb61f, org.springframework.security.web.authentication.logout.LogoutFilter@5b57f5ab, com.example.inventoryservice.security.jwt.JwtTokenFilter@5beddac1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2d602977, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2a4df7e4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@32bb5334, org.springframework.security.web.session.SessionManagementFilter@7bb89646, org.springframework.security.web.access.ExceptionTranslationFilter@1703a5be, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@49e286e6]
+2021-02-02 12:42:13 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:42:14 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 12:42:14 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 12:42:14 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 12:42:14 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 12:42:14 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 12:42:14 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 12:42:14 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 12:42:14 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 12:42:14 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 12:42:14 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 12:42:14 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 12:42:14 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 7.322 seconds (JVM running for 8.866)
+2021-02-02 12:42:21 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 12:42:21 INFO  DispatcherServlet:547 - Completed initialization in 1 ms
+2021-02-02 12:42:21 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:42:21 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:42:21 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:42:21 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:42:32 INFO  ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:42:32 INFO  LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:42:32 INFO  HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2021-02-02 12:42:32 INFO  HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2021-02-02 12:42:40 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 14168 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 12:42:40 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 12:42:40 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 12:42:40 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 12:42:40 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 12:42:41 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 12:42:41 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 77 ms. Found 6 JPA repository interfaces.
+2021-02-02 12:42:42 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 12:42:42 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2221 ms
+2021-02-02 12:42:42 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 12:42:42 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 12:42:42 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 12:42:43 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 12:42:43 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 12:42:43 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 12:42:44 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 12:42:44 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:42:44 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 12:42:45 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 12:42:46 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1f84c6d4, org.springframework.security.web.context.SecurityContextPersistenceFilter@3b60cbc1, org.springframework.security.web.header.HeaderWriterFilter@25107317, org.springframework.web.filter.CorsFilter@5ded14f3, org.springframework.security.web.authentication.logout.LogoutFilter@1359e04, com.example.inventoryservice.security.jwt.JwtTokenFilter@52f8dd4c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@62558f45, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b235abd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@50741d64, org.springframework.security.web.session.SessionManagementFilter@2a3ccf8d, org.springframework.security.web.access.ExceptionTranslationFilter@22ed4ca, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@17485492]
+2021-02-02 12:42:46 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:42:46 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 12:42:46 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 12:42:46 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 12:42:46 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 12:42:46 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 12:42:46 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 12:42:46 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 12:42:46 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 12:42:46 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 12:42:46 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 12:42:46 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 12:42:46 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 7.053 seconds (JVM running for 9.118)
+2021-02-02 12:42:52 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 12:42:52 INFO  DispatcherServlet:547 - Completed initialization in 1 ms
+2021-02-02 12:42:52 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:42:52 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:44:01 WARN  HikariPool:787 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45s679ms978µs500ns).
+2021-02-02 12:45:42 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:45:42 WARN  HikariPool:787 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m40s679ms379µs500ns).
+2021-02-02 12:45:42 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:45:42 INFO  ThreadPoolTaskExecutor:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:45:42 INFO  LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:45:42 INFO  HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2021-02-02 12:45:42 INFO  HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2021-02-02 12:45:55 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 12:45:55 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 12488 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 12:45:55 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 12:45:55 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 12:45:55 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 12:45:56 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 12:45:56 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 110 ms. Found 6 JPA repository interfaces.
+2021-02-02 12:45:57 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 12:45:57 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2594 ms
+2021-02-02 12:45:57 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 12:45:58 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 12:45:58 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 12:45:58 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 12:45:58 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 12:45:58 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 12:45:59 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 12:45:59 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:45:59 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 12:45:59 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 12:45:59 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5622b72, org.springframework.security.web.context.SecurityContextPersistenceFilter@196a3383, org.springframework.security.web.header.HeaderWriterFilter@252d6720, org.springframework.web.filter.CorsFilter@71cd87e0, org.springframework.security.web.authentication.logout.LogoutFilter@35cbf828, com.example.inventoryservice.security.jwt.JwtTokenFilter@3096cd8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a38295f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@44755679, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76bade43, org.springframework.security.web.session.SessionManagementFilter@640d67c8, org.springframework.security.web.access.ExceptionTranslationFilter@297a7354, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@71b7160a]
+2021-02-02 12:45:59 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:46:00 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 12:46:00 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 12:46:00 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 12:46:00 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 12:46:00 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 12:46:00 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 12:46:00 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 12:46:00 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 12:46:00 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 12:46:00 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 12:46:00 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 12:46:00 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 5.352 seconds (JVM running for 6.443)
+2021-02-02 12:46:21 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 12:46:21 INFO  DispatcherServlet:547 - Completed initialization in 1 ms
+2021-02-02 12:46:22 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:46:22 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:46:22 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:46:35 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:46:35 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:46:35 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:46:39 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:46:39 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:46:39 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:46:44 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:46:44 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:46:44 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:47:05 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:47:05 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:47:05 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:47:05 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:47:06 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:47:06 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:47:06 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:47:06 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:47:28 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:47:28 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:47:28 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:47:28 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:47:29 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:47:29 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:47:29 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:47:29 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:47:30 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:47:30 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:47:30 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:47:30 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:47:31 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:47:31 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:47:31 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:47:31 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:47:36 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:47:36 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:47:36 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:47:36 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:47:56 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:47:56 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:47:56 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:47:56 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:48:07 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 13772 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 12:48:07 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 12:48:07 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 12:48:07 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 12:48:07 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 12:48:08 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 12:48:08 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 75 ms. Found 6 JPA repository interfaces.
+2021-02-02 12:48:08 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 12:48:08 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 1501 ms
+2021-02-02 12:48:08 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 12:48:09 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 12:48:09 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 12:48:09 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 12:48:09 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 12:48:09 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 12:48:09 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 12:48:09 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:48:09 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 12:48:10 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 12:48:11 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1335659, org.springframework.security.web.context.SecurityContextPersistenceFilter@77d22e1b, org.springframework.security.web.header.HeaderWriterFilter@58d89d73, org.springframework.web.filter.CorsFilter@600238b, org.springframework.security.web.authentication.logout.LogoutFilter@5a6786b3, com.example.inventoryservice.security.jwt.JwtTokenFilter@1ddd142e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e612d84, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@31eb7170, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6fb8be30, org.springframework.security.web.session.SessionManagementFilter@78790140, org.springframework.security.web.access.ExceptionTranslationFilter@23c68e09, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@363224a4]
+2021-02-02 12:48:11 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:48:11 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 12:48:11 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 12:48:11 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 12:48:11 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 12:48:11 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 12:48:11 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 12:48:11 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 12:48:11 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 12:48:11 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 12:48:11 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 12:48:11 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 12:48:11 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 5.111 seconds (JVM running for 7.165)
+2021-02-02 12:48:15 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 12:48:15 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+2021-02-02 12:48:16 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:48:16 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:48:16 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:48:16 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:48:20 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:48:20 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:48:20 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:48:20 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:48:42 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:48:42 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:48:42 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:48:42 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:48:44 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:48:44 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:48:44 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:48:44 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:48:44 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:48:44 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:48:44 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:48:44 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:48:49 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:48:49 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:48:49 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:48:49 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:49:12 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:49:12 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:49:12 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:49:12 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:49:28 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:49:28 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:49:28 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:49:28 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:49:46 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:49:46 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:49:46 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:49:46 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:50:13 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:50:13 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:50:13 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:50:13 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:50:15 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:50:15 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:50:15 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:50:15 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:50:15 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:50:15 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:50:15 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:50:15 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:50:19 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:50:19 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:50:19 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:50:19 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:52:36 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:52:36 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:52:36 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:52:36 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:52:38 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:52:38 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:52:38 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:52:38 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:53:04 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 10972 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 12:53:04 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 12:53:04 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 12:53:04 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 12:53:04 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 12:53:05 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 12:53:05 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 110 ms. Found 6 JPA repository interfaces.
+2021-02-02 12:53:06 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 12:53:06 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 1743 ms
+2021-02-02 12:53:06 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 12:53:06 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 12:53:06 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 12:53:06 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 12:53:07 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 12:53:07 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 12:53:07 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 12:53:07 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 12:53:07 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 12:53:07 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 12:53:08 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7339d564, org.springframework.security.web.context.SecurityContextPersistenceFilter@1c90ae2e, org.springframework.security.web.header.HeaderWriterFilter@610d06ce, org.springframework.web.filter.CorsFilter@630d349, org.springframework.security.web.authentication.logout.LogoutFilter@15cf6d78, com.example.inventoryservice.security.jwt.JwtTokenFilter@2c53b481, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f36029a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36e2b2ab, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d705fb7, org.springframework.security.web.session.SessionManagementFilter@461a4658, org.springframework.security.web.access.ExceptionTranslationFilter@69cd1a16, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@33b67b65]
+2021-02-02 12:53:08 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 12:53:08 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 12:53:08 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 12:53:08 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 12:53:08 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 12:53:09 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 12:53:09 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 12:53:09 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 12:53:09 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 12:53:09 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 12:53:09 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 12:53:09 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 12:53:09 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 4.894 seconds (JVM running for 6.901)
+2021-02-02 12:53:20 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 12:53:20 INFO  DispatcherServlet:547 - Completed initialization in 1 ms
+2021-02-02 12:53:20 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:53:20 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:53:20 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:53:20 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:53:23 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:53:23 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:53:23 WARN  BCryptPasswordEncoder:130 - Encoded password does not look like BCrypt
+2021-02-02 12:53:23 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:57:43 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:57:43 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:57:43 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:58:01 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:58:01 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:58:01 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:58:44 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:58:44 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:58:44 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:58:47 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:58:47 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:58:47 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 12:58:52 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 12:58:52 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: test successfully loaded
+2021-02-02 12:58:52 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 13:20:49 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 14584 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 13:20:49 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 13:20:49 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 13:20:49 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 13:20:49 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 13:20:50 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 13:20:50 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 67 ms. Found 6 JPA repository interfaces.
+2021-02-02 13:20:50 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 13:20:51 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 1490 ms
+2021-02-02 13:20:51 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 13:20:51 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 13:20:51 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 13:20:51 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 13:20:51 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 13:20:51 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 13:20:52 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 13:20:52 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 13:20:52 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 13:20:53 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 13:20:53 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@560d81ec, org.springframework.security.web.context.SecurityContextPersistenceFilter@1161d8bc, org.springframework.security.web.header.HeaderWriterFilter@55a1cc51, org.springframework.web.filter.CorsFilter@1795a12f, org.springframework.security.web.authentication.logout.LogoutFilter@5cceab16, com.example.inventoryservice.security.jwt.JwtTokenFilter@3d8def15, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@766fabbd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6ade1b46, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@42245f64, org.springframework.security.web.session.SessionManagementFilter@103f227d, org.springframework.security.web.access.ExceptionTranslationFilter@3a4d0671, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4bcdb40f]
+2021-02-02 13:20:53 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 13:20:53 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 13:20:53 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 13:20:53 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 13:20:53 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 13:20:54 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 13:20:54 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 13:20:54 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 13:20:54 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 13:20:54 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 13:20:54 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 13:20:54 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 13:20:54 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 4.814 seconds (JVM running for 6.386)
+2021-02-02 13:20:58 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 13:20:58 INFO  DispatcherServlet:547 - Completed initialization in 1 ms
+2021-02-02 13:20:58 INFO  UserServiceImpl:30 - Find user by username test
+2021-02-02 13:20:58 ERROR AuthenticationController:59 - source cannot be null
+2021-02-02 13:21:04 INFO  UserServiceImpl:30 - Find user by username chef
+2021-02-02 13:21:04 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: chef successfully loaded
+2021-02-02 13:21:04 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 13:21:08 INFO  UserServiceImpl:30 - Find user by username chef
+2021-02-02 13:21:08 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: chef successfully loaded
+2021-02-02 13:21:08 INFO  UserServiceImpl:30 - Find user by username chef
+2021-02-02 13:21:17 INFO  UserServiceImpl:30 - Find user by username stuff
+2021-02-02 13:21:17 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: stuff successfully loaded
+2021-02-02 13:21:17 INFO  UserServiceImpl:30 - Find user by username stuff
+2021-02-02 13:21:28 INFO  UserServiceImpl:30 - Find user by username manager
+2021-02-02 13:21:28 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: manager successfully loaded
+2021-02-02 13:21:28 INFO  UserServiceImpl:30 - Find user by username manager
+2021-02-02 13:21:33 INFO  UserServiceImpl:30 - Find user by username manager
+2021-02-02 13:21:33 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: manager successfully loaded
+2021-02-02 13:21:33 ERROR AuthenticationController:59 - Неверные учетные данные пользователя
+2021-02-02 13:21:37 INFO  UserServiceImpl:30 - Find user by username manager
+2021-02-02 13:21:37 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: manager successfully loaded
+2021-02-02 13:21:37 INFO  UserServiceImpl:30 - Find user by username manager
+2021-02-02 13:22:30 INFO  UserServiceImpl:30 - Find user by username manager
+2021-02-02 13:23:50 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 3856 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-02 13:23:50 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-02 13:23:50 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-02 13:23:50 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-02 13:23:50 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-02 13:23:51 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-02 13:23:51 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 90 ms. Found 6 JPA repository interfaces.
+2021-02-02 13:23:52 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-02 13:23:52 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 1977 ms
+2021-02-02 13:23:52 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-02 13:23:52 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-02 13:23:53 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-02 13:23:53 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-02 13:23:53 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-02 13:23:53 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-02 13:23:54 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-02 13:23:54 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-02 13:23:54 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-02 13:23:54 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-02 13:23:54 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@462249ea, org.springframework.security.web.context.SecurityContextPersistenceFilter@1cc63f78, org.springframework.security.web.header.HeaderWriterFilter@1fa63063, org.springframework.web.filter.CorsFilter@42d1d008, org.springframework.security.web.authentication.logout.LogoutFilter@6fe40360, com.example.inventoryservice.security.jwt.JwtTokenFilter@22c66974, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@f1ccf5f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@58cc337c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@68842546, org.springframework.security.web.session.SessionManagementFilter@5380541a, org.springframework.security.web.access.ExceptionTranslationFilter@32f9c555, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7403f7ee]
+2021-02-02 13:23:54 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-02 13:23:55 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-02 13:23:55 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-02 13:23:55 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-02 13:23:55 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-02 13:23:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-02 13:23:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-02 13:23:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-02 13:23:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-02 13:23:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-02 13:23:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-02 13:23:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-02 13:23:55 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 4.815 seconds (JVM running for 5.81)
+2021-02-02 13:24:03 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-02 13:24:03 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+2021-02-02 13:24:03 INFO  UserServiceImpl:31 - Find user by username manager
+2021-02-02 13:24:03 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: manager successfully loaded
+2021-02-02 13:24:24 INFO  UserServiceImpl:31 - Find user by username stuff
+2021-02-02 13:24:24 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: stuff successfully loaded
+2021-02-02 13:24:24 INFO  UserServiceImpl:31 - Find user by username stuff
+2021-02-02 13:24:38 INFO  UserServiceImpl:31 - Find user by username stuff
+2021-02-02 13:24:38 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: stuff successfully loaded
+2021-02-02 13:24:38 INFO  UserServiceImpl:60 - Find all dishes by restaurant
+2021-02-02 13:24:38 INFO  UserServiceImpl:39 - Get current user
+2021-02-02 13:24:38 INFO  UserServiceImpl:31 - Find user by username stuff
+2021-02-03 13:38:14 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-03 13:38:14 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 18176 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-03 13:38:14 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-03 13:38:14 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-03 13:38:14 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-03 13:38:15 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-03 13:38:16 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 120 ms. Found 6 JPA repository interfaces.
+2021-02-03 13:38:16 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-03 13:38:17 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2875 ms
+2021-02-03 13:38:17 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-03 13:38:17 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-03 13:38:17 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-03 13:38:17 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-03 13:38:18 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-03 13:38:18 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-03 13:38:19 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-03 13:38:19 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-03 13:38:19 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-03 13:38:20 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-03 13:38:20 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3a20d462, org.springframework.security.web.context.SecurityContextPersistenceFilter@56ef7c50, org.springframework.security.web.header.HeaderWriterFilter@4190c53c, org.springframework.web.filter.CorsFilter@5b0eb3e6, org.springframework.security.web.authentication.logout.LogoutFilter@72b8f039, com.example.inventoryservice.security.jwt.JwtTokenFilter@44b7440, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@30acd1b9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@60064b0c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@53c00071, org.springframework.security.web.session.SessionManagementFilter@306c6a1b, org.springframework.security.web.access.ExceptionTranslationFilter@6ea1199a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4a4ee6e3]
+2021-02-03 13:38:21 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-03 13:38:21 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-03 13:38:21 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-03 13:38:21 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-03 13:38:21 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-03 13:38:21 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-03 13:38:21 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-03 13:38:21 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-03 13:38:21 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-03 13:38:21 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-03 13:38:21 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-03 13:38:21 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-03 13:38:21 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 8.043 seconds (JVM running for 10.565)
+2021-02-03 13:38:43 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-03 13:38:43 INFO  DispatcherServlet:547 - Completed initialization in 3 ms
+2021-02-03 13:39:06 INFO  UserServiceImpl:31 - Find user by username stuff
+2021-02-03 13:39:06 INFO  JwtUserDetailsService:34 - IN loadUserByUsername - user with username: stuff successfully loaded
+2021-02-03 13:39:06 INFO  UserServiceImpl:31 - Find user by username stuff
+2021-02-03 13:41:35 INFO  InventoryServiceApplication:55 - Starting InventoryServiceApplication using Java 12.0.2 on DESKTOP-KMMBP5Q with PID 8256 (D:\5sem\Inventory-Service\target\classes started by Lenovo in D:\5sem\Inventory-Service)
+2021-02-03 13:41:35 INFO  Version:21 - HV000001: Hibernate Validator 6.1.7.Final
+2021-02-03 13:41:35 INFO  InventoryServiceApplication:660 - No active profile set, falling back to default profiles: default
+2021-02-03 13:41:35 INFO  DevToolsPropertyDefaultsPostProcessor:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-03 13:41:35 INFO  DevToolsPropertyDefaultsPostProcessor:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-03 13:41:37 INFO  RepositoryConfigurationDelegate:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-03 13:41:37 INFO  RepositoryConfigurationDelegate:188 - Finished Spring Data repository scanning in 116 ms. Found 6 JPA repository interfaces.
+2021-02-03 13:41:38 INFO  TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2021-02-03 13:41:38 INFO  ServletWebServerApplicationContext:289 - Root WebApplicationContext: initialization completed in 2752 ms
+2021-02-03 13:41:38 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-03 13:41:38 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-03 13:41:39 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-03 13:41:39 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2021-02-03 13:41:39 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2021-02-03 13:41:39 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-03 13:41:40 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-03 13:41:40 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-03 13:41:40 INFO  OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2021-02-03 13:41:41 WARN  JpaBaseConfiguration$JpaWebConfiguration:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-03 13:41:42 INFO  DefaultSecurityFilterChain:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8c84e49, org.springframework.security.web.context.SecurityContextPersistenceFilter@68d76dec, org.springframework.security.web.header.HeaderWriterFilter@5f374f41, org.springframework.web.filter.CorsFilter@d72af, org.springframework.security.web.authentication.logout.LogoutFilter@4ee950aa, com.example.inventoryservice.security.jwt.JwtTokenFilter@d8ceaa2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15043f10, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5707949a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@21c2fa33, org.springframework.security.web.session.SessionManagementFilter@4bc8e543, org.springframework.security.web.access.ExceptionTranslationFilter@706a783]
+2021-02-03 13:41:42 INFO  ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-03 13:41:42 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-03 13:41:42 INFO  DocumentationPluginsBootstrapper:120 - Context refreshed
+2021-02-03 13:41:42 INFO  DocumentationPluginsBootstrapper:123 - Found 1 custom documentation plugin(s)
+2021-02-03 13:41:42 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references
+2021-02-03 13:41:42 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_1
+2021-02-03 13:41:42 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_1
+2021-02-03 13:41:42 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_2
+2021-02-03 13:41:42 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_2
+2021-02-03 13:41:42 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_3
+2021-02-03 13:41:42 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: createUsingPOST_4
+2021-02-03 13:41:42 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: findAllByRestaurantUsingGET_3
+2021-02-03 13:41:42 INFO  InventoryServiceApplication:61 - Started InventoryServiceApplication in 7.621 seconds (JVM running for 10.002)
+2021-02-03 13:41:47 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2021-02-03 13:41:47 INFO  DispatcherServlet:547 - Completed initialization in 2 ms

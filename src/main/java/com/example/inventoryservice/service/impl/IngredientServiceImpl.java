@@ -2,6 +2,7 @@ package com.example.inventoryservice.service.impl;
 
 import com.example.inventoryservice.converter.IngredientConverter;
 import com.example.inventoryservice.dto.IngredientDto;
+import com.example.inventoryservice.dto.RestaurantDto;
 import com.example.inventoryservice.dto.UserDto;
 import com.example.inventoryservice.entity.Ingredient;
 import com.example.inventoryservice.exception.ServiceException;
@@ -30,6 +31,9 @@ public class IngredientServiceImpl implements IngredientService {
     @Override
     public IngredientDto create(IngredientDto ingredientDto) {
         logger.info("Create ingredient");
+        UserDto userDto = userService.getCurrentUser();
+        RestaurantDto restaurantDto = userDto.getRestaurant();
+        ingredientDto.setRestaurant(restaurantDto);
         Ingredient ingredient = ingredientConverter.dtoToEntity(ingredientDto);
         if (ingredientExists(ingredient)) {
             throw new ServiceException("Not unique ingredient");//проверка что ингредиент этого юзера
@@ -44,12 +48,13 @@ public class IngredientServiceImpl implements IngredientService {
         logger.info("Update ingredient");
         Ingredient ingredient = ingredientConverter.dtoToEntity(ingredientDto);
         if (!ingredientExists(ingredient)) {
-            throw new ServiceException("No such ingredient");//проверка что ингредиент этого юзера
-            //после security
+            logger.error("No such ingredient {}", ingredient.getName());
+            throw new ServiceException("No such ingredient");
         }
-        Ingredient persistIngredient = ingredientRepository.findById(ingredient.getId()).orElse(new Ingredient());
+        Ingredient persistIngredient = ingredientRepository.findById(ingredient.getId())
+                                                           .orElse(new Ingredient());
         persistIngredient.setAmount(ingredient.getAmount());
-        persistIngredient=ingredientRepository.save(persistIngredient);
+        persistIngredient = ingredientRepository.save(persistIngredient);
         return ingredientConverter.entityToDto(persistIngredient);
     }
 
@@ -62,9 +67,10 @@ public class IngredientServiceImpl implements IngredientService {
         return ingredientConverter.entityToDto(ingredients);
     }
 
+    @Override
     public boolean ingredientExists(Ingredient ingredient) {
-        return ingredientRepository.findAllByRestaurant_IdAndName(ingredient.getRestaurant()
-                                                                            .getId(), ingredient.getName())
+        return ingredientRepository.findAllByNameIgnoreCaseAndRestaurant_Id(ingredient.getName(), ingredient.getRestaurant()
+                                                                                                            .getId())
                                    .size() != 0;
     }
 }

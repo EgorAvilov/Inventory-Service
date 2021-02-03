@@ -1,6 +1,7 @@
 package com.example.inventoryservice.service;
 
 import com.example.inventoryservice.dto.RecipeDto;
+import com.example.inventoryservice.entity.Recipe;
 
 import java.util.List;
 
@@ -9,5 +10,5 @@ public interface RecipeService {
 
     List<RecipeDto> findAllByRestaurant();
 
-    boolean recipeExists(String name, Long restaurantId);
+    boolean recipeExists(Recipe recipe);
 }

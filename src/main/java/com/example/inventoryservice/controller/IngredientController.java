@@ -28,4 +28,8 @@ public class IngredientController {
     public ResponseEntity create(@RequestBody @Valid IngredientDto ingredientDto) {
         return new ResponseEntity<>(ingredientService.create(ingredientDto), HttpStatus.CREATED);
     }
+    @PutMapping
+    public ResponseEntity update(@RequestBody @Valid IngredientDto ingredientDto) {
+        return new ResponseEntity<>(ingredientService.update(ingredientDto), HttpStatus.CREATED);
+    }
 }

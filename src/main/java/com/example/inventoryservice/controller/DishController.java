@@ -21,7 +21,7 @@ public class DishController {
         this.dishService = dishService;
     }
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity findAllByRestaurant() {
         return new ResponseEntity<>(dishService.findAllByRestaurant(), HttpStatus.OK);
     }

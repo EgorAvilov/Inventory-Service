@@ -48,6 +48,7 @@ public class DishServiceImpl implements DishService {
         logger.info("Create dish");
         Dish dish = dishConverter.dtoToEntity(dishDto);
         if (!recipeExists(dish)) {
+            logger.error("No such recipe {}", dish.getRecipe().getName());
             throw new ServiceException("No such recipe");
         }
         checkForEnoughIngredients(dish);
