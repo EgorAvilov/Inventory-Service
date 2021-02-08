@@ -18,9 +18,9 @@ import java.sql.SQLException;
 
 @Service
 public class RestaurantServiceImpl implements RestaurantService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(RestaurantServiceImpl.class);
     private final RestaurantRepository restaurantRepository;
     private final RestaurantConverter restaurantConverter;
-    Logger logger = LoggerFactory.getLogger(RestaurantServiceImpl.class);
 
     @Autowired
     public RestaurantServiceImpl(RestaurantRepository restaurantRepository, RestaurantConverter restaurantConverter) {
@@ -32,9 +32,9 @@ public class RestaurantServiceImpl implements RestaurantService {
     @Transactional(isolation = Isolation.SERIALIZABLE)
     @Retryable(value = {SQLException.class})
     public RestaurantDto create(RestaurantDto restaurantDto) {
-        logger.info("Create restaurant");
+        LOGGER.info("Create restaurant");
         if (restaurantExists(restaurantDto.getName())) {
-            logger.error("Not unique name {}", restaurantDto.getName());
+            LOGGER.error("Not unique name {}", restaurantDto.getName());
             throw new ServiceException("Name should be unique");
         }
         Restaurant restaurant = restaurantConverter.dtoToEntity(restaurantDto);
@@ -44,7 +44,7 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     @Override
     public boolean restaurantExists(String name) {
-        logger.info("Check for existing restaurant {}", name);
+        LOGGER.info("Check for existing restaurant {}", name);
         return restaurantRepository.findAllByName(name) != 0;
     }
 }

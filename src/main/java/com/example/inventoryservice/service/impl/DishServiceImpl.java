@@ -29,12 +29,12 @@ import java.util.stream.Collectors;
 
 @Service
 public class DishServiceImpl implements DishService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
     private final DishRepository dishRepository;
     private final RecipeIngredientRepository recipeIngredientRepository;
     private final RecipeRepository recipeRepository;
     private final DishConverter dishConverter;
     private final UserService userService;
-    Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Autowired
     public DishServiceImpl(DishRepository dishRepository,
@@ -53,10 +53,10 @@ public class DishServiceImpl implements DishService {
     @Transactional(isolation = Isolation.SERIALIZABLE)
     @Retryable(value = {SQLException.class})
     public DishDto create(DishDto dishDto) {
-        logger.info("Create dish");
+        LOGGER.info("Create dish");
         Dish dish = dishConverter.dtoToEntity(dishDto);
         if (!recipeExists(dish)) {
-            logger.error("No such recipe {}", dish.getRecipe()
+            LOGGER.error("No such recipe {}", dish.getRecipe()
                                                   .getName());
             throw new NoItemException("No such recipe");
         }
@@ -67,7 +67,7 @@ public class DishServiceImpl implements DishService {
 
     @Override
     public List<DishDto> findAllByRestaurant() {
-        logger.info("Find all dishes by restaurant");
+        LOGGER.info("Find all dishes by restaurant");
         UserDto userDto = userService.getCurrentUser();
         List<Dish> ingredients = dishRepository.findAllByRestaurantId(userDto.getRestaurant()
                                                                              .getId());

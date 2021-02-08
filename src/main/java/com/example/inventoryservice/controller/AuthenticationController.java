@@ -13,14 +13,11 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,10 +26,10 @@ import java.util.Map;
 @RequestMapping(value = "/api")
 public class AuthenticationController {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(AuthenticationController.class);
     private final AuthenticationManager authenticationManager;
     private final JwtTokenProvider jwtTokenProvider;
     private final UserService userService;
-    Logger logger = LoggerFactory.getLogger(AuthenticationController.class);
 
     @Autowired
     public AuthenticationController(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, UserService userService) {
@@ -47,7 +44,7 @@ public class AuthenticationController {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(requestDto.getUsername(), requestDto.getPassword()));
             UserDto user = userService.findByUsername(requestDto.getUsername());
             if (user == null) {
-                logger.error("User with username: " + requestDto.getUsername() + " not found");
+                LOGGER.error("User with username: " + requestDto.getUsername() + " not found");
                 throw new UsernameNotFoundException("User with username: " + requestDto.getUsername() + " not found");
             }
             String token = jwtTokenProvider.createToken(requestDto.getUsername(), user.getUserRole());
@@ -56,7 +53,7 @@ public class AuthenticationController {
             response.put("user", user);
             return ResponseEntity.ok(response);
         } catch (AuthenticationException e) {
-            logger.error(e.getMessage());
+            LOGGER.error(e.getMessage());
             return new ResponseEntity<>("Invalid username or password", HttpStatus.FORBIDDEN);
         }
     }

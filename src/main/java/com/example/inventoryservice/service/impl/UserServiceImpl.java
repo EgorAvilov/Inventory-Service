@@ -19,9 +19,9 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
     private final UserRepository userRepository;
     private final UserConverter userConverter;
-    Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     public UserServiceImpl(UserRepository userRepository, UserConverter userConverter) {
         this.userRepository = userRepository;
@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public UserDto findByUsername(String username) {
-        logger.info("Find user by username {}", username);
+        LOGGER.info("Find user by username {}", username);
         User user = userRepository.findByUsername(username);
         return userConverter.entityToDto(user);
     }
@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public UserDto getCurrentUser() {
-        logger.info("Get current user");
+        LOGGER.info("Get current user");
         Authentication authentication = SecurityContextHolder.getContext()
                                                              .getAuthentication();
         String currentPrincipalName = authentication.getName();
@@ -49,7 +49,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean usernameExists(String username) {
-        logger.info("Check for existing user username {}", username);
+        LOGGER.info("Check for existing user username {}", username);
         return userRepository.findAllByUsername(username) != 0;
     }
 
@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
     @Transactional(isolation = Isolation.SERIALIZABLE)
     @Retryable(value = {SQLException.class})
     public UserDto create(UserDto userDto) {
-        logger.info("Create user");
+        LOGGER.info("Create user");
         User user = userConverter.dtoToEntity(userDto);
         User persistUser = userRepository.save(user);
         return userConverter.entityToDto(persistUser);
@@ -65,7 +65,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserDto> findAllByRestaurant() {
-        logger.info("Find all users by restaurant");
+        LOGGER.info("Find all users by restaurant");
         UserDto userDto = getCurrentUser();
         List<User> users = userRepository.findAllByRestaurantId(userDto.getRestaurant()
                                                                        .getId());

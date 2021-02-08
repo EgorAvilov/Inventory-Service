@@ -23,10 +23,10 @@ import java.util.List;
 
 @Service
 public class IngredientServiceImpl implements IngredientService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
     private final IngredientRepository ingredientRepository;
     private final IngredientConverter ingredientConverter;
     private final UserService userService;
-    Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     public IngredientServiceImpl(IngredientRepository ingredientRepository, IngredientConverter ingredientConverter, UserService userService) {
         this.ingredientRepository = ingredientRepository;
@@ -38,7 +38,7 @@ public class IngredientServiceImpl implements IngredientService {
     @Transactional(isolation = Isolation.SERIALIZABLE)
     @Retryable(value = {SQLException.class})
     public IngredientDto create(IngredientDto ingredientDto) {
-        logger.info("Create ingredient");
+        LOGGER.info("Create ingredient");
         UserDto userDto = userService.getCurrentUser();
         RestaurantDto restaurantDto = userDto.getRestaurant();
         ingredientDto.setRestaurant(restaurantDto);
@@ -54,7 +54,7 @@ public class IngredientServiceImpl implements IngredientService {
     @Transactional(isolation = Isolation.SERIALIZABLE)
     @Retryable(value = {SQLException.class})
     public IngredientDto updateAmount(IngredientDto ingredientDto) {
-        logger.info("Update ingredient amount");
+        LOGGER.info("Update ingredient amount");
         Ingredient ingredient = ingredientConverter.dtoToEntity(ingredientDto);
         Ingredient persistIngredient = ingredientRepository.findById(ingredient.getId())
                                                            .orElseThrow(() -> new NoItemException("No such ingredient"));
@@ -68,7 +68,7 @@ public class IngredientServiceImpl implements IngredientService {
     @Transactional(isolation = Isolation.SERIALIZABLE)
     @Retryable(value = {SQLException.class})
     public IngredientDto updatePrice(IngredientDto ingredientDto) {
-        logger.info("Update ingredient price");
+        LOGGER.info("Update ingredient price");
         Ingredient ingredient = ingredientConverter.dtoToEntity(ingredientDto);
         Ingredient persistIngredient = ingredientRepository.findById(ingredient.getId())
                                                            .orElseThrow(() -> new NoItemException("No such ingredient"));
@@ -80,7 +80,7 @@ public class IngredientServiceImpl implements IngredientService {
 
     @Override
     public List<IngredientDto> findAllByRestaurant() {
-        logger.info("Find all ingredients by restaurant");
+        LOGGER.info("Find all ingredients by restaurant");
         UserDto userDto = userService.getCurrentUser();
         List<Ingredient> ingredients = ingredientRepository.findAllByRestaurantId(userDto.getRestaurant()
                                                                                          .getId());
