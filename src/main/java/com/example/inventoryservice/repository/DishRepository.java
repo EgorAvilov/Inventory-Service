@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface DishRepository extends JpaRepository<Dish, Long> {
-    List<Dish> findAllByRestaurant_Id(Long restaurantId);
+    List<Dish> findAllByRestaurantId(Long restaurantId);
 }
 

@@ -50,7 +50,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
             }
         } catch (JwtAuthenticationException e) {
             logger.error(e.getMessage());
-            responseEntityToHttpServletResponse(new ResponseEntity<>(e.getMessage(), HttpStatus.UNAUTHORIZED), response);
+            responseEntityToHttpServletResponse(new ResponseEntity<>(e.getMessage(), HttpStatus.UNAUTHORIZED ), response);
             return;
         }
         filterChain.doFilter(request, response);

@@ -19,11 +19,11 @@ public class RecipeDto {
 
     private Long id;
 
-    @NotBlank(message = "Username can't be empty.")
+    @NotBlank(message = "Name can't be empty.")
     private String name;
 
     private RestaurantDto restaurant;
 
     @NotEmpty(message = "Ingredient list can't be empty")
-    private List<RecipeIngredientDto> recipeIngredients = new ArrayList<>();//было просто
+    private List<RecipeIngredientDto> recipeIngredients = new ArrayList<>();
 }

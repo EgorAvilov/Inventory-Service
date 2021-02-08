@@ -1,9 +1,7 @@
 package com.example.inventoryservice.controller;
 
 import com.example.inventoryservice.dto.DishDto;
-import com.example.inventoryservice.dto.IngredientDto;
 import com.example.inventoryservice.service.DishService;
-import com.example.inventoryservice.service.IngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

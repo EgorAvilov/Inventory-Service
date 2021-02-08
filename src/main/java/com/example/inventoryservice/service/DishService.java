@@ -11,5 +11,5 @@ public interface DishService {
 
     List<DishDto> findAllByRestaurant();
 
-    void checkForEnoughIngredients(Dish dish);
+    void cookingDish(Dish dish);
 }

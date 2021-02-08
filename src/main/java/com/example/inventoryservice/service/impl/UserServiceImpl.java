@@ -7,11 +7,14 @@ import com.example.inventoryservice.repository.UserRepository;
 import com.example.inventoryservice.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @Service
@@ -47,11 +50,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean usernameExists(String username) {
         logger.info("Check for existing user username {}", username);
-        return userRepository.findAllByUsernameIgnoreCase(username)
-                             .size() != 0;
+        return userRepository.findAllByUsername(username) != 0;
     }
 
     @Override
+    @Transactional(isolation = Isolation.SERIALIZABLE)
+    @Retryable(value = {SQLException.class})
     public UserDto create(UserDto userDto) {
         logger.info("Create user");
         User user = userConverter.dtoToEntity(userDto);
@@ -63,8 +67,8 @@ public class UserServiceImpl implements UserService {
     public List<UserDto> findAllByRestaurant() {
         logger.info("Find all users by restaurant");
         UserDto userDto = getCurrentUser();
-        List<User> users = userRepository.findAllByRestaurant_Id(userDto.getRestaurant()
-                                                                        .getId());
+        List<User> users = userRepository.findAllByRestaurantId(userDto.getRestaurant()
+                                                                       .getId());
         return userConverter.entityToDto(users);
     }
 }

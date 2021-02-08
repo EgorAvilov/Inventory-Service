@@ -15,6 +15,6 @@ public class RestaurantDto {
 
     private Long id;
 
-    @NotBlank(message = "Username can't be empty.")
+    @NotBlank(message = "Name can't be empty.")
     private String name;
 }

@@ -9,7 +9,12 @@ import com.example.inventoryservice.service.RestaurantService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.sql.SQLException;
 
 @Service
 public class RestaurantServiceImpl implements RestaurantService {
@@ -24,6 +29,8 @@ public class RestaurantServiceImpl implements RestaurantService {
     }
 
     @Override
+    @Transactional(isolation = Isolation.SERIALIZABLE)
+    @Retryable(value = {SQLException.class})
     public RestaurantDto create(RestaurantDto restaurantDto) {
         logger.info("Create restaurant");
         if (restaurantExists(restaurantDto.getName())) {
@@ -38,7 +45,6 @@ public class RestaurantServiceImpl implements RestaurantService {
     @Override
     public boolean restaurantExists(String name) {
         logger.info("Check for existing restaurant {}", name);
-        return restaurantRepository.findAllByNameIgnoreCase(name)
-                                   .size() != 0;
+        return restaurantRepository.findAllByName(name) != 0;
     }
 }

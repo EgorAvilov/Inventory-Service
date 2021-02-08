@@ -60,10 +60,4 @@ public class AuthenticationController {
             return new ResponseEntity<>("Invalid username or password", HttpStatus.FORBIDDEN);
         }
     }
-
-    @PostMapping("/logout")
-    public void logout(HttpServletRequest request, HttpServletResponse response) {
-        SecurityContextLogoutHandler securityContextLogoutHandler = new SecurityContextLogoutHandler();
-        securityContextLogoutHandler.logout(request, response, null);
-    }
 }

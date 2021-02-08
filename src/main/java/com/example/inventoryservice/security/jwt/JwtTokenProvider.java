@@ -42,7 +42,7 @@ public class JwtTokenProvider {
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder(4);
+        return new BCryptPasswordEncoder(31);
     }
 
     @PostConstruct
@@ -71,11 +71,6 @@ public class JwtTokenProvider {
     }
 
     public String getUsername(String token) {
-        System.out.println(Jwts.parser()
-                               .setSigningKey(secret)
-                               .parseClaimsJws(token)
-                               .getBody()
-                               .getSubject());
         return Jwts.parser()
                    .setSigningKey(secret)
                    .parseClaimsJws(token)

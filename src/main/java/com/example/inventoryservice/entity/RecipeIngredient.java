@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -22,7 +23,7 @@ public class RecipeIngredient {
     @Column(name = "amount")
     private BigDecimal amount;
 
-    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "ingredient_id")
     private Ingredient ingredient;
 

@@ -28,12 +28,14 @@ public class IngredientController {
     public ResponseEntity create(@RequestBody @Valid IngredientDto ingredientDto) {
         return new ResponseEntity<>(ingredientService.create(ingredientDto), HttpStatus.CREATED);
     }
-    @PutMapping(value = "/amount")
+
+    @PatchMapping(value = "/amount")
     public ResponseEntity updateAmount(@RequestBody @Valid IngredientDto ingredientDto) {
-        return new ResponseEntity<>(ingredientService.updateAmount(ingredientDto), HttpStatus.CREATED);
+        return new ResponseEntity<>(ingredientService.updateAmount(ingredientDto), HttpStatus.OK);
     }
-    @PutMapping(value = "/price")
+
+    @PatchMapping(value = "/price")
     public ResponseEntity updatePrice(@RequestBody @Valid IngredientDto ingredientDto) {
-        return new ResponseEntity<>(ingredientService.updatePrice(ingredientDto), HttpStatus.CREATED);
+        return new ResponseEntity<>(ingredientService.updatePrice(ingredientDto), HttpStatus.OK);
     }
 }

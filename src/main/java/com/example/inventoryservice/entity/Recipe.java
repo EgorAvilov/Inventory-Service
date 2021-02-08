@@ -28,7 +28,7 @@ public class Recipe implements Serializable {
     @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL )
-    private List<RecipeIngredient> recipeIngredients=new ArrayList<>();
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<RecipeIngredient> recipeIngredients = new ArrayList<>();
 }
 

@@ -28,8 +28,13 @@ public class ExceptionHelper extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(value = {ServiceException.class})
-    public ResponseEntity<Object> handleBusinessException(ServiceException ex) {
+    public ResponseEntity<Object> handleServiceException(ServiceException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(value = {NoItemException.class})
+    public ResponseEntity<Object> handleNoItemException(ServiceException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 
     @Override

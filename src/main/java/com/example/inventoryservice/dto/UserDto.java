@@ -19,10 +19,10 @@ public class UserDto {
 
     private Long id;
 
-    @NotBlank(message = "Username can't be empty.")
+    @NotBlank(message = "First name can't be empty.")
     private String firstName;
 
-    @NotBlank(message = "Username can't be empty.")
+    @NotBlank(message = "Last name can't be empty.")
     private String lastName;
 
     private List<Role> userRole = new ArrayList<>();
@@ -30,7 +30,7 @@ public class UserDto {
     @NotBlank(message = "Username can't be empty.")
     private String username;
 
-    @NotBlank(message = "Username can't be empty.")
+    @NotBlank(message = "Password can't be empty.")
     private String password;
 
     private RestaurantDto restaurant;
