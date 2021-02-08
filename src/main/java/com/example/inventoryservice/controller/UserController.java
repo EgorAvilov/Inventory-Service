@@ -19,7 +19,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity findAllByRestaurant() {
         return new ResponseEntity<>(userService.findAllByRestaurant(), HttpStatus.OK);
     }

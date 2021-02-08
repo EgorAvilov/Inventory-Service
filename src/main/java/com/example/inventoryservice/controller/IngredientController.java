@@ -19,7 +19,7 @@ public class IngredientController {
         this.ingredientService = ingredientService;
     }
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity findAllByRestaurant() {
         return new ResponseEntity<>(ingredientService.findAllByRestaurant(), HttpStatus.OK);
     }
