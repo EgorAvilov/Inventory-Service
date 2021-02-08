@@ -5,6 +5,8 @@ import com.example.inventoryservice.service.DishService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -20,11 +22,13 @@ public class DishController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('KITCHEN_STUFF')")
     public ResponseEntity findAllByRestaurant() {
         return new ResponseEntity<>(dishService.findAllByRestaurant(), HttpStatus.OK);
     }
 
     @PostMapping
+    @PreAuthorize("hasAuthority('KITCHEN_STUFF')")
     public ResponseEntity create(@RequestBody @Valid DishDto dishDto) {
         return new ResponseEntity<>(dishService.create(dishDto), HttpStatus.CREATED);
     }

@@ -5,6 +5,7 @@ import com.example.inventoryservice.service.IngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -20,21 +21,25 @@ public class IngredientController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('INVENTORY_MANAGER')")
     public ResponseEntity findAllByRestaurant() {
         return new ResponseEntity<>(ingredientService.findAllByRestaurant(), HttpStatus.OK);
     }
 
     @PostMapping
+    @PreAuthorize("hasAuthority('INVENTORY_MANAGER')")
     public ResponseEntity create(@RequestBody @Valid IngredientDto ingredientDto) {
         return new ResponseEntity<>(ingredientService.create(ingredientDto), HttpStatus.CREATED);
     }
 
     @PatchMapping(value = "/amount")
+    @PreAuthorize("hasAuthority('INVENTORY_MANAGER')")
     public ResponseEntity updateAmount(@RequestBody @Valid IngredientDto ingredientDto) {
         return new ResponseEntity<>(ingredientService.updateAmount(ingredientDto), HttpStatus.OK);
     }
 
     @PatchMapping(value = "/price")
+    @PreAuthorize("hasAuthority('INVENTORY_MANAGER')")
     public ResponseEntity updatePrice(@RequestBody @Valid IngredientDto ingredientDto) {
         return new ResponseEntity<>(ingredientService.updatePrice(ingredientDto), HttpStatus.OK);
     }
