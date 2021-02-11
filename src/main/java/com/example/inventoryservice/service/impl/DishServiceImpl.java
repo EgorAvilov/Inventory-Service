@@ -103,7 +103,7 @@ public class DishServiceImpl implements DishService {
     }
 
     public boolean recipeExists(Dish dish) {
-        return recipeRepository.findAllByNameAndRestaurantId(dish.getRecipe()
+        return recipeRepository.countAllByNameAndRestaurantId(dish.getRecipe()
                                                                  .getName(),
                 dish.getRestaurant()
                     .getId()) != 0;

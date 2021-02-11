@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean usernameExists(String username) {
         LOGGER.info("Check for existing user username {}", username);
-        return userRepository.findAllByUsername(username) != 0;
+        return userRepository.countAllByUsername(username) != 0;
     }
 
     @Override

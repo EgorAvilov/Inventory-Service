@@ -30,6 +30,8 @@ public class AuthenticationController {
     private final AuthenticationManager authenticationManager;
     private final JwtTokenProvider jwtTokenProvider;
     private final UserService userService;
+    private static final String USER_WITH_USERNAME_MESSAGE = "User with username: ";
+    private static final String NOT_FOUND_MESSAGE = " not found";
 
     @Autowired
     public AuthenticationController(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, UserService userService) {
@@ -44,13 +46,12 @@ public class AuthenticationController {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(requestDto.getUsername(), requestDto.getPassword()));
             UserDto user = userService.findByUsername(requestDto.getUsername());
             if (user == null) {
-                LOGGER.error("User with username: " + requestDto.getUsername() + " not found");
-                throw new UsernameNotFoundException("User with username: " + requestDto.getUsername() + " not found");
+                LOGGER.error(USER_WITH_USERNAME_MESSAGE + requestDto.getUsername() + NOT_FOUND_MESSAGE);
+                throw new UsernameNotFoundException(USER_WITH_USERNAME_MESSAGE+ requestDto.getUsername() + NOT_FOUND_MESSAGE);
             }
             String token = jwtTokenProvider.createToken(requestDto.getUsername(), user.getUserRole());
             Map<Object, Object> response = new HashMap<>();
             response.put("token", token);
-            response.put("user", user);
             return ResponseEntity.ok(response);
         } catch (AuthenticationException e) {
             LOGGER.error(e.getMessage());

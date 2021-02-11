@@ -28,8 +28,8 @@ import java.util.List;
 @Component
 public class JwtTokenProvider {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(JwtTokenProvider.class);
     private final UserDetailsService userDetailsService;
-    Logger logger = LoggerFactory.getLogger(JwtTokenProvider.class);
     @Value("${jwt.token.secret}")
     private String secret;
     @Value("${jwt.token.expired}")
@@ -42,7 +42,7 @@ public class JwtTokenProvider {
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder(31);
+        return new BCryptPasswordEncoder();
     }
 
     @PostConstruct
@@ -95,7 +95,7 @@ public class JwtTokenProvider {
                           .getExpiration()
                           .before(new Date());
         } catch (Exception e) {
-            logger.error(e.getMessage());
+            LOGGER.error(e.getMessage());
             throw new JwtAuthenticationException("JWT token is expired or invalid");
         }
     }

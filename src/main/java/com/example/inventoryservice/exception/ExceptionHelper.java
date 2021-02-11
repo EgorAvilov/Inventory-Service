@@ -2,7 +2,6 @@ package com.example.inventoryservice.exception;
 
 import com.example.inventoryservice.dto.ErrorResponse;
 import lombok.extern.slf4j.Slf4j;
-import org.modelmapper.spi.ErrorMessage;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,14 +13,13 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Slf4j
 @ControllerAdvice
 public class ExceptionHelper extends ResponseEntityExceptionHandler {
 
-   @ExceptionHandler(AccessDeniedException.class)
+    @ExceptionHandler(AccessDeniedException.class)
     public final ResponseEntity<Object> handleAccessDeniedException(AccessDeniedException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.FORBIDDEN);
     }

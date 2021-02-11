@@ -45,6 +45,6 @@ public class RestaurantServiceImpl implements RestaurantService {
     @Override
     public boolean restaurantExists(String name) {
         LOGGER.info("Check for existing restaurant {}", name);
-        return restaurantRepository.findAllByName(name) != 0;
+        return restaurantRepository.countAllByName(name) != 0;
     }
 }

@@ -35,7 +35,7 @@ public class IngredientServiceImpl implements IngredientService {
     }
 
     @Override
-    @Transactional(isolation = Isolation.SERIALIZABLE)
+    @Transactional(isolation = Isolation.REPEATABLE_READ)
     @Retryable(value = {SQLException.class})
     public IngredientDto create(IngredientDto ingredientDto) {
         LOGGER.info("Create ingredient");
@@ -89,7 +89,7 @@ public class IngredientServiceImpl implements IngredientService {
 
     @Override
     public boolean ingredientExists(Ingredient ingredient) {
-        return ingredientRepository.findAllByNameAndRestaurantId(ingredient.getName(), ingredient.getRestaurant()
+        return ingredientRepository.countAllByNameAndRestaurantId(ingredient.getName(), ingredient.getRestaurant()
                                                                                                  .getId()) != 0;
     }
 }

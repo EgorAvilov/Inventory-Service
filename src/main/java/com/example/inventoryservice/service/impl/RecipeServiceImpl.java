@@ -66,7 +66,7 @@ public class RecipeServiceImpl implements RecipeService {
     @Override
     public boolean recipeExists(Recipe recipe) {
         LOGGER.info("Check for existing recipe {}", recipe.getName());
-        return recipeRepository.findAllByNameAndRestaurantId(recipe.getName(), recipe.getRestaurant()
+        return recipeRepository.countAllByNameAndRestaurantId(recipe.getName(), recipe.getRestaurant()
                                                                                      .getId()) != 0;
     }
 }

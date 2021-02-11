@@ -16,6 +16,8 @@ import org.springframework.stereotype.Service;
 public class JwtUserDetailsService implements UserDetailsService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtUserDetailsService.class);
+    private static final String USER_WITH_USERNAME_MESSAGE = "User with username: ";
+    private static final String NOT_FOUND_MESSAGE = " not found";
     private final UserService userService;
 
     @Autowired
@@ -27,8 +29,6 @@ public class JwtUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserDto user = userService.findByUsername(username);
         if (user == null) {
-            String USER_WITH_USERNAME_MESSAGE = "User with username: ";
-            String NOT_FOUND_MESSAGE = " not found";
             LOGGER.error(USER_WITH_USERNAME_MESSAGE + username + NOT_FOUND_MESSAGE);
             throw new UsernameNotFoundException(USER_WITH_USERNAME_MESSAGE + username + NOT_FOUND_MESSAGE);
         }
