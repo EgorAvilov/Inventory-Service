@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/api/dishes")
+@PreAuthorize("hasAuthority('KITCHEN_STUFF')")
 public class DishQueryController {
     private final DishQueryService dishService;
 
@@ -20,7 +21,6 @@ public class DishQueryController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('KITCHEN_STUFF')")
     public ResponseEntity findAllByRestaurant() {
         return new ResponseEntity<>(dishService.findAllByRestaurant(), HttpStatus.OK);
     }

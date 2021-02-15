@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/api/ingredients")
+@PreAuthorize("hasAuthority('INVENTORY_MANAGER')")
 public class IngredientQueryController {
     private final IngredientQueryService ingredientService;
 
@@ -20,7 +21,6 @@ public class IngredientQueryController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('INVENTORY_MANAGER')")
     public ResponseEntity findAllByRestaurant() {
         return new ResponseEntity<>(ingredientService.findAllByRestaurant(), HttpStatus.OK);
     }

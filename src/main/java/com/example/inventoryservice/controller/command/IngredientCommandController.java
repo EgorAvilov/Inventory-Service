@@ -14,6 +14,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping(value = "/api/ingredients")
+@PreAuthorize("hasAuthority('INVENTORY_MANAGER')")
 public class IngredientCommandController {
     private final IngredientCommandService ingredientService;
 
@@ -23,19 +24,16 @@ public class IngredientCommandController {
     }
 
     @PostMapping
-    @PreAuthorize("hasAuthority('INVENTORY_MANAGER')")
     public ResponseEntity create(@RequestBody @Valid IngredientDto ingredientDto) {
         return new ResponseEntity<>(ingredientService.create(ingredientDto), HttpStatus.CREATED);
     }
 
     @PatchMapping(value = "/amount")
-    @PreAuthorize("hasAuthority('INVENTORY_MANAGER')")
     public ResponseEntity updateAmount(@RequestBody @Valid IngredientUpdateAmountDto ingredientDto) {
         return new ResponseEntity<>(ingredientService.updateAmount(ingredientDto), HttpStatus.OK);
     }
 
     @PatchMapping(value = "/price")
-    @PreAuthorize("hasAuthority('INVENTORY_MANAGER')")
     public ResponseEntity updatePrice(@RequestBody @Valid IngredientUpdatePriceDto ingredientDto) {
         return new ResponseEntity<>(ingredientService.updatePrice(ingredientDto), HttpStatus.OK);
     }

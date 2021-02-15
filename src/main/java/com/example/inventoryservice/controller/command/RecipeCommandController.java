@@ -15,6 +15,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping(value = "/api/recipes")
+@PreAuthorize("hasAuthority('KITCHEN_CHEF')")
 public class RecipeCommandController {
     private final RecipeCommandService recipeService;
 
@@ -24,7 +25,6 @@ public class RecipeCommandController {
     }
 
     @PostMapping
-    @PreAuthorize("hasAuthority('KITCHEN_CHEF')")
     public ResponseEntity create(@RequestBody @Valid RecipeDto recipeDto) {
         return new ResponseEntity<>(recipeService.create(recipeDto), HttpStatus.CREATED);
     }

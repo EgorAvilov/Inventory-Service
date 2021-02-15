@@ -15,6 +15,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping(value = "/api/dishes")
+@PreAuthorize("hasAuthority('KITCHEN_STUFF')")
 public class DishCommandController {
     private final DishCommandService dishService;
 
@@ -24,7 +25,6 @@ public class DishCommandController {
     }
 
     @PostMapping
-    @PreAuthorize("hasAuthority('KITCHEN_STUFF')")
     public ResponseEntity create(@RequestBody @Valid DishDto dishDto) {
         return new ResponseEntity<>(dishService.create(dishDto), HttpStatus.CREATED);
     }
