@@ -51,6 +51,7 @@ public class IngredientCommandServiceImpl implements IngredientCommandService {
         Ingredient ingredient = ingredientConverter.dtoToEntity(ingredientDto);
         ingredient.setRestaurant(restaurant);
         if (ingredientExists(ingredient)) {
+            LOGGER.error("Not unique ingredient {}", ingredient.getName());
             throw new ServiceException("Not unique ingredient");
         }
         ingredient = ingredientRepository.save(ingredient);
@@ -82,6 +83,7 @@ public class IngredientCommandServiceImpl implements IngredientCommandService {
     }
 
     public boolean ingredientExists(Ingredient ingredient) {
+        LOGGER.info("Check for existing ingredient {}", ingredient.getName());
         return ingredientRepository.countAllByNameAndRestaurantId(ingredient.getName(), ingredient.getRestaurant()
                                                                                                   .getId()) != 0;
     }

@@ -78,8 +78,11 @@ public class DishCommandServiceImpl implements DishCommandService {
 
     @Override
     public void cookingDish(Dish dish) {
+        LOGGER.info("Cooking dish {}", dish.getRecipe()
+                                           .getName());
         Recipe recipe = recipeRepository.findByName(dish.getRecipe()
                                                         .getName());
+        dish.setRecipe(recipe);
         List<Long> recipeIngredientIds = recipe.getRecipeIngredients()
                                                .stream()
                                                .map(RecipeIngredient::getId)
@@ -99,12 +102,15 @@ public class DishCommandServiceImpl implements DishCommandService {
                                     .setAmount(existingAmount.subtract(requiredRecipeIngredient.getAmount()));
         }
         if (notEnoughIngredientsList.size() != 0) {
+            LOGGER.error("Not enough ingredients {}", notEnoughIngredientsList.toString());
             throw new ServiceException("Not enough ingredients: " + notEnoughIngredientsList.toString());
         }
         recipeIngredientRepository.saveAll(requiredRecipeIngredients);
     }
 
     public boolean recipeExists(Dish dish) {
+        LOGGER.info("Check fro existing recipe {}", dish.getRecipe()
+                                                        .getName());
         return recipeRepository.countAllByNameAndRestaurantId(dish.getRecipe()
                                                                   .getName(),
                 dish.getRestaurant()
