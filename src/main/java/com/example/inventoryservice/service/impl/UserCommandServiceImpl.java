@@ -26,7 +26,7 @@ public class UserCommandServiceImpl implements UserCommandService {
     }
 
     @Override
-    @Transactional(isolation = Isolation.SERIALIZABLE)
+    @Transactional(isolation = Isolation.REPEATABLE_READ)
     @Retryable(value = {SQLException.class})
     public UserDto create(UserDto userDto) {
         LOGGER.info("Create user");

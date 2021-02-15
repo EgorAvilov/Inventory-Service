@@ -29,7 +29,7 @@ public class RestaurantCommandServiceImpl implements RestaurantCommandService {
     }
 
     @Override
-    @Transactional(isolation = Isolation.SERIALIZABLE)
+    @Transactional(isolation = Isolation.REPEATABLE_READ)
     @Retryable(value = {SQLException.class})
     public RestaurantDto create(RestaurantDto restaurantDto) {
         LOGGER.info("Create restaurant");
