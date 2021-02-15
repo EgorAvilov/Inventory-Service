@@ -1,30 +1,22 @@
-package com.example.inventoryservice.controller;
+package com.example.inventoryservice.controller.command;
 
 import com.example.inventoryservice.dto.DishDto;
-import com.example.inventoryservice.service.DishService;
+import com.example.inventoryservice.service.DishCommandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-
 @RestController
 @RequestMapping(value = "/api/dishes")
-public class DishController {
-    private final DishService dishService;
+public class DishCommandController {
+    private final DishCommandService dishService;
 
     @Autowired
-    public DishController(DishService dishService) {
+    public DishCommandController(DishCommandService dishService) {
         this.dishService = dishService;
-    }
-
-    @GetMapping
-    @PreAuthorize("hasAuthority('KITCHEN_STUFF')")
-    public ResponseEntity findAllByRestaurant() {
-        return new ResponseEntity<>(dishService.findAllByRestaurant(), HttpStatus.OK);
     }
 
     @PostMapping

@@ -1,15 +1,13 @@
 package com.example.inventoryservice.service;
 
 import com.example.inventoryservice.dto.DishDto;
-import com.example.inventoryservice.dto.IngredientDto;
 import com.example.inventoryservice.entity.Dish;
 
 import java.util.List;
 
-public interface DishService {
-    DishDto create(DishDto dishDto);
+public interface DishCommandService {
 
-    List<DishDto> findAllByRestaurant();
+    DishDto create(DishDto dishDto);
 
     void cookingDish(Dish dish);
 }

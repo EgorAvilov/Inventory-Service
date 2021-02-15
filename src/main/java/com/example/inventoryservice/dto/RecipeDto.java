@@ -1,6 +1,5 @@
 package com.example.inventoryservice.dto;
 
-import com.example.inventoryservice.entity.RecipeIngredient;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,7 +21,6 @@ public class RecipeDto {
     @NotBlank(message = "Name can't be empty.")
     private String name;
 
-    private RestaurantDto restaurant;
 
     @NotEmpty(message = "Ingredient list can't be empty")
     private List<RecipeIngredientDto> recipeIngredients = new ArrayList<>();

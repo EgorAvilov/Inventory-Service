@@ -1,17 +1,20 @@
 package com.example.inventoryservice.service.impl;
 
 import com.example.inventoryservice.converter.DishConverter;
+import com.example.inventoryservice.converter.RestaurantConverter;
 import com.example.inventoryservice.dto.DishDto;
+import com.example.inventoryservice.dto.RestaurantDto;
 import com.example.inventoryservice.dto.UserDto;
 import com.example.inventoryservice.entity.Dish;
 import com.example.inventoryservice.entity.Recipe;
 import com.example.inventoryservice.entity.RecipeIngredient;
+import com.example.inventoryservice.entity.Restaurant;
 import com.example.inventoryservice.exception.NoItemException;
 import com.example.inventoryservice.exception.ServiceException;
 import com.example.inventoryservice.repository.DishRepository;
 import com.example.inventoryservice.repository.RecipeIngredientRepository;
 import com.example.inventoryservice.repository.RecipeRepository;
-import com.example.inventoryservice.service.DishService;
+import com.example.inventoryservice.service.DishCommandService;
 import com.example.inventoryservice.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,33 +31,36 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class DishServiceImpl implements DishService {
-    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
+public class DishCommandServiceImpl implements DishCommandService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(DishCommandServiceImpl.class);
     private final DishRepository dishRepository;
     private final RecipeIngredientRepository recipeIngredientRepository;
     private final RecipeRepository recipeRepository;
     private final DishConverter dishConverter;
+    private final RestaurantConverter restaurantConverter;
     private final UserService userService;
 
     @Autowired
-    public DishServiceImpl(DishRepository dishRepository,
-                           RecipeIngredientRepository recipeIngredientRepository,
-                           RecipeRepository recipeRepository,
-                           DishConverter dishConverter,
-                           UserService userService) {
+    public DishCommandServiceImpl(DishRepository dishRepository, RecipeIngredientRepository recipeIngredientRepository, RecipeRepository recipeRepository, DishConverter dishConverter, RestaurantConverter restaurantConverter, UserService userService) {
         this.dishRepository = dishRepository;
         this.recipeIngredientRepository = recipeIngredientRepository;
         this.recipeRepository = recipeRepository;
         this.dishConverter = dishConverter;
+        this.restaurantConverter = restaurantConverter;
         this.userService = userService;
     }
+
 
     @Override
     @Transactional(isolation = Isolation.SERIALIZABLE)
     @Retryable(value = {SQLException.class})
     public DishDto create(DishDto dishDto) {
         LOGGER.info("Create dish");
+        UserDto userDto = userService.getCurrentUser();
+        RestaurantDto restaurantDto = userDto.getRestaurant();
+        Restaurant restaurant = restaurantConverter.dtoToEntity(restaurantDto);
         Dish dish = dishConverter.dtoToEntity(dishDto);
+        dish.setRestaurant(restaurant);
         if (!recipeExists(dish)) {
             LOGGER.error("No such recipe {}", dish.getRecipe()
                                                   .getName());
@@ -66,18 +72,9 @@ public class DishServiceImpl implements DishService {
     }
 
     @Override
-    public List<DishDto> findAllByRestaurant() {
-        LOGGER.info("Find all dishes by restaurant");
-        UserDto userDto = userService.getCurrentUser();
-        List<Dish> ingredients = dishRepository.findAllByRestaurantId(userDto.getRestaurant()
-                                                                             .getId());
-        return dishConverter.entityToDto(ingredients);
-    }
-
-    @Override
     public void cookingDish(Dish dish) {
-        Recipe recipe = recipeRepository.getOne(dish.getRecipe()
-                                                    .getId());
+        Recipe recipe = recipeRepository.findByName(dish.getRecipe()
+                                                        .getName());
         List<Long> recipeIngredientIds = recipe.getRecipeIngredients()
                                                .stream()
                                                .map(RecipeIngredient::getId)
@@ -104,7 +101,7 @@ public class DishServiceImpl implements DishService {
 
     public boolean recipeExists(Dish dish) {
         return recipeRepository.countAllByNameAndRestaurantId(dish.getRecipe()
-                                                                 .getName(),
+                                                                  .getName(),
                 dish.getRestaurant()
                     .getId()) != 0;
     }

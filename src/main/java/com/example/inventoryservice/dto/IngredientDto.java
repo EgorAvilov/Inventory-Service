@@ -1,6 +1,5 @@
 package com.example.inventoryservice.dto;
 
-import com.example.inventoryservice.entity.Restaurant;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -30,5 +29,4 @@ public class IngredientDto {
     @DecimalMin(value = "0.0", inclusive = false, message = "Price can't be <=0")
     private BigDecimal price;
 
-    private RestaurantDto restaurant;
 }

@@ -5,20 +5,19 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
 import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class RecipeIngredientDto {
+public class IngredientUpdateAmountDto {
 
-    private Long id;
+    @NotBlank(message = "Name can't be empty.")
+    private String name;
 
     @DecimalMin(value = "0.0", inclusive = false, message = "Amount can't be <=0")
     private BigDecimal amount;
-
-    private IngredientRecipeIngredientDto ingredient;
 }

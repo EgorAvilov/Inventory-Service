@@ -1,6 +1,8 @@
 package com.example.inventoryservice.converter;
 
 import com.example.inventoryservice.dto.IngredientDto;
+import com.example.inventoryservice.dto.IngredientUpdateAmountDto;
+import com.example.inventoryservice.dto.IngredientUpdatePriceDto;
 import com.example.inventoryservice.entity.Ingredient;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
@@ -31,4 +33,15 @@ public class IngredientConverter {
                              .map(this::dtoToEntity)
                              .collect(Collectors.toList());
     }
+
+    public Ingredient dtoToEntity(IngredientUpdateAmountDto ingredientDto) {
+        ModelMapper mapper = new ModelMapper();
+        return mapper.map(ingredientDto, Ingredient.class);
+    }
+
+    public Ingredient dtoToEntity(IngredientUpdatePriceDto ingredientDto) {
+        ModelMapper mapper = new ModelMapper();
+        return mapper.map(ingredientDto, Ingredient.class);
+    }
+
 }

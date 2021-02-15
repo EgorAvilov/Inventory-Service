@@ -24,14 +24,14 @@ public class ExceptionHelper extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.FORBIDDEN);
     }
 
-    @ExceptionHandler(Exception.class)
+  /*  @ExceptionHandler(Exception.class)
     public ResponseEntity<Object> handle(Exception ex) {
         if (ex instanceof NullPointerException) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                              .build();
-    }
+    }*/
 
     @ExceptionHandler(value = {ServiceException.class})
     public ResponseEntity<Object> handleServiceException(ServiceException ex) {
@@ -39,7 +39,7 @@ public class ExceptionHelper extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(value = {NoItemException.class})
-    public ResponseEntity<Object> handleNoItemException(ServiceException ex) {
+    public ResponseEntity<Object> handleNoItemException(NoItemException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 

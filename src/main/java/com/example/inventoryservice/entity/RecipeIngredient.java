@@ -23,7 +23,7 @@ public class RecipeIngredient {
     @Column(name = "amount")
     private BigDecimal amount;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinColumn(name = "ingredient_id")
     private Ingredient ingredient;
 

@@ -1,7 +1,9 @@
-package com.example.inventoryservice.controller;
+package com.example.inventoryservice.controller.command;
 
 import com.example.inventoryservice.dto.IngredientDto;
-import com.example.inventoryservice.service.IngredientService;
+import com.example.inventoryservice.dto.IngredientUpdateAmountDto;
+import com.example.inventoryservice.dto.IngredientUpdatePriceDto;
+import com.example.inventoryservice.service.IngredientCommandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,18 +14,12 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping(value = "/api/ingredients")
-public class IngredientController {
-    private final IngredientService ingredientService;
+public class IngredientCommandController {
+    private final IngredientCommandService ingredientService;
 
     @Autowired
-    public IngredientController(IngredientService ingredientService) {
+    public IngredientCommandController(IngredientCommandService ingredientService) {
         this.ingredientService = ingredientService;
-    }
-
-    @GetMapping
-    @PreAuthorize("hasAuthority('INVENTORY_MANAGER')")
-    public ResponseEntity findAllByRestaurant() {
-        return new ResponseEntity<>(ingredientService.findAllByRestaurant(), HttpStatus.OK);
     }
 
     @PostMapping
@@ -34,13 +30,13 @@ public class IngredientController {
 
     @PatchMapping(value = "/amount")
     @PreAuthorize("hasAuthority('INVENTORY_MANAGER')")
-    public ResponseEntity updateAmount(@RequestBody @Valid IngredientDto ingredientDto) {
+    public ResponseEntity updateAmount(@RequestBody @Valid IngredientUpdateAmountDto ingredientDto) {
         return new ResponseEntity<>(ingredientService.updateAmount(ingredientDto), HttpStatus.OK);
     }
 
     @PatchMapping(value = "/price")
     @PreAuthorize("hasAuthority('INVENTORY_MANAGER')")
-    public ResponseEntity updatePrice(@RequestBody @Valid IngredientDto ingredientDto) {
+    public ResponseEntity updatePrice(@RequestBody @Valid IngredientUpdatePriceDto ingredientDto) {
         return new ResponseEntity<>(ingredientService.updatePrice(ingredientDto), HttpStatus.OK);
     }
 }

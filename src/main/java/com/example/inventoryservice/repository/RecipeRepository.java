@@ -12,5 +12,7 @@ public interface RecipeRepository extends JpaRepository<Recipe, Long> {
     Long countAllByNameAndRestaurantId(String name, Long restaurantId);
 
     List<Recipe> findAllByRestaurantId(Long restaurantId);
+
+    Recipe findByName(String name);
 }
 
