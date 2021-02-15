@@ -4,14 +4,12 @@ import com.example.inventoryservice.dto.UserDto;
 
 import java.util.List;
 
-public interface UserService {
+public interface UserQueryService {
     UserDto findByUsername(String username);
 
     UserDto getCurrentUser();
 
     boolean usernameExists(String username);
-
-    UserDto create(UserDto userDto);
 
     List<UserDto> findAllByRestaurant();
 }

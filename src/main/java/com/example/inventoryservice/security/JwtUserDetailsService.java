@@ -3,7 +3,7 @@ package com.example.inventoryservice.security;
 import com.example.inventoryservice.dto.UserDto;
 import com.example.inventoryservice.security.jwt.JwtUser;
 import com.example.inventoryservice.security.jwt.JwtUserFactory;
-import com.example.inventoryservice.service.UserService;
+import com.example.inventoryservice.service.UserQueryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +18,10 @@ public class JwtUserDetailsService implements UserDetailsService {
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtUserDetailsService.class);
     private static final String USER_WITH_USERNAME_MESSAGE = "User with username: ";
     private static final String NOT_FOUND_MESSAGE = " not found";
-    private final UserService userService;
+    private final UserQueryService userService;
 
     @Autowired
-    public JwtUserDetailsService(UserService userService) {
+    public JwtUserDetailsService(UserQueryService userService) {
         this.userService = userService;
     }
 

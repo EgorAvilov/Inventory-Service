@@ -6,7 +6,7 @@ import com.example.inventoryservice.dto.UserDto;
 import com.example.inventoryservice.entity.Ingredient;
 import com.example.inventoryservice.repository.IngredientRepository;
 import com.example.inventoryservice.service.IngredientQueryService;
-import com.example.inventoryservice.service.UserService;
+import com.example.inventoryservice.service.UserQueryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +19,12 @@ public class IngredientQueryServiceImpl implements IngredientQueryService {
     private static final Logger LOGGER = LoggerFactory.getLogger(IngredientQueryServiceImpl.class);
     private final IngredientRepository ingredientRepository;
     private final IngredientConverter ingredientConverter;
-    private final UserService userService;
+    private final UserQueryService userService;
 
     @Autowired
     public IngredientQueryServiceImpl(IngredientRepository ingredientRepository,
                                       IngredientConverter ingredientConverter,
-                                      UserService userService) {
+                                      UserQueryService userService) {
         this.ingredientRepository = ingredientRepository;
         this.ingredientConverter = ingredientConverter;
         this.userService = userService;

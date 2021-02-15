@@ -3,7 +3,7 @@ package com.example.inventoryservice.controller;
 import com.example.inventoryservice.dto.AuthenticationRequestDto;
 import com.example.inventoryservice.dto.UserDto;
 import com.example.inventoryservice.security.jwt.JwtTokenProvider;
-import com.example.inventoryservice.service.UserService;
+import com.example.inventoryservice.service.UserQueryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,12 +29,14 @@ public class AuthenticationController {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthenticationController.class);
     private final AuthenticationManager authenticationManager;
     private final JwtTokenProvider jwtTokenProvider;
-    private final UserService userService;
+    private final UserQueryService userService;
     private static final String USER_WITH_USERNAME_MESSAGE = "User with username: ";
     private static final String NOT_FOUND_MESSAGE = " not found";
 
     @Autowired
-    public AuthenticationController(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, UserService userService) {
+    public AuthenticationController(AuthenticationManager authenticationManager,
+                                    JwtTokenProvider jwtTokenProvider,
+                                    UserQueryService userService) {
         this.authenticationManager = authenticationManager;
         this.jwtTokenProvider = jwtTokenProvider;
         this.userService = userService;

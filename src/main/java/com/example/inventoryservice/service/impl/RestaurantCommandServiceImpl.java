@@ -5,7 +5,7 @@ import com.example.inventoryservice.dto.RestaurantDto;
 import com.example.inventoryservice.entity.Restaurant;
 import com.example.inventoryservice.exception.ServiceException;
 import com.example.inventoryservice.repository.RestaurantRepository;
-import com.example.inventoryservice.service.RestaurantService;
+import com.example.inventoryservice.service.RestaurantCommandService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +17,13 @@ import org.springframework.transaction.annotation.Transactional;
 import java.sql.SQLException;
 
 @Service
-public class RestaurantServiceImpl implements RestaurantService {
-    private static final Logger LOGGER = LoggerFactory.getLogger(RestaurantServiceImpl.class);
+public class RestaurantCommandServiceImpl implements RestaurantCommandService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(RestaurantCommandServiceImpl.class);
     private final RestaurantRepository restaurantRepository;
     private final RestaurantConverter restaurantConverter;
 
     @Autowired
-    public RestaurantServiceImpl(RestaurantRepository restaurantRepository, RestaurantConverter restaurantConverter) {
+    public RestaurantCommandServiceImpl(RestaurantRepository restaurantRepository, RestaurantConverter restaurantConverter) {
         this.restaurantRepository = restaurantRepository;
         this.restaurantConverter = restaurantConverter;
     }

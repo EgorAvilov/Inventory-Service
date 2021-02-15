@@ -1,7 +1,7 @@
-package com.example.inventoryservice.controller;
+package com.example.inventoryservice.controller.command;
 
 import com.example.inventoryservice.dto.RestaurantDto;
-import com.example.inventoryservice.service.RestaurantService;
+import com.example.inventoryservice.service.RestaurantCommandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,11 +14,11 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping(value = "/api/restaurants")
-public class RestaurantController {
-    private final RestaurantService restaurantService;
+public class RestaurantCommandController {
+    private final RestaurantCommandService restaurantService;
 
     @Autowired
-    public RestaurantController(RestaurantService restaurantService) {
+    public RestaurantCommandController(RestaurantCommandService restaurantService) {
         this.restaurantService = restaurantService;
     }
 
