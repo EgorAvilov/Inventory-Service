@@ -16,13 +16,15 @@ import java.util.List;
 
 @Service
 public class IngredientQueryServiceImpl implements IngredientQueryService {
-    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(IngredientQueryServiceImpl.class);
     private final IngredientRepository ingredientRepository;
     private final IngredientConverter ingredientConverter;
     private final UserService userService;
 
     @Autowired
-    public IngredientQueryServiceImpl(IngredientRepository ingredientRepository, IngredientConverter ingredientConverter, UserService userService) {
+    public IngredientQueryServiceImpl(IngredientRepository ingredientRepository,
+                                      IngredientConverter ingredientConverter,
+                                      UserService userService) {
         this.ingredientRepository = ingredientRepository;
         this.ingredientConverter = ingredientConverter;
         this.userService = userService;

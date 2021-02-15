@@ -23,14 +23,17 @@ import java.sql.SQLException;
 
 @Service
 public class IngredientCommandServiceImpl implements IngredientCommandService {
-    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(IngredientCommandServiceImpl.class);
     private final IngredientRepository ingredientRepository;
     private final IngredientConverter ingredientConverter;
     private final RestaurantConverter restaurantConverter;
     private final UserService userService;
 
     @Autowired
-    public IngredientCommandServiceImpl(IngredientRepository ingredientRepository, IngredientConverter ingredientConverter, RestaurantConverter restaurantConverter, UserService userService) {
+    public IngredientCommandServiceImpl(IngredientRepository ingredientRepository,
+                                        IngredientConverter ingredientConverter,
+                                        RestaurantConverter restaurantConverter,
+                                        UserService userService) {
         this.ingredientRepository = ingredientRepository;
         this.ingredientConverter = ingredientConverter;
         this.restaurantConverter = restaurantConverter;

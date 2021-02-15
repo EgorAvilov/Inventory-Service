@@ -36,7 +36,11 @@ public class RecipeCommandServiceImpl implements RecipeCommandService {
     private final UserService userService;
 
     @Autowired
-    public RecipeCommandServiceImpl(RecipeRepository recipeRepository, IngredientRepository ingredientRepository, RecipeConverter recipeConverter, RestaurantConverter restaurantConverter, UserService userService) {
+    public RecipeCommandServiceImpl(RecipeRepository recipeRepository,
+                                    IngredientRepository ingredientRepository,
+                                    RecipeConverter recipeConverter,
+                                    RestaurantConverter restaurantConverter,
+                                    UserService userService) {
         this.recipeRepository = recipeRepository;
         this.ingredientRepository = ingredientRepository;
         this.recipeConverter = recipeConverter;
@@ -64,7 +68,7 @@ public class RecipeCommandServiceImpl implements RecipeCommandService {
                                              .map((ingredient) -> ingredientRepository.findByName(ingredient.getName())
                                                                                       .orElse(Ingredient.builder()
                                                                                                         .name(ingredient.getName())
-                                                                                                        // .restaurant(restaurant)
+                                                                                                        .restaurant(restaurant)
                                                                                                         .build()))
 
                                              .collect(Collectors.toList());
