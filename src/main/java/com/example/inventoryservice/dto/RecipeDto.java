@@ -21,7 +21,6 @@ public class RecipeDto {
     @NotBlank(message = "Name can't be empty.")
     private String name;
 
-
     @NotEmpty(message = "Ingredient list can't be empty")
     private List<RecipeIngredientDto> recipeIngredients = new ArrayList<>();
 }
