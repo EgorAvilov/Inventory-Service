@@ -17,8 +17,12 @@ import com.example.inventoryservice.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,6 +45,8 @@ public class RecipeCommandServiceImpl implements RecipeCommandService {
     }
 
     @Override
+    @Transactional(isolation = Isolation.REPEATABLE_READ)
+    @Retryable(value = {SQLException.class})
     public RecipeDto create(RecipeDto recipeDto) {
         LOGGER.info("Create recipe");
         UserDto userDto = userService.getCurrentUser();

@@ -13,9 +13,13 @@ import com.example.inventoryservice.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.sql.SQLException;
 
 @Service
 public class IngredientCommandServiceImpl implements IngredientCommandService {
@@ -34,6 +38,8 @@ public class IngredientCommandServiceImpl implements IngredientCommandService {
     }
 
     @Override
+    @Transactional(isolation = Isolation.REPEATABLE_READ)
+    @Retryable(value = {SQLException.class})
     public IngredientDto create(IngredientDto ingredientDto) {
         LOGGER.info("Create ingredient");
         UserDto userDto = userService.getCurrentUser();

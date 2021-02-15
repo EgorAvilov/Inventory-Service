@@ -52,7 +52,7 @@ public class DishCommandServiceImpl implements DishCommandService {
 
 
     @Override
-    @Transactional(isolation = Isolation.SERIALIZABLE)
+    @Transactional(isolation = Isolation.REPEATABLE_READ)
     @Retryable(value = {SQLException.class})
     public DishDto create(DishDto dishDto) {
         LOGGER.info("Create dish");
