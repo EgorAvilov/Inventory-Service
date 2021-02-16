@@ -1,9 +1,11 @@
 package com.example.inventoryservice.Util;
 
+import com.example.inventoryservice.InventoryServiceApplication;
 import com.jayway.restassured.RestAssured;
 import org.junit.BeforeClass;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
-
+@SpringBootTest
 @TestPropertySource(
         locations = "classpath:application-integrationtest.properties")
 public class BasicClassTest {
