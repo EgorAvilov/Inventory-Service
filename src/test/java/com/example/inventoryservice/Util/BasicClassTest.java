@@ -1,17 +1,13 @@
 package com.example.inventoryservice.Util;
 
-import com.example.inventoryservice.InventoryServiceApplication;
 import com.jayway.restassured.RestAssured;
 import org.junit.BeforeClass;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.TestPropertySource;
-@SpringBootTest
-@TestPropertySource(
-        locations = "classpath:application-integrationtest.properties")
+
 public class BasicClassTest {
 
     @BeforeClass
     public static void setup() {
+        RestAssured.basePath = "jdbc:postgresql://localhost:5432/postgres_test";
         String port = System.getProperty("server.port");
         if (port == null) {
             RestAssured.port = 8080;

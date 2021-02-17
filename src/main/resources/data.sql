@@ -6,9 +6,9 @@ INSERT INTO public.users (id, first_name, last_name, password, username, restaur
 INSERT INTO public.user_role (user_id, user_role) VALUES (1, 'KITCHEN_CHEF');
 INSERT INTO public.user_role (user_id, user_role) VALUES (2, 'KITCHEN_STUFF');
 INSERT INTO public.user_role (user_id, user_role) VALUES (3, 'INVENTORY_MANAGER');
-INSERT INTO public.ingredients (id, amount, measure_unit, name, price, restaurant_id) VALUES (2, 0.00, 'kg', 'salt', 0.00, 1);
+INSERT INTO public.ingredients (id, amount, measure_unit, name, price, restaurant_id) VALUES (2, 11.00, 'kg', 'salt', 0.00, 1);
 INSERT INTO public.ingredients (id, amount, measure_unit, name, price, restaurant_id) VALUES (3, 23.00, 'l', 'water', 2.30, 1);
-INSERT INTO public.ingredients (id, amount, measure_unit, name, price, restaurant_id) VALUES (1, 1.00, 'kg', 'sugar', 1.00, 1);
+INSERT INTO public.ingredients (id, amount, measure_unit, name, price, restaurant_id) VALUES (1, 11.00, 'kg', 'sugar', 1.00, 1);
 INSERT INTO public.recipe_ingredients (id, amount, ingredient_id) VALUES (1, 1.20, 1);
 INSERT INTO public.recipe_ingredients (id, amount, ingredient_id) VALUES (2, 1.30, 2);
 INSERT INTO public.recipes (id, name, restaurant_id) VALUES (1, 'cake', 1);

@@ -1,5 +1,6 @@
 package com.example.inventoryservice.controller;
 
+
 import com.example.inventoryservice.Util.BasicClassTest;
 import org.junit.Test;
 
@@ -26,6 +27,24 @@ public class DishCommandControllerIntegrationTest extends BasicClassTest {
                .then()
                .statusCode(201);
     }
+
+    @Test
+    public void whenCreateDishWithFreshTokenOtherRole_then403() {
+        Map<String, String> recipe = new HashMap<>();
+        recipe.put("name", "cake");
+        Map<Object, Object> dishDto = new HashMap<>();
+        dishDto.put("id", 0);
+        dishDto.put("price", 12);
+        dishDto.put("recipe", recipe);
+        given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyIiwicm9sZXMiOlsiSU5WRU5UT1JZX01BTkFHRVIiXSwiaWF0IjoxNjEzNTQ4ODg1LCJleHAiOjE2MTM1ODQ4ODV9.DK31TW3Hitp1NguBPIGZN_pXifnk85e39zPja47qKRc")
+               .contentType("application/json")
+               .body(dishDto)
+               .when()
+               .post("/dishes")
+               .then()
+               .statusCode(403);
+    }
+
 
     @Test
     public void whenCreateDishWithNotExistingRecipe_then404() {
