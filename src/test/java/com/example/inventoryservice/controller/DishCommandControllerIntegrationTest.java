@@ -2,14 +2,25 @@ package com.example.inventoryservice.controller;
 
 
 import com.example.inventoryservice.Util.BasicClassTest;
+import com.example.inventoryservice.entity.Role;
+import com.example.inventoryservice.security.jwt.JwtTokenProvider;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 import static com.jayway.restassured.RestAssured.given;
 
+@RunWith(SpringRunner.class)
 public class DishCommandControllerIntegrationTest extends BasicClassTest {
+
+    @Mock
+    JwtTokenProvider jwtTokenProvider;
+
 
     @Test
     public void whenCreateDishWithFreshToken_then201() {
@@ -19,6 +30,7 @@ public class DishCommandControllerIntegrationTest extends BasicClassTest {
         dishDto.put("id", 0);
         dishDto.put("price", 12);
         dishDto.put("recipe", recipe);
+        //jwtTokenProvider.createToken("chef", Collections.singletonList(Role.KITCHEN_CHEF));
         given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdHVmZiIsInJvbGVzIjpbIktJVENIRU5fU1RVRkYiXSwiaWF0IjoxNjEzNDYyNTc2LCJleHAiOjE2MTM0OTg1NzZ9.FTa8UE3PD7jyytPb2SFnPz8dh7aBrkzkXL7CeALhpdk")
                .contentType("application/json")
                .body(dishDto)
@@ -26,6 +38,7 @@ public class DishCommandControllerIntegrationTest extends BasicClassTest {
                .post("/dishes")
                .then()
                .statusCode(201);
+        //.body("token",isNotNullValue());
     }
 
     @Test
