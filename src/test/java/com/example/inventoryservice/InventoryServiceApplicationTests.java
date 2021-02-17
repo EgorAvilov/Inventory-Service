@@ -11,7 +11,7 @@ public
 class InventoryServiceApplicationTests {
 
     @Test
-    void contextLoads() {
+    public void contextLoads() {
     }
 
 }

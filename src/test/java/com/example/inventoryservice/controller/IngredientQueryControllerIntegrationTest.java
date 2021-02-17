@@ -1,26 +1,32 @@
 package com.example.inventoryservice.controller;
 
 import com.example.inventoryservice.Util.BasicClassTest;
-import org.junit.Test;
+import com.example.inventoryservice.entity.Role;
+import com.example.inventoryservice.security.jwt.JwtTokenProvider;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.Collections;
 
 import static com.jayway.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.notNullValue;
 
 public class IngredientQueryControllerIntegrationTest extends BasicClassTest {
 
+    @Autowired
+    private JwtTokenProvider jwtTokenProvider;
+
     @Test
     public void whenGetIngredientsWithFreshToken_then200() {
-        given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyIiwicm9sZXMiOlsiSU5WRU5UT1JZX01BTkFHRVIiXSwiaWF0IjoxNjEzNTUwODUzLCJleHAiOjE2MTM1ODY4NTN9.rmRVKq7naP8Gy6L7THSclGPKR9F6OOptcFQlARnPcGY")
+        given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("manager", Collections.singletonList(Role.INVENTORY_MANAGER)))
                .when()
                .get("/ingredients")
                .then()
-               .statusCode(200)
-               .body("id", notNullValue());
+               .statusCode(200);
     }
 
     @Test
     public void whenGetIngredientsWithFreshTokenOtherRole_then403() {
-        given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdHVmZiIsInJvbGVzIjpbIktJVENIRU5fU1RVRkYiXSwiaWF0IjoxNjEzNTUyMTU3LCJleHAiOjE2MTM1ODgxNTd9.zDMYPbPAeJ7MMknxjcAcIalV1OcJqmLhfHcjBlGed7Q")
+        given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("stuff", Collections.singletonList(Role.KITCHEN_STUFF)))
                .when()
                .get("/ingredients")
                .then()
@@ -29,7 +35,7 @@ public class IngredientQueryControllerIntegrationTest extends BasicClassTest {
 
     @Test
     public void whenGetIngredientsWithExpiredToken_then401() {
-        given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdHVmZiIsInJvbGVzIjpbIktJVENIRU5fU1RVRkYiXSwiaWF0IjoxNjEzNTUyMTU3LCJleHAiOjE2MTM1ODgxNTd9.zDMYPbPAeJ7MMknxjcAcIalV1OcJqmLhfHcjBlGed7Q")
+        given().header(HEADER, EXPIRED_TOKEN)
                .when()
                .get("/ingredients")
                .then()

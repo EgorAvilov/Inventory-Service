@@ -1,13 +1,13 @@
 package com.example.inventoryservice.controller;
 
 import com.example.inventoryservice.Util.BasicClassTest;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static com.jayway.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.notNullValue;
 
 public class AuthenticationControllerIntegrationTest extends BasicClassTest {
 
@@ -23,7 +23,6 @@ public class AuthenticationControllerIntegrationTest extends BasicClassTest {
                .then()
                .statusCode(200)
                .body("token", notNullValue());
-
     }
 
     @Test
@@ -37,6 +36,5 @@ public class AuthenticationControllerIntegrationTest extends BasicClassTest {
                .post("/login")
                .then()
                .statusCode(403);
-
     }
 }

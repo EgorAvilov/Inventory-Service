@@ -1,39 +1,42 @@
 package com.example.inventoryservice.controller;
 
 import com.example.inventoryservice.Util.BasicClassTest;
-import org.junit.Test;
+import com.example.inventoryservice.entity.Role;
+import com.example.inventoryservice.security.jwt.JwtTokenProvider;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static com.jayway.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.containsString;
 
 public class RecipeCommandControllerIntegrationTest extends BasicClassTest {
+
+    @Autowired
+    private JwtTokenProvider jwtTokenProvider;
 
     @Test
     public void whenCreateRecipeWithFreshToken_then201() {
         Map<String, String> ingredient = new HashMap<>();
         ingredient.put("name", "sugar");
-
         Map<Object, Object> recipeIngredient = new HashMap<>();
         recipeIngredient.put("amount", 1.2);
         recipeIngredient.put("ingredient", ingredient);
-
         List<Object> recipeIngredients = new ArrayList<>() {{
             add(recipeIngredient);
         }};
         Map<Object, Object> recipeDto = new HashMap<>();
         recipeDto.put("name", "jam");
         recipeDto.put("recipeIngredients", recipeIngredients);
-        given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaGVmIiwicm9sZXMiOlsiS0lUQ0hFTl9DSEVGIl0sImlhdCI6MTYxMzU1MjU3OCwiZXhwIjoxNjEzNTg4NTc4fQ.AbqMQHngdDcObxh8tMkndMkfK34sb8KaP2JoBrSCGu8")
+        given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("chef", Collections.singletonList(Role.KITCHEN_CHEF)))
                .contentType("application/json")
                .body(recipeDto)
                .when()
                .post("/recipes")
                .then()
-               .statusCode(201);
+               .statusCode(201)
+               .body("name", containsString(String.valueOf(recipeDto.get("name"))));
     }
 
     @Test
@@ -51,7 +54,7 @@ public class RecipeCommandControllerIntegrationTest extends BasicClassTest {
         Map<Object, Object> recipeDto = new HashMap<>();
         recipeDto.put("name", "jam");
         recipeDto.put("recipeIngredients", recipeIngredients);
-        given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyIiwicm9sZXMiOlsiSU5WRU5UT1JZX01BTkFHRVIiXSwiaWF0IjoxNjEzNTQ4ODg1LCJleHAiOjE2MTM1ODQ4ODV9.DK31TW3Hitp1NguBPIGZN_pXifnk85e39zPja47qKRc")
+        given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("stuff", Collections.singletonList(Role.KITCHEN_STUFF)))
                .contentType("application/json")
                .body(recipeDto)
                .when()
@@ -64,18 +67,16 @@ public class RecipeCommandControllerIntegrationTest extends BasicClassTest {
     public void whenCreateRecipeWithExistingRecipeName_then400() {
         Map<String, String> ingredient = new HashMap<>();
         ingredient.put("name", "sugar");
-
         Map<Object, Object> recipeIngredient = new HashMap<>();
         recipeIngredient.put("amount", 1.2);
         recipeIngredient.put("ingredient", ingredient);
-
         List<Object> recipeIngredients = new ArrayList<>() {{
             add(recipeIngredient);
         }};
         Map<Object, Object> recipeDto = new HashMap<>();
         recipeDto.put("name", "jam");
         recipeDto.put("recipeIngredients", recipeIngredients);
-        given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaGVmIiwicm9sZXMiOlsiS0lUQ0hFTl9DSEVGIl0sImlhdCI6MTYxMzU1MjU3OCwiZXhwIjoxNjEzNTg4NTc4fQ.AbqMQHngdDcObxh8tMkndMkfK34sb8KaP2JoBrSCGu8")
+        given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("chef", Collections.singletonList(Role.KITCHEN_CHEF)))
                .contentType("application/json")
                .body(recipeDto)
                .when()

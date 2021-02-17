@@ -1,41 +1,52 @@
 package com.example.inventoryservice.controller;
 
 import com.example.inventoryservice.Util.BasicClassTest;
-import org.junit.Test;
+import com.example.inventoryservice.entity.Role;
+import com.example.inventoryservice.security.jwt.JwtTokenProvider;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 import static com.jayway.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.equalTo;
 
 public class IngredientCommandControllerIntegrationTest extends BasicClassTest {
+
+    @Autowired
+    private JwtTokenProvider jwtTokenProvider;
 
     @Test
     public void whenCreateIngredientWithFreshToken_then201() {
         Map<Object, Object> ingredientDto = new HashMap<>();
-        ingredientDto.put("id", 0);
         ingredientDto.put("name", "peppers");
         ingredientDto.put("amount", 1);
         ingredientDto.put("measureUnit", "g");
-        ingredientDto.put("price", 12.3);
-        given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyIiwicm9sZXMiOlsiSU5WRU5UT1JZX01BTkFHRVIiXSwiaWF0IjoxNjEzNTQ4ODg1LCJleHAiOjE2MTM1ODQ4ODV9.DK31TW3Hitp1NguBPIGZN_pXifnk85e39zPja47qKRc")
+        ingredientDto.put("price", 12.3f);
+        given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("manager", Collections.singletonList(Role.INVENTORY_MANAGER)))
                .contentType("application/json")
                .body(ingredientDto)
                .when()
                .post("/ingredients")
                .then()
-               .statusCode(201);
+               .statusCode(201)
+               .body("name", containsString(String.valueOf(ingredientDto.get("name"))))
+               .body("amount", equalTo(ingredientDto.get("amount")))
+               .body("measureUnit", containsString(String.valueOf(ingredientDto.get("measureUnit"))))
+               .body("price", equalTo(ingredientDto.get("price")));
     }
 
     @Test
     public void whenCreateIngredientWithFreshTokenOtherRole_then403() {
         Map<Object, Object> ingredientDto = new HashMap<>();
-        ingredientDto.put("id", 0);
         ingredientDto.put("name", "pepper");
         ingredientDto.put("amount", 1);
         ingredientDto.put("measureUnit", "g");
-        ingredientDto.put("price", 12.3);
-        given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaGVmIiwicm9sZXMiOlsiS0lUQ0hFTl9DSEVGIl0sImlhdCI6MTYxMzU1MDYzNywiZXhwIjoxNjEzNTg2NjM3fQ.InHBnQh-EvT9U2Dk3IQIKOf29lWQkM7eAN220bUVHfc")
+        ingredientDto.put("price", 12.3f);
+        given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("stuff", Collections.singletonList(Role.KITCHEN_STUFF)))
                .contentType("application/json")
                .body(ingredientDto)
                .when()
@@ -51,8 +62,8 @@ public class IngredientCommandControllerIntegrationTest extends BasicClassTest {
         ingredientDto.put("name", "sugar");
         ingredientDto.put("amount", 1);
         ingredientDto.put("measureUnit", "g");
-        ingredientDto.put("price", 12.3);
-        given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyIiwicm9sZXMiOlsiSU5WRU5UT1JZX01BTkFHRVIiXSwiaWF0IjoxNjEzNTUwODUzLCJleHAiOjE2MTM1ODY4NTN9.rmRVKq7naP8Gy6L7THSclGPKR9F6OOptcFQlARnPcGY")
+        ingredientDto.put("price", 12.3f);
+        given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("manager", Collections.singletonList(Role.INVENTORY_MANAGER)))
                .contentType("application/json")
                .body(ingredientDto)
                .when()
@@ -69,7 +80,7 @@ public class IngredientCommandControllerIntegrationTest extends BasicClassTest {
         ingredientDto.put("amount", 1);
         ingredientDto.put("measureUnit", "g");
         ingredientDto.put("price", 0);
-        given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyIiwicm9sZXMiOlsiSU5WRU5UT1JZX01BTkFHRVIiXSwiaWF0IjoxNjEzNTUwODUzLCJleHAiOjE2MTM1ODY4NTN9.rmRVKq7naP8Gy6L7THSclGPKR9F6OOptcFQlARnPcGY")
+        given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("manager", Collections.singletonList(Role.INVENTORY_MANAGER)))
                .contentType("application/json")
                .body(ingredientDto)
                .when()
@@ -86,7 +97,7 @@ public class IngredientCommandControllerIntegrationTest extends BasicClassTest {
         ingredientDto.put("amount", 1);
         ingredientDto.put("measureUnit", "g");
         ingredientDto.put("price", 1);
-        given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyIiwicm9sZXMiOlsiSU5WRU5UT1JZX01BTkFHRVIiXSwiaWF0IjoxNjEzNTUwODUzLCJleHAiOjE2MTM1ODY4NTN9.rmRVKq7naP8Gy6L7THSclGPKR9F6OOptcFQlARnPcGY")
+        given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("manager", Collections.singletonList(Role.INVENTORY_MANAGER)))
                .contentType("application/json")
                .body(ingredientDto)
                .when()
@@ -100,13 +111,14 @@ public class IngredientCommandControllerIntegrationTest extends BasicClassTest {
         Map<Object, Object> ingredientUpdateAmountDto = new HashMap<>();
         ingredientUpdateAmountDto.put("name", "sugar");
         ingredientUpdateAmountDto.put("amount", 1);
-        given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyIiwicm9sZXMiOlsiSU5WRU5UT1JZX01BTkFHRVIiXSwiaWF0IjoxNjEzNTUwODUzLCJleHAiOjE2MTM1ODY4NTN9.rmRVKq7naP8Gy6L7THSclGPKR9F6OOptcFQlARnPcGY")
+        given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("manager", Collections.singletonList(Role.INVENTORY_MANAGER)))
                .contentType("application/json")
                .body(ingredientUpdateAmountDto)
                .when()
                .patch("/ingredients/amount")
                .then()
-               .statusCode(200);
+               .statusCode(200)
+               .body("name", containsString(String.valueOf(ingredientUpdateAmountDto.get("name"))));
     }
 
     @Test
@@ -114,7 +126,7 @@ public class IngredientCommandControllerIntegrationTest extends BasicClassTest {
         Map<Object, Object> ingredientUpdateAmountDto = new HashMap<>();
         ingredientUpdateAmountDto.put("name", "cookies");
         ingredientUpdateAmountDto.put("amount", 1);
-        given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyIiwicm9sZXMiOlsiSU5WRU5UT1JZX01BTkFHRVIiXSwiaWF0IjoxNjEzNTUwODUzLCJleHAiOjE2MTM1ODY4NTN9.rmRVKq7naP8Gy6L7THSclGPKR9F6OOptcFQlARnPcGY")
+        given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("manager", Collections.singletonList(Role.INVENTORY_MANAGER)))
                .contentType("application/json")
                .body(ingredientUpdateAmountDto)
                .when()
@@ -128,7 +140,7 @@ public class IngredientCommandControllerIntegrationTest extends BasicClassTest {
         Map<Object, Object> ingredientUpdateAmountDto = new HashMap<>();
         ingredientUpdateAmountDto.put("name", "cookies");
         ingredientUpdateAmountDto.put("amount", 0);
-        given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyIiwicm9sZXMiOlsiSU5WRU5UT1JZX01BTkFHRVIiXSwiaWF0IjoxNjEzNTUwODUzLCJleHAiOjE2MTM1ODY4NTN9.rmRVKq7naP8Gy6L7THSclGPKR9F6OOptcFQlARnPcGY")
+        given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("manager", Collections.singletonList(Role.INVENTORY_MANAGER)))
                .contentType("application/json")
                .body(ingredientUpdateAmountDto)
                .when()
@@ -142,13 +154,14 @@ public class IngredientCommandControllerIntegrationTest extends BasicClassTest {
         Map<Object, Object> ingredientUpdatePriceDto = new HashMap<>();
         ingredientUpdatePriceDto.put("name", "sugar");
         ingredientUpdatePriceDto.put("price", 1);
-        given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyIiwicm9sZXMiOlsiSU5WRU5UT1JZX01BTkFHRVIiXSwiaWF0IjoxNjEzNTUwODUzLCJleHAiOjE2MTM1ODY4NTN9.rmRVKq7naP8Gy6L7THSclGPKR9F6OOptcFQlARnPcGY")
+        given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("manager", Collections.singletonList(Role.INVENTORY_MANAGER)))
                .contentType("application/json")
                .body(ingredientUpdatePriceDto)
                .when()
                .patch("/ingredients/price")
                .then()
-               .statusCode(200);
+               .statusCode(200)
+               .body("name", containsString(String.valueOf(ingredientUpdatePriceDto.get("name"))));
     }
 
     @Test
@@ -156,7 +169,7 @@ public class IngredientCommandControllerIntegrationTest extends BasicClassTest {
         Map<Object, Object> ingredientUpdatePriceDto = new HashMap<>();
         ingredientUpdatePriceDto.put("name", "cookies");
         ingredientUpdatePriceDto.put("price", 1);
-        given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyIiwicm9sZXMiOlsiSU5WRU5UT1JZX01BTkFHRVIiXSwiaWF0IjoxNjEzNTUwODUzLCJleHAiOjE2MTM1ODY4NTN9.rmRVKq7naP8Gy6L7THSclGPKR9F6OOptcFQlARnPcGY")
+        given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("manager", Collections.singletonList(Role.INVENTORY_MANAGER)))
                .contentType("application/json")
                .body(ingredientUpdatePriceDto)
                .when()
@@ -170,7 +183,7 @@ public class IngredientCommandControllerIntegrationTest extends BasicClassTest {
         Map<Object, Object> ingredientUpdatePriceDto = new HashMap<>();
         ingredientUpdatePriceDto.put("name", "cookies");
         ingredientUpdatePriceDto.put("price", 0);
-        given().header("Authorization", "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyIiwicm9sZXMiOlsiSU5WRU5UT1JZX01BTkFHRVIiXSwiaWF0IjoxNjEzNTUwODUzLCJleHAiOjE2MTM1ODY4NTN9.rmRVKq7naP8Gy6L7THSclGPKR9F6OOptcFQlARnPcGY")
+        given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("manager", Collections.singletonList(Role.INVENTORY_MANAGER)))
                .contentType("application/json")
                .body(ingredientUpdatePriceDto)
                .when()
