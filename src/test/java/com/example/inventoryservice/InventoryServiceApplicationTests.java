@@ -3,11 +3,14 @@ package com.example.inventoryservice;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class InventoryServiceApplicationTests {
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT;
 
-	@Test
-	void contextLoads() {
-	}
+
+@SpringBootTest(webEnvironment = DEFINED_PORT)
+public class InventoryServiceApplicationTests {
+
+    @Test
+    public void contextLoads() {
+    }
 
 }

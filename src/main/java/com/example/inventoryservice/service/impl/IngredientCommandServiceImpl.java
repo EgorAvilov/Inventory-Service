@@ -77,7 +77,7 @@ public class IngredientCommandServiceImpl implements IngredientCommandService {
         Ingredient persistIngredient = ingredientRepository.findByName(ingredient.getName())
                                                            .orElseThrow(() -> new NoItemException("No such ingredient"));
         BigDecimal persistPrice = persistIngredient.getPrice();
-        persistIngredient.setPrice(persistPrice.add(ingredient.getAmount()));
+        persistIngredient.setPrice(persistPrice.add(ingredient.getPrice()));
         persistIngredient = ingredientRepository.save(persistIngredient);
         return ingredientConverter.entityToDto(persistIngredient);
     }
