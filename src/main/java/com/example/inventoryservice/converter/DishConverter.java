@@ -1,5 +1,6 @@
 package com.example.inventoryservice.converter;
 
+import com.example.inventoryservice.dto.DishCreateDto;
 import com.example.inventoryservice.dto.DishDto;
 import com.example.inventoryservice.entity.Dish;
 import org.modelmapper.ModelMapper;
@@ -31,4 +32,10 @@ public class DishConverter {
                        .map(this::dtoToEntity)
                        .collect(Collectors.toList());
     }
+
+    public Dish dtoToEntity(DishCreateDto dishDto) {
+        ModelMapper mapper = new ModelMapper();
+        return mapper.map(dishDto, Dish.class);
+    }
+
 }

@@ -2,6 +2,7 @@ package com.example.inventoryservice.service.impl;
 
 import com.example.inventoryservice.converter.DishConverter;
 import com.example.inventoryservice.converter.RestaurantConverter;
+import com.example.inventoryservice.dto.DishCreateDto;
 import com.example.inventoryservice.dto.DishDto;
 import com.example.inventoryservice.dto.RestaurantDto;
 import com.example.inventoryservice.dto.UserDto;
@@ -25,10 +26,14 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static java.math.BigDecimal.ROUND_HALF_UP;
 
 @Service
 public class DishCommandServiceImpl implements DishCommandService {
@@ -59,7 +64,7 @@ public class DishCommandServiceImpl implements DishCommandService {
     @Override
     @Transactional(isolation = Isolation.REPEATABLE_READ)
     @Retryable(value = {SQLException.class})
-    public DishDto create(DishDto dishDto) {
+    public DishDto create(DishCreateDto dishDto) {
         LOGGER.info("Create dish");
         UserDto userDto = userService.getCurrentUser();
         RestaurantDto restaurantDto = userDto.getRestaurant();
@@ -68,38 +73,57 @@ public class DishCommandServiceImpl implements DishCommandService {
         dish.setRestaurant(restaurant);
         if (!recipeExists(dish)) {
             LOGGER.error("No such recipe {}", dish.getRecipe()
-                                                  .getName());
+                    .getName());
             throw new NoItemException("No such recipe");
         }
         cookingDish(dish);
+        calculatePrice(dish);
         Dish persistDish = dishRepository.save(dish);
         return dishConverter.entityToDto(persistDish);
+    }
+
+    public void calculatePrice(Dish dish) {
+        LOGGER.info("Calculating price of dish {}", dish.getRecipe()
+                .getName());
+        Recipe recipe = recipeRepository.findByName(dish.getRecipe()
+                .getName());
+        BigDecimal percent = recipe.getPercent();
+        BigDecimal totalPrice = BigDecimal.valueOf(0);
+        List<Long> recipeIngredientIds = recipe.getRecipeIngredients()
+                .stream()
+                .map(RecipeIngredient::getId)
+                .collect(Collectors.toList());
+        List<RecipeIngredient> requiredRecipeIngredients = recipeIngredientRepository.findAllByIdIn(recipeIngredientIds);
+        for (RecipeIngredient requiredRecipeIngredient : requiredRecipeIngredients) {
+            totalPrice = totalPrice.add(requiredRecipeIngredient.getAmount().multiply(requiredRecipeIngredient.getIngredient().getPrice()));
+        }
+        dish.setPrice(totalPrice.multiply(percent).setScale(2, RoundingMode.HALF_UP));
     }
 
     @Override
     public void cookingDish(Dish dish) {
         LOGGER.info("Cooking dish {}", dish.getRecipe()
-                                           .getName());
+                .getName());
         Recipe recipe = recipeRepository.findByName(dish.getRecipe()
-                                                        .getName());
+                .getName());
         dish.setRecipe(recipe);
         List<Long> recipeIngredientIds = recipe.getRecipeIngredients()
-                                               .stream()
-                                               .map(RecipeIngredient::getId)
-                                               .collect(Collectors.toList());
+                .stream()
+                .map(RecipeIngredient::getId)
+                .collect(Collectors.toList());
         List<String> notEnoughIngredientsList = new ArrayList<>();
         List<RecipeIngredient> requiredRecipeIngredients = recipeIngredientRepository.findAllByIdIn(recipeIngredientIds);
         for (RecipeIngredient requiredRecipeIngredient : requiredRecipeIngredients) {
             if (requiredRecipeIngredient.getAmount()
-                                        .compareTo(requiredRecipeIngredient.getIngredient()
-                                                                           .getAmount()) > 0) {
+                    .compareTo(requiredRecipeIngredient.getIngredient()
+                            .getAmount()) > 0) {
                 notEnoughIngredientsList.add(requiredRecipeIngredient.getIngredient()
-                                                                     .getName());
+                        .getName());
             }
             BigDecimal existingAmount = requiredRecipeIngredient.getIngredient()
-                                                                .getAmount();
+                    .getAmount();
             requiredRecipeIngredient.getIngredient()
-                                    .setAmount(existingAmount.subtract(requiredRecipeIngredient.getAmount()));
+                    .setAmount(existingAmount.subtract(requiredRecipeIngredient.getAmount()));
         }
         if (notEnoughIngredientsList.size() != 0) {
             LOGGER.error("Not enough ingredients {}", notEnoughIngredientsList.toString());
@@ -110,10 +134,10 @@ public class DishCommandServiceImpl implements DishCommandService {
 
     public boolean recipeExists(Dish dish) {
         LOGGER.info("Check fro existing recipe {}", dish.getRecipe()
-                                                        .getName());
+                .getName());
         return recipeRepository.countAllByNameAndRestaurantId(dish.getRecipe()
-                                                                  .getName(),
+                        .getName(),
                 dish.getRestaurant()
-                    .getId()) != 0;
+                        .getId()) != 0;
     }
 }

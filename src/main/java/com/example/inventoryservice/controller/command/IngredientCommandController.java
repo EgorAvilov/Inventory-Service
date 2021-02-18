@@ -2,6 +2,7 @@ package com.example.inventoryservice.controller.command;
 
 import com.example.inventoryservice.dto.IngredientDto;
 import com.example.inventoryservice.dto.IngredientUpdateAmountDto;
+import com.example.inventoryservice.dto.IngredientUpdateDto;
 import com.example.inventoryservice.dto.IngredientUpdatePriceDto;
 import com.example.inventoryservice.service.IngredientCommandService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,9 @@ public class IngredientCommandController {
     @PatchMapping(value = "/price")
     public ResponseEntity updatePrice(@RequestBody @Valid IngredientUpdatePriceDto ingredientDto) {
         return new ResponseEntity<>(ingredientService.updatePrice(ingredientDto), HttpStatus.OK);
+    }
+    @PatchMapping
+    public ResponseEntity update(@RequestBody @Valid IngredientUpdateDto ingredientDto) {
+        return new ResponseEntity<>(ingredientService.update(ingredientDto), HttpStatus.OK);
     }
 }

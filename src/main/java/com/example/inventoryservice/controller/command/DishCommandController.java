@@ -1,5 +1,6 @@
 package com.example.inventoryservice.controller.command;
 
+import com.example.inventoryservice.dto.DishCreateDto;
 import com.example.inventoryservice.dto.DishDto;
 import com.example.inventoryservice.service.DishCommandService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class DishCommandController {
     }
 
     @PostMapping
-    public ResponseEntity create(@RequestBody @Valid DishDto dishDto) {
+    public ResponseEntity create(@RequestBody @Valid DishCreateDto dishDto) {
         return new ResponseEntity<>(dishService.create(dishDto), HttpStatus.CREATED);
     }
 }

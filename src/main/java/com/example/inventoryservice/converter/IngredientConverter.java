@@ -2,6 +2,7 @@ package com.example.inventoryservice.converter;
 
 import com.example.inventoryservice.dto.IngredientDto;
 import com.example.inventoryservice.dto.IngredientUpdateAmountDto;
+import com.example.inventoryservice.dto.IngredientUpdateDto;
 import com.example.inventoryservice.dto.IngredientUpdatePriceDto;
 import com.example.inventoryservice.entity.Ingredient;
 import org.modelmapper.ModelMapper;
@@ -40,6 +41,11 @@ public class IngredientConverter {
     }
 
     public Ingredient dtoToEntity(IngredientUpdatePriceDto ingredientDto) {
+        ModelMapper mapper = new ModelMapper();
+        return mapper.map(ingredientDto, Ingredient.class);
+    }
+
+    public Ingredient dtoToEntity(IngredientUpdateDto ingredientDto) {
         ModelMapper mapper = new ModelMapper();
         return mapper.map(ingredientDto, Ingredient.class);
     }
