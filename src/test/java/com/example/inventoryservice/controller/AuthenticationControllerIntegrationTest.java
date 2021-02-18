@@ -1,6 +1,6 @@
 package com.example.inventoryservice.controller;
 
-import com.example.inventoryservice.Util.BasicClassTest;
+import com.example.inventoryservice.util.BasicClassTest;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;

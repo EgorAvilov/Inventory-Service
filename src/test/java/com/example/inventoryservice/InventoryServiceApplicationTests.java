@@ -7,8 +7,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 
 
 @SpringBootTest(webEnvironment = DEFINED_PORT)
-public
-class InventoryServiceApplicationTests {
+public class InventoryServiceApplicationTests {
 
     @Test
     public void contextLoads() {

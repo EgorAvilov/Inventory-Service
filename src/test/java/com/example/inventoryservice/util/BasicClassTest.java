@@ -1,4 +1,4 @@
-package com.example.inventoryservice.Util;
+package com.example.inventoryservice.util;
 
 import com.jayway.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;

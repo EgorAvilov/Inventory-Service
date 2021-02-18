@@ -1,7 +1,7 @@
 package com.example.inventoryservice.controller;
 
 
-import com.example.inventoryservice.Util.BasicClassTest;
+import com.example.inventoryservice.util.BasicClassTest;
 import com.example.inventoryservice.entity.Role;
 import com.example.inventoryservice.security.jwt.JwtTokenProvider;
 import org.junit.jupiter.api.Test;
