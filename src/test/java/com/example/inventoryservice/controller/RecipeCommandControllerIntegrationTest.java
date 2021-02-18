@@ -74,7 +74,7 @@ public class RecipeCommandControllerIntegrationTest extends BasicClassTest {
             add(recipeIngredient);
         }};
         Map<Object, Object> recipeDto = new HashMap<>();
-        recipeDto.put("name", "jam");
+        recipeDto.put("name", "cake");
         recipeDto.put("recipeIngredients", recipeIngredients);
         given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("chef", Collections.singletonList(Role.KITCHEN_CHEF)))
                .contentType("application/json")
