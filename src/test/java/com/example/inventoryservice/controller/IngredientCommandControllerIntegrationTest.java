@@ -22,7 +22,7 @@ public class IngredientCommandControllerIntegrationTest extends BasicClassTest {
     @Test
     public void whenCreateIngredientWithFreshToken_then201() {
         Map<Object, Object> ingredientDto = new HashMap<>();
-        ingredientDto.put("name", "peppers");
+        ingredientDto.put("name", "pepper");
         ingredientDto.put("amount", 1);
         ingredientDto.put("measureUnit", "g");
         ingredientDto.put("price", 12.3f);
