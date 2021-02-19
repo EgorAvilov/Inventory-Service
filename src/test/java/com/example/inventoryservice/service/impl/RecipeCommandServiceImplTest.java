@@ -9,7 +9,6 @@ import com.example.inventoryservice.entity.*;
 import com.example.inventoryservice.exception.ServiceException;
 import com.example.inventoryservice.repository.IngredientRepository;
 import com.example.inventoryservice.repository.RecipeRepository;
-import com.example.inventoryservice.service.UserCommandService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -67,14 +66,6 @@ public class RecipeCommandServiceImplTest {
                 .measureUnit("measureUnit")
                 .name("name")
                 .restaurant(restaurant)
-                .price(BigDecimal.valueOf(2))
-                .build();
-        IngredientDto ingredientDto = IngredientDto
-                .builder()
-                .id(1L)
-                .amount(BigDecimal.valueOf(2))
-                .measureUnit("measureUnit")
-                .name("name")
                 .price(BigDecimal.valueOf(2))
                 .build();
         IngredientRecipeIngredientDto ingredientRecipeIngredientDto = IngredientRecipeIngredientDto

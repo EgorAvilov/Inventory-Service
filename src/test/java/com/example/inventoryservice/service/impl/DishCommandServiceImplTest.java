@@ -1,6 +1,3 @@
-/*
-
-
 package com.example.inventoryservice.service.impl;
 
 import com.example.inventoryservice.converter.DishConverter;
@@ -144,7 +141,7 @@ public class DishCommandServiceImplTest {
         when(dishConverter.dtoToEntity(dishDto)).thenReturn(dish);
         when(recipeRepository.countAllByNameAndRestaurantId(recipe.getName(), restaurant.getId())).thenReturn(1L);
         when(recipeRepository.findByName(dish.getRecipe()
-                .getName())).thenReturn(recipe);
+                .getName())).thenReturn(java.util.Optional.ofNullable(recipe));
         when(recipeIngredientRepository.findAllByIdIn(recipeIngredientIds)).thenReturn(Collections.singletonList(recipeIngredient));
         dishService.create(dishDto);
 
@@ -159,7 +156,7 @@ public class DishCommandServiceImplTest {
         when(dishConverter.dtoToEntity(dishDto)).thenReturn(dish);
         when(recipeRepository.countAllByNameAndRestaurantId(recipe.getName(), restaurant.getId())).thenReturn(1L);
         when(recipeRepository.findByName(dish.getRecipe()
-                .getName())).thenReturn(recipe);
+                .getName())).thenReturn(java.util.Optional.ofNullable(recipe));
         when(recipeIngredientRepository.findAllByIdIn(recipeIngredientIds)).thenReturn(Collections.singletonList(recipeIngredient));
         dishService.create(dishDto);
         //then
@@ -168,4 +165,4 @@ public class DishCommandServiceImplTest {
     }
 }
 
-*/
+
