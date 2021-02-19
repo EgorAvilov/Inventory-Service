@@ -1,8 +1,8 @@
 package com.example.inventoryservice.controller;
 
-import com.example.inventoryservice.util.BasicClassTest;
 import com.example.inventoryservice.entity.Role;
 import com.example.inventoryservice.security.jwt.JwtTokenProvider;
+import com.example.inventoryservice.util.BasicClassTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -10,6 +10,7 @@ import java.util.*;
 
 import static com.jayway.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.equalTo;
 
 public class RecipeCommandControllerIntegrationTest extends BasicClassTest {
 
@@ -22,21 +23,24 @@ public class RecipeCommandControllerIntegrationTest extends BasicClassTest {
         ingredient.put("name", "sugar");
         Map<Object, Object> recipeIngredient = new HashMap<>();
         recipeIngredient.put("amount", 1.2);
+
         recipeIngredient.put("ingredient", ingredient);
         List<Object> recipeIngredients = new ArrayList<>() {{
             add(recipeIngredient);
         }};
         Map<Object, Object> recipeDto = new HashMap<>();
-        recipeDto.put("name", "jam");
+        recipeDto.put("name", "jam2");
+        recipeDto.put("percent", 11.2f);
         recipeDto.put("recipeIngredients", recipeIngredients);
         given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("chef", Collections.singletonList(Role.KITCHEN_CHEF)))
-               .contentType("application/json")
-               .body(recipeDto)
-               .when()
-               .post("/recipes")
-               .then()
-               .statusCode(201)
-               .body("name", containsString(String.valueOf(recipeDto.get("name"))));
+                .contentType("application/json")
+                .body(recipeDto)
+                .when()
+                .post("/recipes")
+                .then()
+                .statusCode(201)
+                .body("name", containsString(String.valueOf(recipeDto.get("name"))))
+                .body("percent", equalTo(recipeDto.get("percent")));
     }
 
     @Test
@@ -55,12 +59,12 @@ public class RecipeCommandControllerIntegrationTest extends BasicClassTest {
         recipeDto.put("name", "jam");
         recipeDto.put("recipeIngredients", recipeIngredients);
         given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("stuff", Collections.singletonList(Role.KITCHEN_STUFF)))
-               .contentType("application/json")
-               .body(recipeDto)
-               .when()
-               .post("/recipes")
-               .then()
-               .statusCode(403);
+                .contentType("application/json")
+                .body(recipeDto)
+                .when()
+                .post("/recipes")
+                .then()
+                .statusCode(403);
     }
 
     @Test
@@ -77,11 +81,11 @@ public class RecipeCommandControllerIntegrationTest extends BasicClassTest {
         recipeDto.put("name", "cake");
         recipeDto.put("recipeIngredients", recipeIngredients);
         given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("chef", Collections.singletonList(Role.KITCHEN_CHEF)))
-               .contentType("application/json")
-               .body(recipeDto)
-               .when()
-               .post("/recipes")
-               .then()
-               .statusCode(400);
+                .contentType("application/json")
+                .body(recipeDto)
+                .when()
+                .post("/recipes")
+                .then()
+                .statusCode(400);
     }
 }

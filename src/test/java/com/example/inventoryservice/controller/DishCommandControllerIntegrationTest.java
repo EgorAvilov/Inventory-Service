@@ -25,7 +25,6 @@ public class DishCommandControllerIntegrationTest extends BasicClassTest {
         Map<String, String> recipe = new HashMap<>();
         recipe.put("name", "cake");
         Map<Object, Object> dishDto = new HashMap<>();
-        dishDto.put("price", 12);
         dishDto.put("recipe", recipe);
         given().header(HEADER, BEARER_PREFIX + jwtTokenProvider.createToken("stuff", Collections.singletonList(Role.KITCHEN_STUFF)))
                .contentType("application/json")
@@ -34,7 +33,6 @@ public class DishCommandControllerIntegrationTest extends BasicClassTest {
                .post("/dishes")
                .then()
                .statusCode(201)
-               .body("price", equalTo(12))
                .body("id", notNullValue())
                .body("recipe.name", equalTo("cake"));
 

@@ -1,4 +1,4 @@
-/*
+
 
 package com.example.inventoryservice.service.impl;
 
@@ -46,20 +46,20 @@ public class RecipeCommandServiceImplTest {
 
     private UserDto userDto;
     private Recipe recipe;
-    private RecipeDto recipeDto;
+    private RecipeCreateDto recipeCreateDto;
     private Restaurant restaurant;
     private RestaurantDto restaurantDto;
 
     @Before
     public void setUp() {
         restaurantDto = RestaurantDto.builder()
-                                     .id(1L)
-                                     .name("restaurant")
-                                     .build();
+                .id(1L)
+                .name("restaurant")
+                .build();
         restaurant = Restaurant.builder()
-                               .id(1L)
-                               .name("restaurant")
-                               .build();
+                .id(1L)
+                .name("restaurant")
+                .build();
         Ingredient ingredient = Ingredient
                 .builder()
                 .id(1L)
@@ -82,33 +82,33 @@ public class RecipeCommandServiceImplTest {
                 .name("ingredient")
                 .build();
         RecipeIngredient recipeIngredient = RecipeIngredient.builder()
-                                                            .id(1L)
-                                                            .ingredient(ingredient)
-                                                            .amount(BigDecimal.valueOf(2))
-                                                            .build();
+                .id(1L)
+                .ingredient(ingredient)
+                .amount(BigDecimal.valueOf(2))
+                .build();
         RecipeIngredientDto recipeIngredientDto = RecipeIngredientDto.builder()
-                                                                     .ingredient(ingredientRecipeIngredientDto)
-                                                                     .amount(BigDecimal.valueOf(2))
-                                                                     .build();
+                .ingredient(ingredientRecipeIngredientDto)
+                .amount(BigDecimal.valueOf(2))
+                .build();
         recipe = Recipe.builder()
-                       .recipeIngredients(Collections.singletonList(recipeIngredient))
-                       .restaurant(restaurant)
-                       .name("name")
-                       .id(1L)
-                       .build();
-        recipeDto = RecipeDto.builder()
-                             .recipeIngredients(Collections.singletonList(recipeIngredientDto))
-                             .name("name")
-                             .id(1L)
-                             .build();
+                .recipeIngredients(Collections.singletonList(recipeIngredient))
+                .restaurant(restaurant)
+                .name("name")
+                .id(1L)
+                .build();
+        recipeCreateDto = RecipeCreateDto.builder()
+                .recipeIngredients(Collections.singletonList(recipeIngredientDto))
+                .name("name")
+                .percent(BigDecimal.valueOf(23))
+                .build();
         userDto = UserDto.builder()
-                         .firstName("firstName")
-                         .lastName("lastName")
-                         .username("username")
-                         .password("password")
-                         .userRole(Collections.singletonList(Role.KITCHEN_STUFF))
-                         .restaurant(restaurantDto)
-                         .build();
+                .firstName("firstName")
+                .lastName("lastName")
+                .username("username")
+                .password("password")
+                .userRole(Collections.singletonList(Role.KITCHEN_STUFF))
+                .restaurant(restaurantDto)
+                .build();
     }
 
     @Test(expected = ServiceException.class)
@@ -117,10 +117,10 @@ public class RecipeCommandServiceImplTest {
         //when
         when(userService.getCurrentUser()).thenReturn(userDto);
         when(restaurantConverter.dtoToEntity(restaurantDto)).thenReturn(restaurant);
-        when(recipeConverter.dtoToEntity(recipeDto)).thenReturn(recipe);
+        when(recipeConverter.dtoToEntity(recipeCreateDto)).thenReturn(recipe);
         when(recipeRepository.countAllByNameAndRestaurantId(recipe.getName(), recipe.getRestaurant()
-                                                                                    .getId())).thenReturn(1L);
-        recipeService.create(recipeDto);
+                .getId())).thenReturn(1L);
+        recipeService.create(recipeCreateDto);
     }
 
     @Test
@@ -129,15 +129,15 @@ public class RecipeCommandServiceImplTest {
         //when
         when(userService.getCurrentUser()).thenReturn(userDto);
         when(restaurantConverter.dtoToEntity(restaurantDto)).thenReturn(restaurant);
-        when(recipeConverter.dtoToEntity(recipeDto)).thenReturn(recipe);
+        when(recipeConverter.dtoToEntity(recipeCreateDto)).thenReturn(recipe);
         when(recipeRepository.countAllByNameAndRestaurantId(recipe.getName(), recipe.getRestaurant()
-                                                                                    .getId())).thenReturn(0L);
+                .getId())).thenReturn(0L);
         when(recipeRepository.save(recipe)).thenReturn(recipe);
-        recipeService.create(recipeDto);
+        recipeService.create(recipeCreateDto);
         //then
         verify(recipeConverter).entityToDto(recipe);
         assertThat(recipe).extracting(Recipe::getName)
-                          .isEqualTo(recipeDto.getName());
+                .isEqualTo(recipeCreateDto.getName());
     }
 }
-*/
+

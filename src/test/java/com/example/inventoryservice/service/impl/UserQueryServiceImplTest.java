@@ -20,51 +20,59 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import java.util.Collections;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
+import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserQueryServiceImplTest {
+
     @InjectMocks
     UserQueryServiceImpl userService;
+
     @Mock
     private UserConverter userConverter;
+
     @Mock
     private UserRepository userRepository;
-    private UserDto userDto;
-    private User user;
+
     @Mock
     private Authentication authentication;
+
     @Mock
     private SecurityContext securityContext;
+    private UserDto userDto;
+    private User user;
+
+
 
     @Before
     public void setUp() {
         RestaurantDto restaurantDto = RestaurantDto.builder()
-                                                   .id(1L)
-                                                   .name("restaurant")
-                                                   .build();
+                .id(1L)
+                .name("restaurant")
+                .build();
 
         Restaurant restaurant = Restaurant.builder()
-                                          .id(1L)
-                                          .name("restaurant")
-                                          .build();
+                .id(1L)
+                .name("restaurant")
+                .build();
 
         userDto = UserDto.builder()
-                         .firstName("firstName")
-                         .lastName("lastName")
-                         .username("username")
-                         .password("password")
-                         .userRole(Collections.singletonList(Role.KITCHEN_STUFF))
-                         .restaurant(restaurantDto)
-                         .build();
+                .firstName("firstName")
+                .lastName("lastName")
+                .username("username")
+                .password("password")
+                .userRole(Collections.singletonList(Role.KITCHEN_STUFF))
+                .restaurant(restaurantDto)
+                .build();
         user = User.builder()
-                   .firstName("firstName")
-                   .lastName("lastName")
-                   .username("username")
-                   .password("password")
-                   .userRole(Collections.singletonList(Role.KITCHEN_STUFF))
-                   .restaurant(restaurant)
-                   .build();
+                .firstName("firstName")
+                .lastName("lastName")
+                .username("username")
+                .password("password")
+                .userRole(Collections.singletonList(Role.KITCHEN_STUFF))
+                .restaurant(restaurant)
+                .build();
 
     }
 
@@ -73,7 +81,7 @@ public class UserQueryServiceImplTest {
         //given
         String username = "username";
         //when
-        when(userRepository.findByUsername(username)).thenReturn(user);
+        lenient().when(userRepository.findByUsername(username)).thenReturn(user);
         //then
         assertThat(user.getUsername()).isEqualTo(username);
     }
