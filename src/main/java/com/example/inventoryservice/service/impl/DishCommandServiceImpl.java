@@ -133,7 +133,7 @@ public class DishCommandServiceImpl implements DishCommandService {
     }
 
     public boolean recipeExists(Dish dish) {
-        LOGGER.info("Check fro existing recipe {}", dish.getRecipe()
+        LOGGER.info("Check for existing recipe {}", dish.getRecipe()
                 .getName());
         return recipeRepository.countAllByNameAndRestaurantId(dish.getRecipe()
                         .getName(),

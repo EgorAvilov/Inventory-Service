@@ -1,10 +1,13 @@
-/*
+
 
 package com.example.inventoryservice.service.impl;
 
 import com.example.inventoryservice.converter.DishConverter;
 import com.example.inventoryservice.converter.RestaurantConverter;
-import com.example.inventoryservice.dto.*;
+import com.example.inventoryservice.dto.DishCreateDto;
+import com.example.inventoryservice.dto.RecipeDishDto;
+import com.example.inventoryservice.dto.RestaurantDto;
+import com.example.inventoryservice.dto.UserDto;
 import com.example.inventoryservice.entity.*;
 import com.example.inventoryservice.exception.NoItemException;
 import com.example.inventoryservice.exception.ServiceException;
@@ -23,7 +26,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static org.assertj.core.api.Java6Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -52,7 +54,7 @@ public class DishCommandServiceImplTest {
     DishCommandServiceImpl dishService;
 
     private UserDto userDto;
-    private DishDto dishDto;
+    private DishCreateDto dishDto;
     private Restaurant restaurant;
     private RestaurantDto restaurantDto;
     private Recipe recipe;
@@ -64,21 +66,20 @@ public class DishCommandServiceImplTest {
     @Before
     public void setUp() {
         restaurantDto = RestaurantDto.builder()
-                                     .id(1L)
-                                     .name("restaurant")
-                                     .build();
+                .id(1L)
+                .name("restaurant")
+                .build();
 
         RecipeDishDto recipeDishDto = RecipeDishDto.builder()
-                                                   .name("recipe")
-                                                   .build();
-        dishDto = DishDto.builder()
-                         .price(BigDecimal.valueOf(1))
-                         .recipe(recipeDishDto)
-                         .build();
+                .name("recipe")
+                .build();
+        dishDto = DishCreateDto.builder()
+                .recipe(recipeDishDto)
+                .build();
         restaurant = Restaurant.builder()
-                               .id(1L)
-                               .name("restaurant")
-                               .build();
+                .id(1L)
+                .name("restaurant")
+                .build();
         ingredient = Ingredient
                 .builder()
                 .id(1L)
@@ -92,31 +93,31 @@ public class DishCommandServiceImplTest {
             add(1L);
         }};
         recipeIngredient = RecipeIngredient.builder()
-                                           .id(1L)
-                                           .ingredient(ingredient)
-                                           .amount(BigDecimal.valueOf(2))
-                                           .build();
+                .id(1L)
+                .ingredient(ingredient)
+                .amount(BigDecimal.valueOf(2))
+                .build();
 
         recipe = Recipe.builder()
-                       .id(1L)
-                       .name("recipe")
-                       .restaurant(restaurant)
-                       .recipeIngredients(Collections.singletonList(recipeIngredient))
-                       .build();
+                .id(1L)
+                .name("recipe")
+                .restaurant(restaurant)
+                .percent(BigDecimal.valueOf(12))
+                .recipeIngredients(Collections.singletonList(recipeIngredient))
+                .build();
         dish = Dish.builder()
-                   .price(BigDecimal.valueOf(1))
-                   .restaurant(restaurant)
-                   .recipe(recipe)
-                   .id(1L)
-                   .build();
+                .price(BigDecimal.valueOf(1))
+                .restaurant(restaurant)
+                .recipe(recipe)
+                .build();
         userDto = UserDto.builder()
-                         .firstName("firstName")
-                         .lastName("lastName")
-                         .username("username")
-                         .password("password")
-                         .userRole(Collections.singletonList(Role.KITCHEN_STUFF))
-                         .restaurant(restaurantDto)
-                         .build();
+                .firstName("firstName")
+                .lastName("lastName")
+                .username("username")
+                .password("password")
+                .userRole(Collections.singletonList(Role.KITCHEN_STUFF))
+                .restaurant(restaurantDto)
+                .build();
     }
 
     @Test(expected = NoItemException.class)
@@ -142,7 +143,7 @@ public class DishCommandServiceImplTest {
         when(dishConverter.dtoToEntity(dishDto)).thenReturn(dish);
         when(recipeRepository.countAllByNameAndRestaurantId(recipe.getName(), restaurant.getId())).thenReturn(1L);
         when(recipeRepository.findByName(dish.getRecipe()
-                                             .getName())).thenReturn(recipe);
+                .getName())).thenReturn(recipe);
         when(recipeIngredientRepository.findAllByIdIn(recipeIngredientIds)).thenReturn(Collections.singletonList(recipeIngredient));
         dishService.create(dishDto);
 
@@ -157,18 +158,12 @@ public class DishCommandServiceImplTest {
         when(dishConverter.dtoToEntity(dishDto)).thenReturn(dish);
         when(recipeRepository.countAllByNameAndRestaurantId(recipe.getName(), restaurant.getId())).thenReturn(1L);
         when(recipeRepository.findByName(dish.getRecipe()
-                                             .getName())).thenReturn(recipe);
+                .getName())).thenReturn(recipe);
         when(recipeIngredientRepository.findAllByIdIn(recipeIngredientIds)).thenReturn(Collections.singletonList(recipeIngredient));
         dishService.create(dishDto);
         //then
         verify(recipeIngredientRepository).saveAll(Collections.singletonList(recipeIngredient));
         verify(dishRepository).save(dish);
-        assertThat(dish).extracting(Dish::getPrice)
-                        .isEqualTo(dishDto.getPrice());
     }
-
-
-
-
 }
-*/
+
