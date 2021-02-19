@@ -12,7 +12,5 @@ import lombok.NoArgsConstructor;
 @Builder
 public class DishCreateDto {
 
-    private Long id;
-
     private RecipeDishDto recipe;
 }

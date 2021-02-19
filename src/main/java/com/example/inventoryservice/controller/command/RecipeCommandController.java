@@ -1,5 +1,6 @@
 package com.example.inventoryservice.controller.command;
 
+import com.example.inventoryservice.dto.RecipeCreateDto;
 import com.example.inventoryservice.dto.RecipeDto;
 import com.example.inventoryservice.service.RecipeCommandService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class RecipeCommandController {
     }
 
     @PostMapping
-    public ResponseEntity create(@RequestBody @Valid RecipeDto recipeDto) {
+    public ResponseEntity create(@RequestBody @Valid RecipeCreateDto recipeDto) {
         return new ResponseEntity<>(recipeService.create(recipeDto), HttpStatus.CREATED);
     }
 }

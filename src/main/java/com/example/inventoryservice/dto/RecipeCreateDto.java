@@ -17,13 +17,15 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class RecipeDto {
+public class RecipeCreateDto {
 
-    private Long id;
-
+    @NotBlank(message = "Name can't be empty.")
     private String name;
 
+    @NotEmpty(message = "Ingredient list can't be empty")
     private List<RecipeIngredientDto> recipeIngredients = new ArrayList<>();
 
+    @DecimalMin(value = "0.00")
+    @Digits(integer = 15, fraction = 2)
     private BigDecimal percent;
 }

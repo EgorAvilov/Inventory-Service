@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Digits;
 import java.math.BigDecimal;
 
 @Data
@@ -15,9 +16,8 @@ import java.math.BigDecimal;
 @Builder
 public class RecipeIngredientDto {
 
-    private Long id;
-
     @DecimalMin(value = "0.0", inclusive = false, message = "Amount can't be <=0")
+    @Digits(integer = 15, fraction = 2)
     private BigDecimal amount;
 
     private IngredientRecipeIngredientDto ingredient;

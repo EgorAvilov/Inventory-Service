@@ -1,5 +1,6 @@
 package com.example.inventoryservice.converter;
 
+import com.example.inventoryservice.dto.RecipeCreateDto;
 import com.example.inventoryservice.dto.RecipeDto;
 import com.example.inventoryservice.entity.Recipe;
 import org.modelmapper.ModelMapper;
@@ -30,5 +31,10 @@ public class RecipeConverter {
         return recipeDtos.stream()
                          .map(this::dtoToEntity)
                          .collect(Collectors.toList());
+    }
+
+    public Recipe dtoToEntity(RecipeCreateDto recipeDto) {
+        ModelMapper mapper = new ModelMapper();
+        return mapper.map(recipeDto, Recipe.class);
     }
 }

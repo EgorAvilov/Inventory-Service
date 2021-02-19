@@ -2,6 +2,7 @@ package com.example.inventoryservice.service.impl;
 
 import com.example.inventoryservice.converter.RecipeConverter;
 import com.example.inventoryservice.converter.RestaurantConverter;
+import com.example.inventoryservice.dto.RecipeCreateDto;
 import com.example.inventoryservice.dto.RecipeDto;
 import com.example.inventoryservice.dto.RestaurantDto;
 import com.example.inventoryservice.dto.UserDto;
@@ -51,7 +52,7 @@ public class RecipeCommandServiceImpl implements RecipeCommandService {
     @Override
     @Transactional(isolation = Isolation.REPEATABLE_READ)
     @Retryable(value = {SQLException.class})
-    public RecipeDto create(RecipeDto recipeDto) {
+    public RecipeDto create(RecipeCreateDto recipeDto) {
         LOGGER.info("Create recipe");
         UserDto userDto = userService.getCurrentUser();
         RestaurantDto restaurantDto = userDto.getRestaurant();
