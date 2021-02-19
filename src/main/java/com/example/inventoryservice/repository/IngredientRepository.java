@@ -13,7 +13,7 @@ public interface IngredientRepository extends JpaRepository<Ingredient, Long> {
 
     Long countAllByNameAndRestaurantId(String name, Long restaurantId);
 
-    Optional<Ingredient> findByName(String name);
+    Optional<Ingredient> findByNameAndRestaurantId(String name,Long restaurantId);
 
     List<Ingredient> findAllByNameIn(List<String> names);
 }

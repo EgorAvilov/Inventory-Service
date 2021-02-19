@@ -64,7 +64,7 @@ public class IngredientCommandServiceImpl implements IngredientCommandService {
     public IngredientDto updateAmount(IngredientUpdateAmountDto ingredientDto) {
         LOGGER.info("Update ingredient amount");
         Ingredient ingredient = ingredientConverter.dtoToEntity(ingredientDto);
-        Ingredient persistIngredient = ingredientRepository.findByName(ingredient.getName())
+        Ingredient persistIngredient = ingredientRepository.findByNameAndRestaurantId(ingredient.getName(),ingredient.getRestaurant().getId())
                 .orElseThrow(() -> new NoItemException("No such ingredient"));
         BigDecimal persistAmount = persistIngredient.getAmount();
         persistIngredient.setAmount(persistAmount.add(ingredient.getAmount()));
@@ -76,7 +76,7 @@ public class IngredientCommandServiceImpl implements IngredientCommandService {
     public IngredientDto updatePrice(IngredientUpdatePriceDto ingredientDto) {
         LOGGER.info("Update ingredient price");
         Ingredient ingredient = ingredientConverter.dtoToEntity(ingredientDto);
-        Ingredient persistIngredient = ingredientRepository.findByName(ingredient.getName())
+        Ingredient persistIngredient = ingredientRepository.findByNameAndRestaurantId(ingredient.getName(),ingredient.getRestaurant().getId())
                 .orElseThrow(() -> new NoItemException("No such ingredient"));
         BigDecimal persistPrice = persistIngredient.getPrice();
         persistIngredient.setPrice(persistPrice.add(ingredient.getPrice()));
@@ -88,7 +88,7 @@ public class IngredientCommandServiceImpl implements IngredientCommandService {
     public IngredientDto update(IngredientUpdateDto ingredientDto) {
         LOGGER.info("Update ingredient");
         Ingredient ingredient = ingredientConverter.dtoToEntity(ingredientDto);
-        Ingredient persistIngredient = ingredientRepository.findByName(ingredient.getName())
+        Ingredient persistIngredient = ingredientRepository.findByNameAndRestaurantId(ingredient.getName(),ingredient.getRestaurant().getId())
                 .orElseThrow(() -> new NoItemException("No such ingredient"));
         BigDecimal weightedPrice = weightPrice(ingredient, persistIngredient);
         BigDecimal totalAmount = persistIngredient.getAmount().add(ingredient.getAmount());
