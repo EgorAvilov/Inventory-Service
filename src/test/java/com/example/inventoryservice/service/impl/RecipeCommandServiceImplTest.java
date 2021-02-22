@@ -253,5 +253,17 @@ public class RecipeCommandServiceImplTest {
                 .getId())).thenReturn(Optional.ofNullable(persistRecipe));
         recipeService.update(recipeUpdateDto);
     }
+    @Test
+    public void update() {
+        //given
+        persistRecipe.getRecipeIngredients().get(0).getIngredient().setName("ingredient2");
+        //when
+        when(userService.getCurrentUser()).thenReturn(userDto);
+        when(restaurantConverter.dtoToEntity(restaurantDto)).thenReturn(restaurant);
+        when(recipeConverter.dtoToEntity(recipeUpdateDto)).thenReturn(persistRecipe);
+        when(recipeRepository.findByNameAndRestaurantId(recipe.getName(), recipe.getRestaurant()
+                .getId())).thenReturn(Optional.ofNullable(persistRecipe));
+        recipeService.update(recipeUpdateDto);
+    }
 }
 
