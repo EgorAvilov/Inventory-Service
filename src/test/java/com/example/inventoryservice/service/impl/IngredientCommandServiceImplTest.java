@@ -200,7 +200,39 @@ public class IngredientCommandServiceImplTest {
                 .isEqualTo(ingredientDto.getPrice()
                         .add(price));
     }
+    @Test(expected = NoItemException.class)
+    public void updateNoItemExceptionNoSuchIngredient() {
+        //given
+        IngredientUpdateDto ingredientUpdateDto = IngredientUpdateDto
+                .builder()
+                .name("name")
+                .price(BigDecimal.valueOf(5))
+                .amount(BigDecimal.valueOf(5))
+                .build();
+        Ingredient ingredientUpdate = Ingredient
+                .builder()
+                .name("name")
+                .price(BigDecimal.valueOf(5))
+                .amount(BigDecimal.valueOf(5))
+                .restaurant(restaurant)
+                .build();
+        BigDecimal amount = BigDecimal.valueOf(1L);
+        Ingredient persistIngredient = Ingredient
+                .builder()
+                .id(1L)
+                .amount(amount)
+                .measureUnit("measureUnit")
+                .name("name")
+                .restaurant(restaurant)
+                .price(BigDecimal.valueOf(1))
+                .build();
+        //when
+        when(ingredientConverter.dtoToEntity(ingredientUpdateDto)).thenReturn(ingredientUpdate);
+        when(ingredientRepository.findByNameAndRestaurantId(ingredientUpdate.getName(),ingredientUpdate.getRestaurant().getId())).thenThrow(new NoItemException("No such ingredient"));
+        ingredientService.update(ingredientUpdateDto);
+        //then
 
+    }
     @Test
     public void update() {
         //given
@@ -238,4 +270,5 @@ public class IngredientCommandServiceImplTest {
                 .isEqualTo(ingredientUpdateDto.getAmount()
                         .add(amount));
     }
+
 }
