@@ -25,5 +25,5 @@ public class RecipeDto {
 
     private List<RecipeIngredientDto> recipeIngredients = new ArrayList<>();
 
-    private BigDecimal percent;
+    private BigDecimal margin;
 }

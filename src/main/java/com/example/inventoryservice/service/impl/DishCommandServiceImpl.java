@@ -85,9 +85,9 @@ public class DishCommandServiceImpl implements DishCommandService {
     public void calculatePrice(Dish dish) {
         LOGGER.info("Calculating price of dish {}", dish.getRecipe()
                 .getName());
-        Recipe recipe = recipeRepository.findByName(dish.getRecipe()
-                .getName()).orElseThrow(() -> new NoItemException("No such recipe"));
-        BigDecimal percent = recipe.getPercent();
+        Recipe recipe = recipeRepository.findByNameAndRestaurantId(dish.getRecipe()
+                .getName(), dish.getRestaurant().getId()).orElseThrow(() -> new NoItemException("No such recipe"));
+        BigDecimal percent = recipe.getMargin();
         BigDecimal totalPrice = BigDecimal.valueOf(0);
         List<Long> recipeIngredientIds = recipe.getRecipeIngredients()
                 .stream()
@@ -104,8 +104,8 @@ public class DishCommandServiceImpl implements DishCommandService {
     public void cookingDish(Dish dish) {
         LOGGER.info("Cooking dish {}", dish.getRecipe()
                 .getName());
-        Recipe recipe = recipeRepository.findByName(dish.getRecipe()
-                .getName()).orElseThrow();
+        Recipe recipe = recipeRepository.findByNameAndRestaurantId(dish.getRecipe()
+                .getName(), dish.getRestaurant().getId()).orElseThrow(() -> new NoItemException("No such recipe"));
         dish.setRecipe(recipe);
         List<Long> recipeIngredientIds = recipe.getRecipeIngredients()
                 .stream()

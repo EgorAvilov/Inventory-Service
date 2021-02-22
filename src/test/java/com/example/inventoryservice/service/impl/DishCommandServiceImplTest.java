@@ -23,6 +23,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -100,7 +101,7 @@ public class DishCommandServiceImplTest {
                 .id(1L)
                 .name("recipe")
                 .restaurant(restaurant)
-                .percent(BigDecimal.valueOf(12))
+                .margin(BigDecimal.valueOf(12))
                 .recipeIngredients(Collections.singletonList(recipeIngredient))
                 .build();
         dish = Dish.builder()
@@ -140,8 +141,8 @@ public class DishCommandServiceImplTest {
         when(restaurantConverter.dtoToEntity(restaurantDto)).thenReturn(restaurant);
         when(dishConverter.dtoToEntity(dishDto)).thenReturn(dish);
         when(recipeRepository.countAllByNameAndRestaurantId(recipe.getName(), restaurant.getId())).thenReturn(1L);
-        when(recipeRepository.findByName(dish.getRecipe()
-                .getName())).thenReturn(java.util.Optional.ofNullable(recipe));
+        when(recipeRepository.findByNameAndRestaurantId(dish.getRecipe()
+                .getName(),dish.getRestaurant().getId())).thenReturn(Optional.ofNullable(recipe));
         when(recipeIngredientRepository.findAllByIdIn(recipeIngredientIds)).thenReturn(Collections.singletonList(recipeIngredient));
         dishService.create(dishDto);
 
@@ -155,8 +156,8 @@ public class DishCommandServiceImplTest {
         when(restaurantConverter.dtoToEntity(restaurantDto)).thenReturn(restaurant);
         when(dishConverter.dtoToEntity(dishDto)).thenReturn(dish);
         when(recipeRepository.countAllByNameAndRestaurantId(recipe.getName(), restaurant.getId())).thenReturn(1L);
-        when(recipeRepository.findByName(dish.getRecipe()
-                .getName())).thenReturn(java.util.Optional.ofNullable(recipe));
+        when(recipeRepository.findByNameAndRestaurantId(dish.getRecipe()
+                .getName(),dish.getRestaurant().getId())).thenReturn(Optional.ofNullable(recipe));
         when(recipeIngredientRepository.findAllByIdIn(recipeIngredientIds)).thenReturn(Collections.singletonList(recipeIngredient));
         dishService.create(dishDto);
         //then

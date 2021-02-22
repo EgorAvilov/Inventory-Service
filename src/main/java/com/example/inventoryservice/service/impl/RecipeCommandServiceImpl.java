@@ -101,12 +101,12 @@ public class RecipeCommandServiceImpl implements RecipeCommandService {
         Restaurant restaurant = restaurantConverter.dtoToEntity(restaurantDto);
         Recipe recipe = recipeConverter.dtoToEntity(recipeDto);
         recipe.setRestaurant(restaurant);
-        Recipe persistRecipe = recipeRepository.findByName(recipe.getName())
+        Recipe persistRecipe = recipeRepository.findByNameAndRestaurantId(recipe.getName(),recipe.getRestaurant().getId())
                 .orElseThrow(() -> new NoItemException("No such recipe"));
         if (ingredientsRepeatInRecipe(recipe)) {
             throw new ServiceException("Ingredients in recipe should be unique");
         }
-        if(checkForNullAndZeroAmounts(recipe)){
+        if (checkForNullAndZeroAmounts(recipe)) {
             throw new ServiceException("Amount can't be zero");
         }
         if (recipe.getRecipeIngredients().size() != 0) {
@@ -131,23 +131,26 @@ public class RecipeCommandServiceImpl implements RecipeCommandService {
             }
             persistRecipe.setRecipeIngredients(recipe.getRecipeIngredients());
         }
-        if (recipe.getPercent() != null && !recipe.getPercent().equals(persistRecipe.getPercent())) {
-            persistRecipe.setPercent(recipe.getPercent());
+        if (recipe.getMargin() != null && !recipe.getMargin().equals(persistRecipe.getMargin())) {
+            persistRecipe.setMargin(recipe.getMargin());
         }
         persistRecipe = recipeRepository.save(persistRecipe);
         return recipeConverter.entityToDto(persistRecipe);
     }
 
+    @Override
     public boolean ingredientsRepeatInRecipe(Recipe recipe) {
         List<Ingredient> ingredients = recipe.getRecipeIngredients().stream().map(RecipeIngredient::getIngredient).collect(Collectors.toList());
         return !ingredients.stream().allMatch(new HashSet<>()::add);
     }
 
+    @Override
     public boolean checkForNullAndZeroAmounts(Recipe recipe) {
         List<BigDecimal> amounts = recipe.getRecipeIngredients().stream().map(RecipeIngredient::getAmount).collect(Collectors.toList());
         return amounts.stream().anyMatch(amount -> (amount == null) || (amount.compareTo(BigDecimal.ZERO) <= 0));
     }
 
+    @Override
     public boolean recipeExists(Recipe recipe) {
         LOGGER.info("Check for existing recipe {}", recipe.getName());
         return recipeRepository.countAllByNameAndRestaurantId(recipe.getName(), recipe.getRestaurant()

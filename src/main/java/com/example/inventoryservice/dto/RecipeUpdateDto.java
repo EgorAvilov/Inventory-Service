@@ -26,5 +26,5 @@ public class RecipeUpdateDto {
 
     @DecimalMin(value = "0.00")
     @Digits(integer = 15, fraction = 2)
-    private BigDecimal percent;
+    private BigDecimal margin;
 }
