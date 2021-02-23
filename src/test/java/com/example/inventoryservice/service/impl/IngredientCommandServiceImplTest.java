@@ -217,15 +217,6 @@ public class IngredientCommandServiceImplTest {
                 .restaurant(restaurant)
                 .build();
         BigDecimal amount = BigDecimal.valueOf(1L);
-        Ingredient persistIngredient = Ingredient
-                .builder()
-                .id(1L)
-                .amount(amount)
-                .measureUnit("measureUnit")
-                .name("name")
-                .restaurant(restaurant)
-                .price(BigDecimal.valueOf(1))
-                .build();
         //when
         when(ingredientConverter.dtoToEntity(ingredientUpdateDto)).thenReturn(ingredientUpdate);
         when(ingredientRepository.findByNameAndRestaurantId(ingredientUpdate.getName(),ingredientUpdate.getRestaurant().getId())).thenThrow(new NoItemException("No such ingredient"));

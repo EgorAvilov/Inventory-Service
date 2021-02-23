@@ -101,7 +101,7 @@ public class RecipeCommandServiceImpl implements RecipeCommandService {
         Restaurant restaurant = restaurantConverter.dtoToEntity(restaurantDto);
         Recipe recipe = recipeConverter.dtoToEntity(recipeDto);
         recipe.setRestaurant(restaurant);
-        Recipe persistRecipe = recipeRepository.findByNameAndRestaurantId(recipe.getName(),recipe.getRestaurant().getId())
+        Recipe persistRecipe = recipeRepository.findByNameAndRestaurantId(recipe.getName(), recipe.getRestaurant().getId())
                 .orElseThrow(() -> new NoItemException("No such recipe"));
         if (ingredientsRepeatInRecipe(recipe)) {
             throw new ServiceException("Ingredients in recipe should be unique");
@@ -131,7 +131,7 @@ public class RecipeCommandServiceImpl implements RecipeCommandService {
             }
             persistRecipe.setRecipeIngredients(recipe.getRecipeIngredients());
         }
-        if (recipe.getMargin() != null && !recipe.getMargin().equals(persistRecipe.getMargin())) {
+        if (recipe.getMargin() != null) {
             persistRecipe.setMargin(recipe.getMargin());
         }
         persistRecipe = recipeRepository.save(persistRecipe);

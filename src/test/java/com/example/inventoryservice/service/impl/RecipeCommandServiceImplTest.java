@@ -60,6 +60,7 @@ public class RecipeCommandServiceImplTest {
     private RecipeIngredientDto recipeIngredientUpdateDto1;
     private RecipeIngredient recipeIngredientUpdate2;
     private ArrayList<RecipeIngredientDto> recipeIngredientDtoList;
+    private Recipe recipeUpdate;
 
     @Before
     public void setUp() {
@@ -112,6 +113,7 @@ public class RecipeCommandServiceImplTest {
                 .restaurant(restaurant)
                 .name("name")
                 .id(1L)
+                .margin(BigDecimal.valueOf(14))
                 .build();
 
         restaurantDto = RestaurantDto.builder()
@@ -157,6 +159,12 @@ public class RecipeCommandServiceImplTest {
                 .build();
         recipeUpdateDto = RecipeUpdateDto.builder()
                 .name("name")
+                .recipeIngredients(recipeIngredientDtoList)
+                .margin(BigDecimal.valueOf(23))
+                .build();
+        recipeUpdate = Recipe.builder()
+                .name("name")
+                .recipeIngredients(recipeIngredientList)
                 .margin(BigDecimal.valueOf(23))
                 .build();
         userDto = UserDto.builder()
@@ -253,6 +261,7 @@ public class RecipeCommandServiceImplTest {
                 .getId())).thenReturn(Optional.ofNullable(persistRecipe));
         recipeService.update(recipeUpdateDto);
     }
+
     @Test
     public void update() {
         //given
@@ -260,10 +269,15 @@ public class RecipeCommandServiceImplTest {
         //when
         when(userService.getCurrentUser()).thenReturn(userDto);
         when(restaurantConverter.dtoToEntity(restaurantDto)).thenReturn(restaurant);
-        when(recipeConverter.dtoToEntity(recipeUpdateDto)).thenReturn(persistRecipe);
+        when(recipeConverter.dtoToEntity(recipeUpdateDto)).thenReturn(recipeUpdate);
         when(recipeRepository.findByNameAndRestaurantId(recipe.getName(), recipe.getRestaurant()
                 .getId())).thenReturn(Optional.ofNullable(persistRecipe));
+        when(recipeRepository.save(persistRecipe)).thenReturn(persistRecipe);
         recipeService.update(recipeUpdateDto);
+        //then
+        assertThat(persistRecipe).extracting(Recipe::getName)
+                .isEqualTo(recipeUpdateDto.getName());
+        assertThat(persistRecipe).extracting(Recipe::getMargin).isEqualTo(recipeUpdateDto.getMargin());
     }
 }
 
