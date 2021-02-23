@@ -19,6 +19,8 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.sql.SQLException;
 
 @Service
@@ -62,8 +64,8 @@ public class IngredientCommandServiceImpl implements IngredientCommandService {
     public IngredientDto updateAmount(IngredientUpdateAmountDto ingredientDto) {
         LOGGER.info("Update ingredient amount");
         Ingredient ingredient = ingredientConverter.dtoToEntity(ingredientDto);
-        Ingredient persistIngredient = ingredientRepository.findByName(ingredient.getName())
-                                                           .orElseThrow(() -> new NoItemException("No such ingredient"));
+        Ingredient persistIngredient = ingredientRepository.findByNameAndRestaurantId(ingredient.getName(),ingredient.getRestaurant().getId())
+                .orElseThrow(() -> new NoItemException("No such ingredient"));
         BigDecimal persistAmount = persistIngredient.getAmount();
         persistIngredient.setAmount(persistAmount.add(ingredient.getAmount()));
         persistIngredient = ingredientRepository.save(persistIngredient);
@@ -74,10 +76,24 @@ public class IngredientCommandServiceImpl implements IngredientCommandService {
     public IngredientDto updatePrice(IngredientUpdatePriceDto ingredientDto) {
         LOGGER.info("Update ingredient price");
         Ingredient ingredient = ingredientConverter.dtoToEntity(ingredientDto);
-        Ingredient persistIngredient = ingredientRepository.findByName(ingredient.getName())
-                                                           .orElseThrow(() -> new NoItemException("No such ingredient"));
+        Ingredient persistIngredient = ingredientRepository.findByNameAndRestaurantId(ingredient.getName(),ingredient.getRestaurant().getId())
+                .orElseThrow(() -> new NoItemException("No such ingredient"));
         BigDecimal persistPrice = persistIngredient.getPrice();
         persistIngredient.setPrice(persistPrice.add(ingredient.getPrice()));
+        persistIngredient = ingredientRepository.save(persistIngredient);
+        return ingredientConverter.entityToDto(persistIngredient);
+    }
+
+    @Override
+    public IngredientDto update(IngredientUpdateDto ingredientDto) {
+        LOGGER.info("Update ingredient");
+        Ingredient ingredient = ingredientConverter.dtoToEntity(ingredientDto);
+        Ingredient persistIngredient = ingredientRepository.findByNameAndRestaurantId(ingredient.getName(),ingredient.getRestaurant().getId())
+                .orElseThrow(() -> new NoItemException("No such ingredient"));
+        BigDecimal weightedPrice = weightPrice(ingredient, persistIngredient);
+        BigDecimal totalAmount = persistIngredient.getAmount().add(ingredient.getAmount());
+        persistIngredient.setAmount(totalAmount);
+        persistIngredient.setPrice(weightedPrice);
         persistIngredient = ingredientRepository.save(persistIngredient);
         return ingredientConverter.entityToDto(persistIngredient);
     }
@@ -85,6 +101,14 @@ public class IngredientCommandServiceImpl implements IngredientCommandService {
     public boolean ingredientExists(Ingredient ingredient) {
         LOGGER.info("Check for existing ingredient {}", ingredient.getName());
         return ingredientRepository.countAllByNameAndRestaurantId(ingredient.getName(), ingredient.getRestaurant()
-                                                                                                  .getId()) != 0;
+                .getId()) != 0;
+    }
+
+    public BigDecimal weightPrice(Ingredient ingredient, Ingredient persistIngredient) {
+        BigDecimal totalOldPrice = persistIngredient.getAmount().multiply(persistIngredient.getPrice());
+        BigDecimal totalNewPrice = ingredient.getAmount().multiply(ingredient.getPrice());
+        BigDecimal totalPrice = totalOldPrice.add(totalNewPrice);
+        BigDecimal totalAmount = persistIngredient.getAmount().add(ingredient.getAmount());
+        return totalPrice.divide(totalAmount, 2, RoundingMode.HALF_EVEN);
     }
 }

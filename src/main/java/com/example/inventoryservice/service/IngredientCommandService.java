@@ -2,6 +2,7 @@ package com.example.inventoryservice.service;
 
 import com.example.inventoryservice.dto.IngredientDto;
 import com.example.inventoryservice.dto.IngredientUpdateAmountDto;
+import com.example.inventoryservice.dto.IngredientUpdateDto;
 import com.example.inventoryservice.dto.IngredientUpdatePriceDto;
 
 public interface IngredientCommandService {
@@ -10,4 +11,6 @@ public interface IngredientCommandService {
     IngredientDto updateAmount(IngredientUpdateAmountDto ingredientDto);
 
     IngredientDto updatePrice(IngredientUpdatePriceDto ingredientDto);
+
+    IngredientDto update(IngredientUpdateDto ingredientDto);
 }

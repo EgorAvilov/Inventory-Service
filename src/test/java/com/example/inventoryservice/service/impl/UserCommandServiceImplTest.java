@@ -16,7 +16,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.Collections;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.lenient;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserCommandServiceImplTest {
@@ -35,42 +35,42 @@ public class UserCommandServiceImplTest {
     @Before
     public void setUp() {
         RestaurantDto restaurantDto = RestaurantDto.builder()
-                                                   .id(1L)
-                                                   .name("restaurant")
-                                                   .build();
+                .id(1L)
+                .name("restaurant")
+                .build();
 
         Restaurant restaurant = Restaurant.builder()
-                                          .id(1L)
-                                          .name("restaurant")
-                                          .build();
+                .id(1L)
+                .name("restaurant")
+                .build();
 
         userDto = UserDto.builder()
-                         .firstName("firstName")
-                         .lastName("lastName")
-                         .username("username")
-                         .password("password")
-                         .userRole(Collections.singletonList(Role.KITCHEN_STUFF))
-                         .restaurant(restaurantDto)
-                         .build();
+                .firstName("firstName")
+                .lastName("lastName")
+                .username("username")
+                .password("password")
+                .userRole(Collections.singletonList(Role.KITCHEN_STUFF))
+                .restaurant(restaurantDto)
+                .build();
         user = User.builder()
-                   .firstName("firstName")
-                   .lastName("lastName")
-                   .username("username")
-                   .password("password")
-                   .userRole(Collections.singletonList(Role.KITCHEN_STUFF))
-                   .restaurant(restaurant)
-                   .build();
+                .firstName("firstName")
+                .lastName("lastName")
+                .username("username")
+                .password("password")
+                .userRole(Collections.singletonList(Role.KITCHEN_STUFF))
+                .restaurant(restaurant)
+                .build();
     }
 
     @Test
     public void create() {
         //given
         //when
-        when(userConverter.dtoToEntity(userDto)).thenReturn(user);
-        when(userRepository.save(user)).thenReturn(user);
+        lenient().when(userConverter.dtoToEntity(userDto)).thenReturn(user);
+        lenient().when(userRepository.save(user)).thenReturn(user);
         userService.create(userDto);
         //then
         assertThat(user).extracting(User::getFirstName)
-                        .isEqualTo(userDto.getFirstName());
+                .isEqualTo(userDto.getFirstName());
     }
 }

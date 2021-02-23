@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,5 +31,8 @@ public class Recipe implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<RecipeIngredient> recipeIngredients = new ArrayList<>();
+
+    @Column(name = "margin", nullable = false, columnDefinition = "numeric(19,2) default 0.00")
+    private BigDecimal margin;
 }
 

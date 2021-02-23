@@ -8,28 +8,24 @@ import lombok.NoArgsConstructor;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class IngredientDto {
-
-    private Long id;
+public class RecipeCreateDto {
 
     @NotBlank(message = "Name can't be empty.")
     private String name;
 
-    @DecimalMin(value = "0.00", inclusive = false, message = "Amount can't be <=0")
+    @NotEmpty(message = "Ingredient list can't be empty")
+    private List<RecipeIngredientDto> recipeIngredients = new ArrayList<>();
+
+    @DecimalMin(value = "0.00")
     @Digits(integer = 15, fraction = 2)
-    private BigDecimal amount;
-
-    @NotBlank(message = "Measure unit can't be empty.")
-    private String measureUnit;
-
-    @DecimalMin(value = "0.00", inclusive = false, message = "Price can't be <=0")
-    @Digits(integer = 15, fraction = 2)
-    private BigDecimal price;
-
+    private BigDecimal margin;
 }
