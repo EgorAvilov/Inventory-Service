@@ -1,0 +1,8 @@
+select d.restaurant_id, rri.recipe_ingredients_id, sum(ri.amount)
+from dishes d
+         join recipes_recipe_ingredients rri on d.recipe_id = rri.recipe_id
+         join recipe_ingredients ri on rri.recipe_ingredients_id = ri.id
+group by d.restaurant_id, rri.recipe_ingredients_id, d.date
+having d.date between (select date_trunc('day', now()) - interval '1 month')
+           and (select (date_trunc('day', now())));
+
