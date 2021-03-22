@@ -26,14 +26,12 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.math.RoundingMode;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static java.math.BigDecimal.ROUND_HALF_UP;
 
 @Service
 public class DishCommandServiceImpl implements DishCommandService {
@@ -73,7 +71,7 @@ public class DishCommandServiceImpl implements DishCommandService {
         dish.setRestaurant(restaurant);
         if (!recipeExists(dish)) {
             LOGGER.error("No such recipe {}", dish.getRecipe()
-                    .getName());
+                                                  .getName());
             throw new NoItemException("No such recipe");
         }
         cookingDish(dish);
@@ -84,60 +82,69 @@ public class DishCommandServiceImpl implements DishCommandService {
 
     public void calculatePrice(Dish dish) {
         LOGGER.info("Calculating price of dish {}", dish.getRecipe()
-                .getName());
+                                                        .getName());
         Recipe recipe = recipeRepository.findByNameAndRestaurantId(dish.getRecipe()
-                .getName(), dish.getRestaurant().getId()).orElseThrow(() -> new NoItemException("No such recipe"));
+                                                                       .getName(), dish.getRestaurant()
+                                                                                       .getId())
+                                        .orElseThrow(() -> new NoItemException("No such recipe"));
         BigDecimal percent = recipe.getMargin();
         BigDecimal totalPrice = BigDecimal.valueOf(0);
         List<Long> recipeIngredientIds = recipe.getRecipeIngredients()
-                .stream()
-                .map(RecipeIngredient::getId)
-                .collect(Collectors.toList());
+                                               .stream()
+                                               .map(RecipeIngredient::getId)
+                                               .collect(Collectors.toList());
         List<RecipeIngredient> requiredRecipeIngredients = recipeIngredientRepository.findAllByIdIn(recipeIngredientIds);
         for (RecipeIngredient requiredRecipeIngredient : requiredRecipeIngredients) {
-            totalPrice = totalPrice.add(requiredRecipeIngredient.getAmount().multiply(requiredRecipeIngredient.getIngredient().getPrice()));
+            totalPrice = totalPrice.add(requiredRecipeIngredient.getAmount()
+                                                                .multiply(requiredRecipeIngredient.getIngredient()
+                                                                                                  .getPrice()));
         }
-        dish.setPrice(totalPrice.multiply(percent).setScale(2, RoundingMode.HALF_UP));
+        dish.setPrice(totalPrice.multiply(percent)
+                                .setScale(2, RoundingMode.HALF_UP));
     }
 
     @Override
     public void cookingDish(Dish dish) {
         LOGGER.info("Cooking dish {}", dish.getRecipe()
-                .getName());
+                                           .getName());
         Recipe recipe = recipeRepository.findByNameAndRestaurantId(dish.getRecipe()
-                .getName(), dish.getRestaurant().getId()).orElseThrow(() -> new NoItemException("No such recipe"));
+                                                                       .getName(), dish.getRestaurant()
+                                                                                       .getId())
+                                        .orElseThrow(() -> new NoItemException("No such recipe"));
         dish.setRecipe(recipe);
         List<Long> recipeIngredientIds = recipe.getRecipeIngredients()
-                .stream()
-                .map(RecipeIngredient::getId)
-                .collect(Collectors.toList());
+                                               .stream()
+                                               .map(RecipeIngredient::getId)
+                                               .collect(Collectors.toList());
         List<String> notEnoughIngredientsList = new ArrayList<>();
         List<RecipeIngredient> requiredRecipeIngredients = recipeIngredientRepository.findAllByIdIn(recipeIngredientIds);
         for (RecipeIngredient requiredRecipeIngredient : requiredRecipeIngredients) {
             if (requiredRecipeIngredient.getAmount()
-                    .compareTo(requiredRecipeIngredient.getIngredient()
-                            .getAmount()) > 0) {
+                                        .compareTo(requiredRecipeIngredient.getIngredient()
+                                                                           .getAmount()) > 0) {
                 notEnoughIngredientsList.add(requiredRecipeIngredient.getIngredient()
-                        .getName());
+                                                                     .getName());
             }
             BigDecimal existingAmount = requiredRecipeIngredient.getIngredient()
-                    .getAmount();
+                                                                .getAmount();
             requiredRecipeIngredient.getIngredient()
-                    .setAmount(existingAmount.subtract(requiredRecipeIngredient.getAmount()));
+                                    .setAmount(existingAmount.subtract(requiredRecipeIngredient.getAmount()));
         }
         if (notEnoughIngredientsList.size() != 0) {
             LOGGER.error("Not enough ingredients {}", notEnoughIngredientsList.toString());
             throw new ServiceException("Not enough ingredients: " + notEnoughIngredientsList.toString());
         }
+
         recipeIngredientRepository.saveAll(requiredRecipeIngredients);
+        dish.setDate(LocalDate.now());
     }
 
     public boolean recipeExists(Dish dish) {
         LOGGER.info("Check for existing recipe {}", dish.getRecipe()
-                .getName());
+                                                        .getName());
         return recipeRepository.countAllByNameAndRestaurantId(dish.getRecipe()
-                        .getName(),
+                                                                  .getName(),
                 dish.getRestaurant()
-                        .getId()) != 0;
+                    .getId()) != 0;
     }
 }
