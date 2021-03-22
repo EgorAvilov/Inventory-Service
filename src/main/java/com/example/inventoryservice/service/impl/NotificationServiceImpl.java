@@ -32,7 +32,7 @@ public class NotificationServiceImpl implements NotificationService {
     }
 
     @Override
-    public Map<List<User>, List<Ingredient>> remind(Long restaurantId) {
+    public  List<Ingredient> remind(Long restaurantId) {
         List<UsedIngredientView> usedIngredientViews = ingredientRepository.findAllUsedIngredientsByRestaurantId(restaurantId);
         List<Ingredient> soonOutIngredients = new ArrayList<>();
         for (UsedIngredientView usedIngredientView : usedIngredientViews) {
@@ -44,9 +44,6 @@ public class NotificationServiceImpl implements NotificationService {
                 soonOutIngredients.add(ingredient);
             }
         }
-        List<User> managers = userRepository.findAllByUserRoleAndRestaurantId(Role.INVENTORY_MANAGER, restaurantId);
-        Map<List<User>, List<Ingredient>> map = new HashMap<>();
-        map.put(managers, soonOutIngredients);
-        return map;
+       return soonOutIngredients;
     }
 }

@@ -8,5 +8,5 @@ import java.util.Map;
 
 public interface NotificationService {
 
-    public Map<List<User>, List<Ingredient>> remind(Long restaurantId);
+    public List<Ingredient> remind(Long restaurantId);
 }
