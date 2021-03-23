@@ -11,6 +11,6 @@ INSERT INTO public.ingredients (id, amount, measure_unit, name, price, restauran
 INSERT INTO public.ingredients (id, amount, measure_unit, name, price, restaurant_id) VALUES (1, 444.00, 'kg', 'sugar', 1.00, 1);
 INSERT INTO public.recipe_ingredients (id, amount, ingredient_id) VALUES (1, 1.20, 1);
 INSERT INTO public.recipe_ingredients (id, amount, ingredient_id) VALUES (2, 1.30, 2);
-INSERT INTO public.recipes (id, name, percent, restaurant_id) VALUES (1, 'cake', 23.00, 1);
+INSERT INTO public.recipes (id, name, margin, restaurant_id) VALUES (1, 'cake', 23.00, 1);
 INSERT INTO public.recipes_recipe_ingredients (recipe_id, recipe_ingredients_id) VALUES (1, 1);
 INSERT INTO public.recipes_recipe_ingredients (recipe_id, recipe_ingredients_id) VALUES (1, 2);
